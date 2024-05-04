@@ -648,7 +648,7 @@ a {
 .PAN-twothird,
 .PAN-threequarter,
 .PAN-quarter {
-    float: left;
+    float: right;
     width: 100%
 }
 
@@ -4281,7 +4281,7 @@ h1 {
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 20px;
     color: #000;
 }
 
@@ -4728,7 +4728,7 @@ a.topnav-icons {
 }
 
 .ws-yellow {
-    background-color: #FFF4A3 !important;
+    background-color: #8fa0fbab !important;
     color: black !important;
 }
 
@@ -5105,7 +5105,7 @@ h1 {
 }
 
 .tut-button {
-    background-color: #04AA6D;
+    background-color: #000000;
     color: white;
     font-size: 18px;
     margin: auto;
@@ -5167,7 +5167,7 @@ h1 {
 }
 
 .black-color:hover {
-    background-color: #000 !important;
+    background-color: #024bff !important;
     color: white !important;
 }
 
@@ -5313,7 +5313,7 @@ h1 {
 }
 
 .ws-yellow-hover:hover {
-    background-color: #fff080 !important;
+    background-color: #8fa0fbab !important;
     color: black !important;
 }
 
@@ -5650,6 +5650,7 @@ form.example::after {
 .learntocodeh1 {
     font-size: 70px;
     font-weight: 700;
+    display:none;
 }
 
 .learntocodeh3 {
@@ -5657,6 +5658,7 @@ form.example::after {
     font-weight: 700;
     margin-top: 30px !important;
     font-size: 23px;
+    display: none;
 }
 
 .learntocodeh4 {

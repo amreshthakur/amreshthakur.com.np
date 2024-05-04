@@ -166,7 +166,7 @@ section {
 /* Style the counter image-containers */
 .image-container {
     box-shadow: 0 4px 8px 0 rgba(234, 89, 27, 0.948);
-    padding: 5px 50px;
+    padding: 1px 1px;
     text-align: center;
     background-color: #ffffffd3;
     transition: transform 0.5s ease;
@@ -182,9 +182,12 @@ section {
     color: black;
 }
 
+.subjects-name{
+  font-size: 20px;
 
+}
 .image-container img {
-    width: 50%;
+    width: 70%;
     height: 30%;
   }
 
