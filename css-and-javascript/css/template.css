@@ -5650,7 +5650,7 @@ form.example::after {
 .learntocodeh1 {
     font-size: 70px;
     font-weight: 700;
-    display:none;
+    /* display:none; */
 }
 
 .learntocodeh3 {
@@ -5658,7 +5658,7 @@ form.example::after {
     font-weight: 700;
     margin-top: 30px !important;
     font-size: 23px;
-    display: none;
+    /* display: none; */
 }
 
 .learntocodeh4 {
