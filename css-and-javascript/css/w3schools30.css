@@ -4239,6 +4239,11 @@ h1 {
 
 h2 {
   font-size: 32px;
+  background-color: rgba(248, 248, 255, 0);
+}
+
+.dark-mode h2 {
+  color: #000000;
 }
 
 .w3-btn:hover,
