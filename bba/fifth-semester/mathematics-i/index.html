@@ -118,7 +118,7 @@
                         Search field
                     </label>
 
-                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off"
+                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off" onkeydown="key_pressed_in_search(event)"
                         onkeydown="TopNavBar.googleSearchAttachKeyPressHandler(event)" aria-label="Search field"
                         oninput="TopNavBar.searchWithSuggestions(this)" onfocus="TopNavBar.searchWithSuggestions(this)"
                         onblur="TopNavBar.searchFieldLostFocus(event)" />
@@ -3261,6 +3261,9 @@
                 ["", "/", "CSS background Property"],
                 ["", "/", "HTML Background Images"],
                 ["", "/", "CSS Fonts"],
+                ["csit", "/../../../csit/", "BSc. CSIT Chepter-wise"],
+                ["bba", "/bba/", "BBA Chepter-wise"],
+                ["bit", "/BIT/", "BIT Chepter-wise"],
                 ["", "/", "CSS font Property"],
                 ["", "/", "CSS font-family Property"],
                 ["", "/", "CSS Web Fonts"],
@@ -3410,9 +3413,6 @@
                 ["", "/", "JAVA Compiler"],
                 ["", "/", "C++ Compiler"],
                 ["", "/", "C Compiler"],
-                ["csit", "/../../../csit/", "BSc. CSIT Chepter-wise"],
-                ["bba", "/bba/", "BBA Chepter-wise"],
-                ["bit", "/BIT/", "BIT Chepter-wise"],
                 ["", "/", "C# Compiler"],
                 ["", "/", "R Compiler"],
                 ["", "/", "Kotlin Compiler"],
@@ -3757,6 +3757,7 @@
             title="Embedded Systems Programming">Embedded Systems Programming</a>
         <a href="../../../csit/eighth-semester/international-business-management/index.html" class="ga-nav"
             title="International Business Management">International Business Management</a>
+
 
 
 

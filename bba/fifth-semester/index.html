@@ -39,8 +39,8 @@
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
 
-    <!-- Favicon -->
-    <link rel="icon" href="image/favicon_io/android-chrome-512x512.png" type="image/x-icon">
+   <!-- Favicon -->
+   <link rel="icon" href="image/favicon_io/android-chrome-512x512.png" type="image/x-icon">
 
     <!-- Canonical Link (Specify the preferred version of a page) -->
     <link rel="canonical" href="https://www.amreshthakur.com.np">
@@ -116,7 +116,7 @@
                         Search field
                     </label>
 
-                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off"
+                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off" onkeydown="key_pressed_in_search(event)"
                         onkeydown="TopNavBar.googleSearchAttachKeyPressHandler(event)" aria-label="Search field"
                         oninput="TopNavBar.searchWithSuggestions(this)" onfocus="TopNavBar.searchWithSuggestions(this)"
                         onblur="TopNavBar.searchFieldLostFocus(event)" />
@@ -3116,9 +3116,6 @@
                 ["js", "/", "JavaScript Chepter-wise"],
                 ["python", "//", "Python Chepter-wise"],
                 ["sql", "/", "SQL Chepter-wise"],
-                ["csit", "/csit/", "BSc. CSIT Chepter-wise"],
-                ["bba", "/bba/", "BBA Chepter-wise"],
-                ["bit", "/BIT/", "BIT Chepter-wise"],
                 ["php", "/", "PHP Chepter-wise"],
                 ["java", "/", "JAVA Chepter-wise"],
                 ["c", "/", "C Chepter-wise"],
@@ -3279,6 +3276,9 @@
                 ["", "/", "CSS flex Property"],
                 ["", "/", "CSS Flex Container"],
                 ["", "/", "CSS Flex Items"],
+                ["csit", "/csit/", "BSc. CSIT Chepter-wise"],
+                ["bba", "/bba/", "BBA Chepter-wise"],
+                ["bit", "/BIT/", "BIT Chepter-wise"],
                 ["", "/", "CSS flex-direction Property"],
                 ["", "/", "CSS flext-wrap Property"],
                 ["", "/", "Bootstrap 5 Flex Chepter-wise", "fle"],
@@ -3709,8 +3709,6 @@
 
 
 
-
-
         <a href="javascript:void(0)" style="width:50px;visibility:hidden;"></a>
         <div id="btn_container_subtopnav">
             <div id="scroll_right_btn" class="PAN-hide-medium PAN-hide-small">
@@ -3766,6 +3764,8 @@
             </div>
         </div>
     </div>
+
+
 
 
 

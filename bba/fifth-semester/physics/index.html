@@ -119,7 +119,7 @@
                         Search field
                     </label>
 
-                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off"
+                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off" onkeydown="key_pressed_in_search(event)"
                         onkeydown="TopNavBar.googleSearchAttachKeyPressHandler(event)" aria-label="Search field"
                         oninput="TopNavBar.searchWithSuggestions(this)" onfocus="TopNavBar.searchWithSuggestions(this)"
                         onblur="TopNavBar.searchFieldLostFocus(event)" />
@@ -3235,6 +3235,9 @@
                 ["tbl", "/", "HTML Table Borders", ["ta", "tb"]],
                 ["tbl", "/", "HTML Table Headers", ["ta", "tb"]],
                 ["", "/", "HTML div Tag"],
+                ["csit", "/../../../csit/", "BSc. CSIT Chepter-wise"],
+                ["bba", "/bba/", "BBA Chepter-wise"],
+                ["bit", "/BIT/", "BIT Chepter-wise"],
                 ["div", "/", "HTML div Chepter-wise", "div"],
                 ["div", "/", "HTML Block Elements", "div"],
                 ["", "/", "HTML Input Types", "in"],
@@ -3283,9 +3286,6 @@
                 ["inline span", "/", "HTML Inline Elements"],
                 ["", "/", "HTML Colors"],
                 ["", "/", "CSS Colors"],
-                ["csit", "/../../../csit/", "BSc. CSIT Chepter-wise"],
-                ["bba", "/bba/", "BBA Chepter-wise"],
-                ["bit", "/BIT/", "BIT Chepter-wise"],
                 ["", "/", "HTML Color Names"],
                 ["", "/", "CSS color Property"],
                 ["", "/", "CSS Display Chepter-wise"],
@@ -3758,6 +3758,9 @@
             title="Embedded Systems Programming">Embedded Systems Programming</a>
         <a href="../../../csit/eighth-semester/international-business-management/index.html" class="ga-nav"
             title="International Business Management">International Business Management</a>
+
+
+
 
 
 
