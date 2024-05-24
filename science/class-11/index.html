@@ -117,7 +117,10 @@
                         Search field
                     </label>
 
-                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off" onkeydown="key_pressed_in_search(event)" onkeydown="TopNavBar.googleSearchAttachKeyPressHandler(event)" aria-label="Search field" oninput="TopNavBar.searchWithSuggestions(this)" onfocus="TopNavBar.searchWithSuggestions(this)" onblur="TopNavBar.searchFieldLostFocus(event)" />
+                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off"
+                        onkeydown="TopNavBar.googleSearchAttachKeyPressHandler(event)" aria-label="Search field"
+                        oninput="TopNavBar.searchWithSuggestions(this)" onfocus="TopNavBar.searchWithSuggestions(this)"
+                        onblur="TopNavBar.searchFieldLostFocus(event)" />
 
                     <div id="tnb-google-search-submit-btn" class="tnb-button-light" role="button"
                         aria-label="Button to search" onclick="TopNavBar.googleSearchSubmit()">
