@@ -40,8 +40,8 @@
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
 
-   <!-- Favicon -->
-   <link rel="icon" href="image/favicon_io/android-chrome-512x512.png" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="icon" href="image/favicon_io/android-chrome-512x512.png" type="image/x-icon">
 
     <!-- Canonical Link (Specify the preferred version of a page) -->
     <link rel="canonical" href="https://www.amreshthakur.com.np">
@@ -117,7 +117,7 @@
                         Search field
                     </label>
 
-                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off"
+                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off" onkeydown="key_pressed_in_search(event)"
                         onkeydown="TopNavBar.googleSearchAttachKeyPressHandler(event)" aria-label="Search field"
                         oninput="TopNavBar.searchWithSuggestions(this)" onfocus="TopNavBar.searchWithSuggestions(this)"
                         onblur="TopNavBar.searchFieldLostFocus(event)" />
@@ -3299,9 +3299,6 @@
                 ["", "/", "CSS Margin Chepter-wise"],
                 ["", "/", "CSS margin Property"],
                 ["", "/", "PAN.CSS Margins"],
-                ["csit", "/../../../csit/", "BSc. CSIT Chepter-wise"],
-                ["bba", "/bba/", "BBA Chepter-wise"],
-                ["bit", "/BIT/", "BIT Chepter-wise"],
                 ["css margins", "/", "CSS Box Model"],
                 ["", "/", "CSS margin-top Property"],
                 ["", "/", "CSS margin-right Property"],
@@ -3344,6 +3341,9 @@
                 ["", "/", "Bootstrap 3 Reference"],
                 ["", "/", "Bootstrap 4 Reference"],
                 ["", "/", "PAN.CSS Reference"],
+                ["csit", "/../../../csit/", "BSc. CSIT Chepter-wise"],
+                ["bba", "/bba/", "BBA Chepter-wise"],
+                ["bit", "/BIT/", "BIT Chepter-wise"],
                 ["", "/", "Icon Reference"],
                 ["", "/", "Sass Reference"],
                 ["", "/", "JavaScript Reference"],

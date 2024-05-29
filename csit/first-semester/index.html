@@ -23,7 +23,7 @@
     <meta property="og:title" content="CSIT First Semester - BSc.CSIT | Pipara Academy">
     <meta property="og:site_name" content="Pipara Academy">
     <meta property="og:image" content="https://www.amreshthakur.com.np//image/meta-image/sibject/first-semester.jpeg">
-    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:type" content="first-semester.jpeg">
     <meta property="og:image:width" content="436">
     <meta property="og:image:height" content="228">
     <meta property="og:description" content="Pipara Academy offers Notes in all CSIT First Semester covers Introduction to Information Technology, foundation of computer science, electronic circuits, programming and mathematics C Programming, Digital Logic, Mathematics I (Calculus), Physics.">
@@ -111,6 +111,7 @@
                 <i class="fa fa-caret-down" style="font-size: 15px" aria-hidden="true"></i>
                 <i class="fa fa-caret-up" style="display: none; font-size: 15px" aria-hidden="true"></i>
             </a>
+            <!-- --------------------------------------------------------------------- -->
 
             <div id="tnb-google-search-container" class="PAN-bar-item">
                 <div id="tnb-google-search-inner-container">
@@ -118,7 +119,7 @@
                         Search field
                     </label>
 
-                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off"
+                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off" onkeydown="key_pressed_in_search(event)"
                         onkeydown="TopNavBar.googleSearchAttachKeyPressHandler(event)" aria-label="Search field"
                         oninput="TopNavBar.searchWithSuggestions(this)" onfocus="TopNavBar.searchWithSuggestions(this)"
                         onblur="TopNavBar.searchFieldLostFocus(event)" />
@@ -151,6 +152,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- --------------------------------------------------------------------- -->
 
             <div id="tnb-dark-mode-toggle-wrapper" class="PAN-bar-item">
                 <a id="tnb-dark-mode-toggle-btn" href="javascript:void(0);"
