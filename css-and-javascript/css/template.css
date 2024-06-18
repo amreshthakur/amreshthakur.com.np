@@ -5040,7 +5040,7 @@ PAN-codeline {
 }
 
 .herosection {
-    background: url('/background-3.gif.mp4' ), url('/');
+    background: url('../../image/background.jpg' ), url('/');
 
     
     background-repeat: repeat, no-repeat;
@@ -5053,7 +5053,7 @@ PAN-codeline {
 
 @media screen and (max-width: 992px) {
     .herosection {
-        background: url('/background-3.gif.mp4');
+        background: url('../../image/background.jpg');
         background-position: center center
             /*left top*/
         ;
