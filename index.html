@@ -275,6 +275,33 @@
                 <i class="fa fa-caret-up" style="display: none; font-size: 15px" aria-hidden="true"></i>
             </a>
 
+
+            <!-- ------------------------------------------------------------------- -->
+            <style>
+                .time {
+                    text-decoration: none;
+                    color: #000;
+                    font-size: 25px;
+                }
+            </style>
+
+            <script>
+                function updateTimeAndDate() {
+                    const now = new Date();
+                    const timeAndDate = now.toLocaleString();
+                    document.getElementById('time-date').textContent = timeAndDate;
+                }
+
+                setInterval(updateTimeAndDate, 1000);
+            </script>
+
+            <a class="time" id="time-date"></a>
+            <script>
+                updateTimeAndDate();
+            </script>
+
+            <!-- ------------------------------------------------------------------- -->
+
         </div>
 
         <nav id="tnb-mobile-nav" class="tnb-mobile-nav PAN-hide">
@@ -1656,7 +1683,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
 
                             <div class="PAN-col l4 m6">
                                 <div id="Notes_html_css_links_list">
@@ -3386,111 +3413,11 @@
 
 
 
-                            <div class="card-container">
-                                <div class="sub-container"><a href="first-semester/index.html" target="_blank">
-                                        <div class="image-container PAN-col">
-                                            <img src="https://heritagebooks.com.np/wp-content/uploads/2023/03/E-GOVERNANCE.jpg"
-                                                width="50%" height="auto" alt="">
-                                            <h2>First Semester</h2>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="sub-container"><a href="https://www.facebook.com/sportstalk2/"
-                                        target="_blank">
-                                        <div class="image-container PAN-col">
-                                            <img src="https://heritagebooks.com.np/wp-content/uploads/2023/03/E-GOVERNANCE.jpg"
-                                                width="50%" height="auto" alt="">
-                                            <h2>Second Semester</h2>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="sub-container"><a href="https://www.facebook.com/technologycsit"
-                                        target="_blank">
-                                        <div class="image-container PAN-col">
-                                            <img src="https://heritagebooks.com.np/wp-content/uploads/2023/03/E-GOVERNANCE.jpg"
-                                                width="50%" height="auto" alt="">
-                                            <h2>Third Semester</h2>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="sub-container">
-                                    <a href="https://www.facebook.com/csitbooks/" target="_blank">
-                                        <div class="image-container PAN-col">
-                                            <img src="https://heritagebooks.com.np/wp-content/uploads/2023/03/E-GOVERNANCE.jpg"
-                                                width="50%" height="auto" alt="">
-                                            <h2>Fourth Semester</h2>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="card-container">
-                                <div class="sub-container"><a href="https://www.facebook.com/amreshthakur4/"
-                                        target="_blank">
-                                        <div class="image-container PAN-col">
-                                            <img src="https://heritagebooks.com.np/wp-content/uploads/2023/03/E-GOVERNANCE.jpg"
-                                                width="50%" height="auto" alt="">
-                                            <h2>Fifth Semester</h2>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="sub-container"><a href="https://www.facebook.com/sportstalk2/"
-                                        target="_blank">
-                                        <div class="image-container PAN-col">
-                                            <img src="https://heritagebooks.com.np/wp-content/uploads/2023/03/E-GOVERNANCE.jpg"
-                                                width="50%" height="auto" alt="">
-                                            <h2>Sixth Semester</h2>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="sub-container"><a href="https://www.facebook.com/technologycsit"
-                                        target="_blank">
-                                        <div class="image-container PAN-col">
-                                            <img src="https://heritagebooks.com.np/wp-content/uploads/2023/03/E-GOVERNANCE.jpg"
-                                                width="50%" height="auto" alt="">
-                                            <h2>Seven Semester</h2>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="sub-container">
-                                    <a href="https://www.facebook.com/csitbooks/" target="_blank">
-                                        <div class="image-container PAN-col">
-                                            <img src="https://heritagebooks.com.np/wp-content/uploads/2023/03/E-GOVERNANCE.jpg"
-                                                width="50%" height="auto" alt="">
-                                            <h2>Eighth Semester</h2>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             <div class="social">
-                                <a href="https://www.facebook.com/piparaacademy"><i
-                                        class="fab fa-facebook-square"></i></a>
-                                <a href="https://www.instagram.com/piparaacademy"><i
-                                        class="fab fa-instagram-square"></i></a>
+                                <a href="https://www.facebook.com/piparaacademy"><i class="fab fa-facebook-square"></i></a>
+                                <a href="https://www.instagram.com/piparaacademy"><i class="fab fa-instagram-square"></i></a>
                                 <a href="https://twitter.com/piparaacademy"><i class="fab fa-twitter-square"></i></a>
-                                <a href="https://www.youtube.com/@piparaacademy"><i
-                                        class="fab fa-youtube-square"></i></a>
+                                <a href="https://www.youtube.com/@piparaacademy"><i class="fab fa-youtube-square"></i></a>
                                 <a href="https://wa.me/yourwhatsappnumber"><i class="fab fa-whatsapp-square"></i></a>
                             </div>
 
@@ -4262,8 +4189,7 @@
                             <h1 style="font-size:100px;font-weight:700;margin-top:-18px!important;">BSc.CSIT
                             </h1>
                             <p style="font-size:19px;">BSc Computer Science & IT Revolution</p>
-                            <a href="csit/" class="PAN-button ga-fp tut-button"
-                                style="margin-bottom:2px;">Books
+                            <a href="csit/" class="PAN-button ga-fp tut-button" style="margin-bottom:2px;">Books
                                 Chepter-wise</a>
                             <br>
                             <a style="position:relative;overflow:visible;margin-bottom:1px;" href="/"
