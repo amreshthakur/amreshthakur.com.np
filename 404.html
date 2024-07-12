@@ -275,6 +275,11 @@
                 <i class="fa fa-caret-up" style="display: none; font-size: 15px" aria-hidden="true"></i>
             </a>
 
+
+               <!-- ------------------------------------------------------------------- -->
+               <a class="time" id="time-date"></a>
+               <!-- ------------------------------------------------------------------- -->
+
         </div>
 
         <nav id="tnb-mobile-nav" class="tnb-mobile-nav PAN-hide">
@@ -4042,7 +4047,7 @@
             if (document.getElementById("btn_container_subtopnav")) d = document.getElementById("btn_container_subtopnav").offsetWidth;
             var ybottom = ytop + c + d + 20;
             return ((ybottom <= b) && (ytop >= a));
-        }
+        };
 
     </script>
 
@@ -4226,35 +4231,27 @@
         <div class='PAN-row PAN-white'>
             <div class='PAN-col l12 m12' id='main'>
                 <div class="ws-black PAN-center herosection">
-
-                    <div class="PAN-content learntocodecontent" style="max-width:1400px">
+                    
+                    <div class="PAN-content learntocodecontent">
                         <h1 class="learntocodeh1">Pipara Academy</h1>
                         <h3 class="learntocodeh3">
-                            <i class="fa fa-logo PAN-hide"
-                                style="color:#FFC0C7!important;margin-right:20px;z-index:1;font-size:36px!important;vertical-align:bottom"></i>
-                            With Search yours courses and notes, PDF.
+                            <i class="fa fa-exclamation-circle" style="color:#FFC0C7!important;margin-right:20px;z-index:1;font-size:36px!important;vertical-align:bottom"></i>
+                            Page Not Found
                         </h3>
+                        <p>We're sorry, but the page you were looking for doesn't exist.</p>
                         <br>
                         <form class="example" action="/#" style="margin:auto;max-width:500px">
-                            <input type="text" placeholder="Search our notes, Books and PDF..." id="search2"
-                                class="ga-fp" autocomplete="off" onkeydown="key_pressed_in_search(event)"
-                                oninput="find_search_results(this)" onfocus="find_search_results(this)">
-                            <button type="button" id="learntocode_searchbtn" onclick="click_learntocode_search_btn()"><i
-                                    id="learntocode_searchicon" class="fa fa-search ga-fp"></i></button>
-                            <div id="listofsearchresults">
-                            </div>
+                            <input type="text" placeholder="Search our notes, Books and PDF..." id="search2" class="ga-fp" autocomplete="off" onkeydown="key_pressed_in_search(event)" oninput="find_search_results(this)" onfocus="find_search_results(this)">
+                            <button type="button" id="learntocode_searchbtn" onclick="click_learntocode_search_btn()"><i id="learntocode_searchicon" class="fa fa-search ga-fp"></i></button>
+                            <div id="listofsearchresults"></div>
                         </form>
                         <h4 class="learntocodeh4">
-                        <a href="where_to_start.asp" class="ga-fp">Sorry we are working on your queries</a>
-                         </h4>
+                            <a href="/" class="ga-fp">Return to the homepage</a>
+                        </h4>
                     </div>
+
+         
                 </div>
-
-             
-
-
-
-
 
             </div>
         </div>
@@ -4343,6 +4340,8 @@
     <!-- javaScript file collection -->
     <script src="css-and-javascript/javaScript/template-footer.js"></script>
     <script src="css-and-javascript/javaScript/topnav-main.js"></script>
+    <script src="css-and-javascript/javaScript/time&date.js"></script>
+
     <!-- javaScript file collection -->
 </body>
 

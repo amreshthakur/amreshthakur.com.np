@@ -231,6 +231,14 @@ body {
     line-height: 1.5
 }
 
+
+.time {
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+  
+}
+
 html {
     overflow-x: hidden;
     overflow-y: scroll;
