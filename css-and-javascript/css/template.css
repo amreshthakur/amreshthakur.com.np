@@ -656,7 +656,7 @@ a {
 .PAN-twothird,
 .PAN-threequarter,
 .PAN-quarter {
-    float: right;
+    float: left;
     width: 100%
 }
 
