@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://amreshthakur.com.np/csit/</loc>
+        <loc>https://amreshthakur.com.np/</loc>
         <lastmod>2024-08-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <title>Home | Pipara Academy</title>
     </url>
 
 
@@ -17,7 +14,7 @@
         <lastmod>2024-08-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <title>About : Pipara Academy</title>
+        <title>About | Pipara Academy</title>
     </url>
 
 
@@ -47,7 +44,7 @@
     <url>
         <loc>https://amreshthakur.com.np/csit/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>BSc.CSIT - Books, Notes, Old Questions | Pipara Academy</title>
     </url>
@@ -57,7 +54,7 @@
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>BSc.CSIT - Books, Notes, Old Questions | Pipara Academy</title>
     </url>
@@ -66,7 +63,7 @@
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/Introduction-To-Information-Technology/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>First Semester: Introduction to Information Technology | Pipara Academy</title>
     </url>
@@ -74,7 +71,7 @@
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/c-programming/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>First Semester: C Programming | Pipara Academy</title>
     </url>
@@ -82,7 +79,7 @@
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>First Semester: Digital Logic | Pipara Academy</title>
     </url>
@@ -90,7 +87,7 @@
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>First Semester: Mathematics I (Calculus) | Pipara Academy</title>
     </url>
@@ -98,427 +95,427 @@
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/physics/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>First Semester: Physics | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/second-semester/discrete-structures/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Second Semester: Discrete Structures | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/second-semester/object-oriented-programming/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Second Semester: Object Oriented Programming | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/second-semester/microprocessor/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Second Semester: Microprocessor | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/second-semester/statistics-i/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Second Semester: Statistics I | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/second-semester/mathematics-ii/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Second Semester: Mathematics II | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/third-semester/data-structures-and-algorithms/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Third Semester: Data Structures and Algorithms | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/third-semester/numerical-method/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Third Semester: Numerical Method | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/third-semester/computer-architecture/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Third Semester: Computer Architecture | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/third-semester/computer-graphics/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Third Semester: Computer Graphics | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/third-semester/statistics-ii/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Third Semester: Statistics II | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fourth-semester/theory-of-computation/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fourth Semester: Theory of Computation | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fourth-semester/computer-networks/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fourth Semester: Computer Networks | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fourth-semester/operating-systems/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fourth Semester: Operating Systems | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fourth-semester/database-management-system/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fourth Semester: Database Management System | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fourth-semester/artificial-intelligence/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fourth Semester: Artificial Intelligence | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/multimedia-computing/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Multimedia Computing | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/web-technology/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Web Technology | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/system-analysis-and-design/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: System Analysis and Design | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/wireless-networking/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Wireless Networking | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/microprocessor-based-design/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Microprocessor Based Design | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/society-and-ethics-in-information-technology/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Society and Ethics in Information Technology | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/knowledge-management/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Knowledge Management | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/design-and-analysis-of-algorithms/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Design and Analysis of Algorithms | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/simulation-and-modelling/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Simulation and Modelling | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/image-processing/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Image Processing | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/fifth-semester/cryptography/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Fifth Semester: Cryptography | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/software-engineering/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: Software Engineering | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/compiler-design-and-construction/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: Compiler Design and Construction | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/e-governance/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: E-Governance | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/net-centric-computing/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: NET Centric Computing | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/technical-writing/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: Technical Writing | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/applied-logic/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: Applied Logic | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/e-commerce/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: E-commerce | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/automation-and-robotics/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: Automation and Robotics | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/neural-networks/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: Neural Networks | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/computer-hardware-design/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: Computer Hardware Design | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/sixth-semeter/cognitive-science/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Sixth Semester: Cognitive Science | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/advanced-java-programming/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Advanced Java Programming | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/data-warehousing-and-data-mining/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Data Warehousing and Data Mining | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/principles-of-management/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Principles of Management | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/project-work/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Project Work | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/information-retrieval/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Information Retrieval | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/database-administration/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Database Administration | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/software-project-management/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Software Project Management | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/network-security/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Network Security | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/digital-system-design/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Digital System Design | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/network-and-system-administration/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: Network and System Administration | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/seventh-semester/international-marketing/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Seventh Semester: International Marketing | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/advanced-database/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Advanced Database | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/internship/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Internship | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/advanced-networking-with-ipv6/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Advanced Networking with IPv6 | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/distributed-networking/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Distributed Networking | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/game-technology/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Game Technology | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/distributed-and-object-oriented-database/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Distributed and Object Oriented Database | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/introduction-to-cloud-computing/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Introduction to Cloud Computing | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/geographical-information-system/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Geographical Information System | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/decision-support-system-and-expert-system/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Decision Support System and Expert System | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/mobile-application-development/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Mobile Application Development | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/embedded-systems-programming/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: Embedded Systems Programming | Pipara Academy</title>
     </url>
     <url>
         <loc>https://amreshthakur.com.np/csit/eighth-semester/international-business-management/</loc>
         <lastmod>2024-08-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <title>Eighth Semester: International Business Management | Pipara Academy</title>
     </url>
