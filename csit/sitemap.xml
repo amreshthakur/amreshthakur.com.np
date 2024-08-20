@@ -7,22 +7,23 @@
         <priority>1.0</priority>
         <title>Home | Pipara Academy</title>
     </url>
+
+
     <url>
         <loc>https://amreshthakur.com.np/about/</loc>
         <lastmod>2024-08-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <title>About | Pipara Academy</title>
-
     </url>
+
+
     <url>
         <loc>https://amreshthakur.com.np/services/</loc>
         <lastmod>2024-08-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <title>Services | Pipara Academy</title>
-
-        
+        <title>Services | Pipara Academy</title>       
     </url>
 
     <url>
@@ -31,8 +32,8 @@
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <title>Blog | Pipara Academy</title>
-
     </url>
+
     <url>
         <loc>https://amreshthakur.com.np/contact-us/</loc>
         <lastmod>2024-08-20</lastmod>
@@ -40,22 +41,22 @@
         <priority>0.7</priority>
         <title>Contact us | Pipara Academy</title>
 
-    </url>
-        <url>
+    <url>
         <loc>https://amreshthakur.com.np/csit/</loc>
         <lastmod>2024-08-20</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
-    <title>BSc.CSIT - Books, Notes, Old Questions | Pipara Academy</title>
-
+        <title>BSc.CSIT - Books, Notes, Old Questions | Pipara Academy</title>
     </url>
-        </url>
-        <url>
+
+
+
+    <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/</loc>
         <lastmod>2024-08-20</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
-    <title>BSc.CSIT - Books, Notes, Old Questions | Pipara Academy</title>
+        <title>BSc.CSIT - Books, Notes, Old Questions | Pipara Academy</title>
     </url>
     
 
@@ -66,6 +67,7 @@
         <priority>0.6</priority>
         <title>First Semester: Introduction to Information Technology | Pipara Academy</title>
     </url>
+
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/c-programming/</loc>
         <lastmod>2024-08-20</lastmod>
@@ -73,6 +75,7 @@
         <priority>0.6</priority>
         <title>First Semester: C Programming | Pipara Academy</title>
     </url>
+
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/</loc>
         <lastmod>2024-08-20</lastmod>
@@ -80,6 +83,7 @@
         <priority>0.6</priority>
         <title>First Semester: Digital Logic | Pipara Academy</title>
     </url>
+
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/</loc>
         <lastmod>2024-08-20</lastmod>
@@ -87,6 +91,7 @@
         <priority>0.6</priority>
         <title>First Semester: Mathematics I (Calculus) | Pipara Academy</title>
     </url>
+    
     <url>
         <loc>https://amreshthakur.com.np/csit/first-semester/physics/</loc>
         <lastmod>2024-08-20</lastmod>
