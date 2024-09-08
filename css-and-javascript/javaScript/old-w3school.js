@@ -38,6 +38,7 @@ function skyscraperResize() {
     }
   }
 }
+
 function browserResize() {
 if (k42 == true) {return false;}
   if (allbeforeResize == window.innerWidth) { return false; }

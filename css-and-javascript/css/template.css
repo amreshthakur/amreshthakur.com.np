@@ -5055,8 +5055,8 @@ PAN-codeline {
     background-position: 100% 200%, center center
         /*left  top*/
     ;
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 @media screen and (max-width: 992px) {
@@ -5664,7 +5664,7 @@ form.example::after {
 .learntocodeh3 {
     color: #FFF4A3;
     font-weight: 700;
-    margin-top: 30px !important;
+    margin-top: 15px !important;
     font-size: 23px;
     /* display: none; */
 }
@@ -5673,7 +5673,7 @@ form.example::after {
     color: white;
     font-size: 23px;
     font-weight: 700;
-    margin-top: 30px !important;
+    margin-top: 14px !important;
 }
 
 .learntocodeh4 a:hover,
