@@ -32,7 +32,6 @@
 
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
     // var navbar = document.getElementById("subtopnav");
 
@@ -54,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Auto-scroll effect (continuous left to right)
     var scrollContainer = document.getElementById("subtopnav");
-    var scrollSpeed = 0.6; // Adjust scroll speed for smoothness
+    var scrollSpeed = 1; // Adjust scroll speed for smoothness
 
     function autoScroll() {
         if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
