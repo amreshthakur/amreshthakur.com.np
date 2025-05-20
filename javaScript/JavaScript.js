@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const slug = title.toLowerCase().replace(/ /g, '-');
 
         // Generate the href dynamically
-        const href = `/search/label/${slug}`;
+        // const href = `/search/label/${slug}`;
 
         // Set the href attribute
         link.setAttribute('href', href);
