@@ -54,7 +54,7 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
     // var navbar = document.getElementById("subtopnav");
 
     // Make the navbar fixed on scroll smoothly ================================
