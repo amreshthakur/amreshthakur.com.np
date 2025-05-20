@@ -29,7 +29,7 @@
 
 
 
-// document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     // Select all elements with the class 'ga-nav'
     // const links = document.querySelectorAll('.ga-nav');
 
@@ -49,12 +49,12 @@
         // Optionally, set the title attribute if needed
         // link.setAttribute('title', title);
     // });
-// });
+});
 
 
 
 
-// document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     // var navbar = document.getElementById("subtopnav");
 
     // Make the navbar fixed on scroll smoothly ================================
