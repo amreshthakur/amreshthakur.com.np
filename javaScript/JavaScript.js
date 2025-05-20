@@ -29,27 +29,27 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
     // Select all elements with the class 'ga-nav'
-    const links = document.querySelectorAll('.ga-nav');
+    // const links = document.querySelectorAll('.ga-nav');
 
-    links.forEach(link => {
+    // links.forEach(link => {
         // Get the title from the title attribute or the link's text
-        const title = link.getAttribute('title') || link.textContent.trim();
+        // const title = link.getAttribute('title') || link.textContent.trim();
 
         // Convert the title to lowercase and replace spaces with hyphens
-        const slug = title.toLowerCase().replace(/ /g, '-');
+        // const slug = title.toLowerCase().replace(/ /g, '-');
 
         // Generate the href dynamically
         // const href = `/search/label/${slug}`;
 
         // Set the href attribute
-        link.setAttribute('href', href);
+        // link.setAttribute('href', href);
 
         // Optionally, set the title attribute if needed
-        link.setAttribute('title', title);
-    });
-});
+        // link.setAttribute('title', title);
+    // });
+// });
 
 
 
