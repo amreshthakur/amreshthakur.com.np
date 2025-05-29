@@ -3715,12 +3715,59 @@
     </div>
 
 
-    <div class="container">
+
+
+    <style>
+        #leftSidebar,
+        #rightSidebar {
+            display: none;
+        }
+    </style>
+
+    <!-- Mobile Menu Toggle -->
+    <!-- <button class="menu-toggle" id="menuToggle">☰ Menu</button> -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar"></div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <!-- Left Sidebar -->
+        <aside class="sidebar left-sidebar" id="leftSidebar">
+            <div class="sidebar-section">
+                <h2>Dashboard</h2>
+                <ul>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Statistics</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Settings</h2>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#">Preferences</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+
+ <div class="container">
         <div class="header">
-            <h1 class="course-title">BSc Computer Science and Information Technology - 1st Semester</h1>
+            <h1 class="course-title">BSc Computer Science and IT - 1st Semester</h1>
+        </div>
+        
         <div class="nav-container">            
             <ul class="nav-menu" id="courseNav">
-                <!-- <li class="nav-item active" data-target="all">All Resources</li> -->
+                <li class="nav-item active" data-target="all">All Resources</li>
                 <li class="nav-item" data-target="syllabus">Syllabus</li>
                 <li class="nav-item" data-target="notes">Notes</li>
                 <li class="nav-item" data-target="exams">Exams</li>
@@ -3749,8 +3796,7 @@
                             <span><i class="far fa-clock"></i> Updated: May 15, 2023</span>
                             <span><i class="far fa-file"></i> PDF</span>
                         </div>
-                        <p class="card-description">Comprehensive syllabus covering all topics for the Introduction to
-                            Information Technology course.</p>
+                        <p class="card-description">Comprehensive syllabus covering all topics for the Introduction to Information Technology course.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
@@ -3771,8 +3817,7 @@
                             <span><i class="far fa-clock"></i> Updated: Jun 5, 2023</span>
                             <span><i class="far fa-file-alt"></i> 42 Pages</span>
                         </div>
-                        <p class="card-description">Detailed notes covering all modules of the Introduction to IT
-                            course.</p>
+                        <p class="card-description">Detailed notes covering all modules of the Introduction to IT course.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
@@ -3813,8 +3858,7 @@
                             <span><i class="fas fa-user-graduate"></i> Credits: 4</span>
                             <span><i class="fas fa-book"></i> 12 Modules</span>
                         </div>
-                        <p class="card-description">Comprehensive course covering C programming fundamentals and
-                            algorithms.</p>
+                        <p class="card-description">Comprehensive course covering C programming fundamentals and algorithms.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary"><i class="fas fa-book-open"></i> View Syllabus</a>
@@ -3828,7 +3872,6 @@
             <div class="section-title">
                 <i class="fas fa-file-alt"></i>
                 <div class="header-course">Syllabus Documents</div>
-
             </div>
             <div class="cards-container">
                 <div class="card" data-overlay="syllabus-overlay">
@@ -3843,8 +3886,7 @@
                             <span><i class="far fa-clock"></i> Updated: May 15, 2023</span>
                             <span><i class="far fa-file"></i> PDF</span>
                         </div>
-                        <p class="card-description">Comprehensive syllabus covering all topics for the Introduction to
-                            Information Technology course.</p>
+                        <p class="card-description">Comprehensive syllabus covering all topics for the Introduction to Information Technology course.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
@@ -3864,8 +3906,7 @@
                             <span><i class="far fa-clock"></i> Updated: Apr 28, 2023</span>
                             <span><i class="far fa-file"></i> PDF</span>
                         </div>
-                        <p class="card-description">Condensed syllabus with key topics and model examination questions.
-                        </p>
+                        <p class="card-description">Condensed syllabus with key topics and model examination questions.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
@@ -3894,8 +3935,7 @@
                             <span><i class="far fa-clock"></i> Updated: Jun 5, 2023</span>
                             <span><i class="far fa-file-alt"></i> 42 Pages</span>
                         </div>
-                        <p class="card-description">Detailed notes covering all modules of the Introduction to IT
-                            course.</p>
+                        <p class="card-description">Detailed notes covering all modules of the Introduction to IT course.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
@@ -3915,8 +3955,7 @@
                             <span><i class="far fa-clock"></i> Updated: May 22, 2023</span>
                             <span><i class="far fa-file-alt"></i> 36 Pages</span>
                         </div>
-                        <p class="card-description">Comprehensive notes on networking concepts, protocols, and
-                            configurations.</p>
+                        <p class="card-description">Comprehensive notes on networking concepts, protocols, and configurations.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
@@ -3930,8 +3969,7 @@
         <div id="exams" class="content-section">
             <div class="section-title">
                 <i class="fas fa-history"></i>
-                                <div class="header-course">Previous Examination Papers</div>
-
+                <div class="header-course">Previous Examination Papers</div>
             </div>
             <div class="cards-container">
                 <div class="card" data-overlay="exam-overlay">
@@ -3980,8 +4018,7 @@
         <div id="subjects" class="content-section">
             <div class="section-title">
                 <i class="fas fa-book"></i>
-            <div class="header-course">Core Subjects</div>
-
+                <div class="header-course">Core Subjects</div>
             </div>
             <div class="cards-container">
                 <div class="card" data-overlay="subject-overlay">
@@ -3995,8 +4032,7 @@
                             <span><i class="fas fa-user-graduate"></i> Credits: 4</span>
                             <span><i class="fas fa-book"></i> 12 Modules</span>
                         </div>
-                        <p class="card-description">Comprehensive course covering C programming fundamentals, data
-                            structures, and algorithms.</p>
+                        <p class="card-description">Comprehensive course covering C programming fundamentals, data structures, and algorithms.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary"><i class="fas fa-book-open"></i> View Syllabus</a>
@@ -4014,8 +4050,7 @@
                             <span><i class="fas fa-user-graduate"></i> Credits: 3</span>
                             <span><i class="fas fa-book"></i> 10 Modules</span>
                         </div>
-                        <p class="card-description">Fundamentals of digital systems, Boolean algebra, logic gates, and
-                            circuit design.</p>
+                        <p class="card-description">Fundamentals of digital systems, Boolean algebra, logic gates, and circuit design.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary"><i class="fas fa-book-open"></i> View Syllabus</a>
@@ -4046,9 +4081,7 @@
             <div class="overlay-body">
                 <div class="overlay-section">
                     <h3>Subject Overview</h3>
-                    <p>This course introduces students to structured programming using the C language. Covering
-                        fundamental programming concepts, data structures, and algorithms, this course provides a solid
-                        foundation for software development.</p>
+                    <p>This course introduces students to structured programming using the C language. Covering fundamental programming concepts, data structures, and algorithms, this course provides a solid foundation for software development.</p>
                 </div>
 
                 <div class="overlay-section">
@@ -4067,9 +4100,7 @@
 
                 <div class="overlay-section">
                     <h3>Learning Outcomes</h3>
-                    <p>Upon successful completion, students will be able to design, implement, test, and debug C
-                        programs, solve computational problems efficiently, and understand memory management concepts.
-                    </p>
+                    <p>Upon successful completion, students will be able to design, implement, test, and debug C programs, solve computational problems efficiently, and understand memory management concepts.</p>
                 </div>
 
                 <div class="overlay-section">
@@ -4100,9 +4131,7 @@
             <div class="overlay-body">
                 <div class="overlay-section">
                     <h3>Resource Overview</h3>
-                    <p>These comprehensive notes cover all modules of the Introduction to Information Technology course.
-                        Compiled by Professor Ramesh Sharma, these materials include detailed explanations, diagrams,
-                        and practical examples.</p>
+                    <p>These comprehensive notes cover all modules of the Introduction to Information Technology course. Compiled by Professor Ramesh Sharma, these materials include detailed explanations, diagrams, and practical examples.</p>
                 </div>
 
                 <div class="overlay-section">
@@ -4121,9 +4150,7 @@
 
                 <div class="overlay-section">
                     <h3>Features</h3>
-                    <p>Includes chapter summaries, key term definitions, review questions, and practical exercises to
-                        reinforce learning. The notes are regularly updated to reflect the latest developments in
-                        information technology.</p>
+                    <p>Includes chapter summaries, key term definitions, review questions, and practical exercises to reinforce learning. The notes are regularly updated to reflect the latest developments in information technology.</p>
                 </div>
 
                 <div class="overlay-section">
@@ -4154,9 +4181,7 @@
             <div class="overlay-body">
                 <div class="overlay-section">
                     <h3>Examination Overview</h3>
-                    <p>Complete examination paper from the year 2065 for Introduction to Information Technology. This
-                        resource includes both theoretical and practical questions along with the official answer key.
-                    </p>
+                    <p>Complete examination paper from the year 2065 for Introduction to Information Technology. This resource includes both theoretical and practical questions along with the official answer key.</p>
                 </div>
 
                 <div class="overlay-section">
@@ -4200,113 +4225,120 @@
         </div>
     </div>
 
+    <!-- Additional overlays (stubs) -->
+    <div class="overlay" id="syllabus-overlay">
+        <div class="overlay-content">
+            <div class="overlay-header">
+                <button class="close-overlay">&times;</button>
+                <h3 class="overlay-title">Intro to IT Syllabus</h3>
+                <p class="overlay-subtitle">Complete course outline</p>
+            </div>
+            <div class="overlay-body">
+                <div class="overlay-section">
+                    <h3>Syllabus Overview</h3>
+                    <p>Official syllabus document for Introduction to Information Technology course. This document outlines the course objectives, topics, assessment methods, and required resources.</p>
+                </div>
+                <div class="overlay-section">
+                    <h3>Detailed Information</h3>
+                    <p>This syllabus covers all aspects of the course including weekly topics, reading assignments, project requirements, and examination details.</p>
+                </div>
+            </div>
+            <div class="overlay-footer">
+                <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download Syllabus</a>
+                <button class="btn btn-outline close-overlay">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="microsyllabus-overlay">
+        <div class="overlay-content">
+            <div class="overlay-header">
+                <button class="close-overlay">&times;</button>
+                <h3 class="overlay-title">IT Microsyllabus</h3>
+                <p class="overlay-subtitle">Concise overview and model questions</p>
+            </div>
+            <div class="overlay-body">
+                <div class="overlay-section">
+                    <h3>Microsyllabus Details</h3>
+                    <p>Condensed version of the syllabus focusing on key concepts and model examination questions to help students prepare effectively.</p>
+                </div>
+            </div>
+            <div class="overlay-footer">
+                <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download</a>
+                <button class="btn btn-outline close-overlay">Close</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Navigation functionality
         document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function () {
+            item.addEventListener('click', function() {
                 // Remove active class from all nav items
                 document.querySelectorAll('.nav-item').forEach(nav => {
                     nav.classList.remove('active');
                 });
-
+                
                 // Add active class to clicked item
                 this.classList.add('active');
-
+                
                 // Hide all content sections
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.classList.remove('active');
                 });
-
+                
                 // Show the target section
                 const target = this.getAttribute('data-target');
                 document.getElementById(target).classList.add('active');
             });
         });
-
+        
         // Card overlay functionality
         document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', function (e) {
+            card.addEventListener('click', function(e) {
                 // Prevent triggering when clicking on buttons inside card
                 if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
-
+                
                 const overlayId = this.getAttribute('data-overlay');
                 if (overlayId) {
-                    document.getElementById(overlayId).classList.add('active');
-                    document.body.style.overflow = 'hidden';
+                    const overlay = document.getElementById(overlayId);
+                    if (overlay) {
+                        overlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
                 }
             });
         });
-
+        
         // Close overlay functionality
         document.querySelectorAll('.close-overlay').forEach(button => {
-            button.addEventListener('click', function () {
+            button.addEventListener('click', function() {
                 this.closest('.overlay').classList.remove('active');
                 document.body.style.overflow = '';
             });
         });
-
+        
         // Close overlay when clicking outside content
         document.querySelectorAll('.overlay').forEach(overlay => {
-            overlay.addEventListener('click', function (e) {
+            overlay.addEventListener('click', function(e) {
                 if (e.target === this) {
                     this.classList.remove('active');
                     document.body.style.overflow = '';
                 }
             });
         });
-
+        
         // Card hover effect enhancement
         document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mouseenter', function () {
+            card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px)';
             });
-            card.addEventListener('mouseleave', function () {
+            card.addEventListener('mouseleave', function() {
                 this.style.transform = '';
             });
         });
     </script>
 
-    <style>
-        #leftSidebar,
-        #rightSidebar {
-            display: none;
-        }
-    </style>
-
-    <!-- Mobile Menu Toggle -->
-    <!-- <button class="menu-toggle" id="menuToggle">☰ Menu</button> -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <!-- Mobile Sidebar -->
-    <div class="mobile-sidebar" id="mobileSidebar"></div>
-
-    <!-- Main Content -->
-    <div class="main-wrapper">
-        <!-- Left Sidebar -->
-        <aside class="sidebar left-sidebar" id="leftSidebar">
-            <div class="sidebar-section">
-                <h2>Dashboard</h2>
-                <ul>
-                    <li><a href="#">Overview</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Reports</a></li>
-                    <li><a href="#">Statistics</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h2>Settings</h2>
-                <ul>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Security</a></li>
-                    <li><a href="#">Notifications</a></li>
-                    <li><a href="#">Preferences</a></li>
-                </ul>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
 
 
 
