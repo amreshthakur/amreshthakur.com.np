@@ -320,3 +320,80 @@ document.addEventListener('keydown', (event) => {
 
         // =========================== Ads Section ===========================
 
+
+
+        // course over lay 
+
+       // Navigation functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all nav items
+                document.querySelectorAll('.nav-item').forEach(nav => {
+                    nav.classList.remove('active');
+                });
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Hide all content sections
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show the target section
+                const target = this.getAttribute('data-target');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+        
+        // Card overlay functionality
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Prevent triggering when clicking on buttons inside card
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+                
+                const overlayId = this.getAttribute('data-overlay');
+                if (overlayId) {
+                    document.getElementById(overlayId).classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Close overlay functionality
+        document.querySelectorAll('.close-overlay').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.overlay').classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Close overlay when clicking outside content
+        document.querySelectorAll('.overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Card hover effect enhancement
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+
+        // ==================================================================
+
+
+
+
+
+        // overlay  course details
+
+        
