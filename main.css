@@ -1102,3 +1102,19 @@ body.dark-mode #tnb-dark-mode-toggle-btn.tnb-button:hover {
             }
         }
 /* ========================================= */
+
+
+
+.sidebar-section ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidebar-section li:hover > .submenu {
+    display: block;
+}
