@@ -51,8 +51,6 @@
 
     <!-- CSS and JavaScript links go here -->
     <link rel="stylesheet" href="../main.css">
-        <!-- <link rel="stylesheet" href="../css-and-javascript/css/topnav-main.css"> -->
-
 
     <!-- icon cnd link fa fa-caret-down and fa fa-caret-up -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -3673,7 +3671,7 @@
     <hr>
 
 
-   <!-- Enhanced HTML Structure -->
+    <!-- Enhanced HTML Structure -->
     <div class="header-ad-container" id="promoContainer">
         <span class="promo-label">SPECIAL OFFER</span>
         <div class="dynamic-promo-carousel">
@@ -3681,7 +3679,8 @@
             <div class="ad-unit banner-ad promo-slide" data-url="https://example.com/promo">
                 <picture>
                     <source media="(max-width: 600px)" srcset="mobile-promo-image.jpg">
-                    <img src="https://images.squarespace-cdn.com/content/v1/5395bdaae4b037015a1acccd/1489520351259-9U1PH4X221GM4HB3TKOK/SPONSOR_ADS_500.png" alt="Special Offer">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5395bdaae4b037015a1acccd/1489520351259-9U1PH4X221GM4HB3TKOK/SPONSOR_ADS_500.png"
+                        alt="Special Offer">
                 </picture>
             </div>
 
@@ -3689,10 +3688,9 @@
             <div class="ad-unit video-ad promo-slide" data-url="https://example.com/video-offer">
                 <div class="video-wrapper">
 
-                    <iframe 
-                        src="https://www.youtube.com/embed/J38KKgAslkI?autoplay=1&mute=1&playsinline=1&controls=0&rel=0" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    <iframe
+                        src="https://www.youtube.com/embed/J38KKgAslkI?autoplay=1&mute=1&playsinline=1&controls=0&rel=0"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
 
@@ -3762,6 +3760,78 @@
             <div class="card-container">
 
 
+                <!-- First Semester -->
+                <div class="card" onclick="openOverlay('CSIT First Semester', [
+            ['Introduction to Information Technology', 'https://example.com/intro-it'],
+            ['C Programming', 'https://example.com/c-programming'],
+            ['Digital Logic', 'https://example.com/digital-logic'],
+            ['Mathematics I (Calculus)', 'https://example.com/calculus'],
+            ['Physics', 'https://example.com/physics']
+        ])">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Fundamentals" class="card-image">
+                    <div class="card-content">
+                        <h2>CSIT First Semester</h2>
+                        <p>Foundational concepts in computing, programming fundamentals, and essential mathematics for
+                            computer science.</p>
+                        <span class="subject-count"><i class="fas fa-book-open"></i> 5 subjects</span>
+                    </div>
+                </div>
+
+                <!-- Second Semester -->
+                <div class="card" onclick="openOverlay('CSIT Second Semester', [
+            ['Discrete Structures', 'https://example.com/discrete-math'],
+            ['Object Oriented Programming', 'https://example.com/oop'],
+            ['Microprocessor', 'https://example.com/microprocessor'],
+            ['Statistics I', 'https://example.com/statistics1'],
+            ['Mathematics II', 'https://example.com/math2']
+        ])">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Programming" class="card-image">
+                    <div class="card-content">
+                        <h2>CSIT Second Semester</h2>
+                        <p>Advanced programming paradigms, computer organization, and mathematical foundations for
+                            computing.</p>
+                        <span class="subject-count"><i class="fas fa-book-open"></i> 5 subjects</span>
+                    </div>
+                </div>
+
+                <!-- Third Semester -->
+                <div class="card" onclick="openOverlay('CSIT Third Semester', [
+            ['Data Structures and Algorithms', 'https://example.com/dsa'],
+            ['Numerical Method', 'https://example.com/numerical-methods'],
+            ['Computer Architecture', 'https://example.com/computer-arch'],
+            ['Computer Graphics', 'https://example.com/computer-graphics'],
+            ['Statistics II', 'https://example.com/statistics2']
+        ])">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Algorithms" class="card-image">
+                    <div class="card-content">
+                        <h2>CSIT Third Semester</h2>
+                        <p>Core algorithm design, computational mathematics, and hardware architecture principles.</p>
+                        <span class="subject-count"><i class="fas fa-book-open"></i> 5 subjects</span>
+                    </div>
+                </div>
+
+                <!-- Fourth Semester -->
+                <div class="card" onclick="openOverlay('CSIT Fourth Semester', [
+            ['Theory of Computation', 'https://example.com/computation-theory'],
+            ['Computer Networks', 'https://example.com/computer-networks'],
+            ['Operating Systems', 'https://example.com/os'],
+            ['Database Management System', 'https://example.com/dbms'],
+            ['Artificial Intelligence', 'https://example.com/ai']
+        ])">
+                    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Advanced Concepts" class="card-image">
+                    <div class="card-content">
+                        <h2>CSIT Fourth Semester</h2>
+                        <p>Systems programming, intelligent computing, and theoretical foundations of computer science.
+                        </p>
+                        <span class="subject-count"><i class="fas fa-book-open"></i> 5 subjects</span>
+                    </div>
+                </div>
+
+                <!-- Fifth Semester -->
                 <div class="card" onclick="openOverlay('CSIT Fifth Semester', [
             ['Web Technology', 'https://example.com/web-tech'],
             ['System Analysis and Design', 'https://example.com/system-analysis'],
@@ -3781,6 +3851,7 @@
                     </div>
                 </div>
 
+                <!-- Sixth Semester -->
                 <div class="card" onclick="openOverlay('CSIT Sixth Semester', [
             ['Software Engineering', 'https://example.com/software-engineering'],
             ['Compiler Design', 'https://example.com/compiler-design'],
@@ -3799,6 +3870,7 @@
                     </div>
                 </div>
 
+                <!-- Seventh Semester -->
                 <div class="card" onclick="openOverlay('CSIT Seventh Semester', [
             ['Advanced Java', 'https://example.com/advanced-java'],
             ['Data Warehousing', 'https://example.com/data-warehousing'],
@@ -3816,6 +3888,7 @@
                     </div>
                 </div>
 
+                <!-- Eighth Semester -->
                 <div class="card" onclick="openOverlay('CSIT Eighth Semester', [
             ['Advanced Database', 'https://example.com/advanced-database'],
             ['Internship', 'https://example.com/internship'],
@@ -3831,74 +3904,8 @@
                     </div>
                 </div>
 
-                <div class="card" onclick="openOverlay('CSIT Fifth Semester', [
-            ['Web Technology', 'https://example.com/web-tech'],
-            ['System Analysis and Design', 'https://example.com/system-analysis'],
-            ['Design and Analysis of Algorithms', 'https://example.com/algorithms'],
-            ['Simulation and Modelling', 'https://example.com/simulation'],
-            ['Cryptography', 'https://example.com/cryptography'],
-            ['Electives', 'https://example.com/electives']
-        ])">
-                    <span class="card-badge">Popular</span>
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Web Development" class="card-image">
-                    <div class="card-content">
-                        <h2>CSIT Fifth Semester</h2>
-                        <p>Comprehensive coverage of web technologies, algorithm design, system modeling, and
-                            cryptographic principles.</p>
-                        <span class="subject-count"><i class="fas fa-book-open"></i> 6 subjects</span>
-                    </div>
-                </div>
+                <!-- ================================================================================================================== -->
 
-                <div class="card" onclick="openOverlay('CSIT Sixth Semester', [
-            ['Software Engineering', 'https://example.com/software-engineering'],
-            ['Compiler Design', 'https://example.com/compiler-design'],
-            ['E-Governance', 'https://example.com/e-governance'],
-            ['NET Computing', 'https://example.com/net-computing'],
-            ['Technical Writing', 'https://example.com/technical-writing'],
-            ['Electives', 'https://example.com/electives']
-        ])">
-                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Software Engineering" class="card-image">
-                    <div class="card-content">
-                        <h2>CSIT Sixth Semester</h2>
-                        <p>Advanced topics in software development, compiler construction, and enterprise computing
-                            solutions.</p>
-                        <span class="subject-count"><i class="fas fa-book-open"></i> 6 subjects</span>
-                    </div>
-                </div>
-
-                <div class="card" onclick="openOverlay('CSIT Seventh Semester', [
-            ['Advanced Java', 'https://example.com/advanced-java'],
-            ['Data Warehousing', 'https://example.com/data-warehousing'],
-            ['Management', 'https://example.com/management'],
-            ['Project Work', 'https://example.com/project-work'],
-            ['Electives', 'https://example.com/electives']
-        ])">
-                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Java Programming" class="card-image">
-                    <div class="card-content">
-                        <h2>CSIT Seventh Semester</h2>
-                        <p>Enterprise Java development, data management strategies, and comprehensive project
-                            implementation.</p>
-                        <span class="subject-count"><i class="fas fa-book-open"></i> 5 subjects</span>
-                    </div>
-                </div>
-
-                <div class="card" onclick="openOverlay('CSIT Eighth Semester', [
-            ['Advanced Database', 'https://example.com/advanced-database'],
-            ['Internship', 'https://example.com/internship'],
-            ['Electives', 'https://example.com/electives']
-        ])">
-                    <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Database" class="card-image">
-                    <div class="card-content">
-                        <h2>CSIT Eighth Semester</h2>
-                        <p>Advanced database concepts, professional internship experience, and specialized elective
-                            courses.</p>
-                        <span class="subject-count"><i class="fas fa-book-open"></i> 3 subjects</span>
-                    </div>
-                </div>
 
             </div>
 
