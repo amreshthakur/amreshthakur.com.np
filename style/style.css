@@ -174,23 +174,23 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   }
 
-  .content-section {
+  .post-content {
       margin-bottom: 3rem;
   }
 
-  .content-section h1 {
+  .post-content h1 {
       color: #2c3e50;
       margin-bottom: 1.5rem;
   }
 
-  .content-section h2 {
+  .post-content h2 {
       color: #2c3e50;
       margin-bottom: 1.25rem;
       padding-bottom: 0.75rem;
       border-bottom: 2px solid #ecf0f1;
   }
 
-  .content-section p {
+  .post-content p {
       margin-bottom: 1rem;
   }
 
