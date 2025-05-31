@@ -341,22 +341,3 @@ window.TopNavBar = window.TopNavBar || {
 };
 
 
-// Testimonials and logos carousel functionality
-  // Pause animations on hover
-        const testimonialTrack = document.querySelector('.testimonials-track');
-        testimonialTrack.addEventListener('mouseenter', () => {
-            testimonialTrack.classList.add('pause-animation');
-        });
-        
-        testimonialTrack.addEventListener('mouseleave', () => {
-            testimonialTrack.classList.remove('pause-animation');
-        });
-        
-        const logoTrack = document.querySelector('.logos-track');
-        logoTrack.addEventListener('mouseenter', () => {
-            logoTrack.classList.add('pause-animation');
-        });
-        
-        logoTrack.addEventListener('mouseleave', () => {
-            logoTrack.classList.remove('pause-animation');
-        });
