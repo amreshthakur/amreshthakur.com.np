@@ -1131,3 +1131,407 @@ footer {
 
 
 
+/* ===============================Team community=============================== */
+
+
+
+        .container-Community {
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 20px;
+                color: var(--dark);
+            line-height: 1.6;
+                        font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title-community {
+            text-align: center;
+            margin: 40px 0 30px;
+            font-size: 2rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title-community::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            height: 320px;
+        }
+
+        .testimonials-track {
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: scroll 40s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 10px;
+            margin: 0 20px;
+            width: 400px;
+            min-width: 380px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(67, 97, 238, 0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--primary);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .avatar-1 { background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'); }
+        .avatar-2 { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'); }
+        .avatar-3 { background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1888&q=80'); }
+        .avatar-4 { background-image: url('https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'); }
+        .avatar-5 { background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'); }
+
+        .testimonial-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-rating {
+            color: var(--warning);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            line-height: 1.7;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .testimonial-content::before {
+            content: "";
+            font-family: Georgia, serif;
+            font-size: 4rem;
+            position: absolute;
+            top: -35px;
+            left: -15px;
+            color: var(--light-gray);
+            z-index: 1;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-bottom: 50px;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(67, 97, 238, 0.2);
+        }
+
+        .team-photo {
+            height: 250px;
+            background-size: cover;
+            background-position: top center;
+        }
+
+        .team-1 { background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'); }
+        .team-2 { background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1961&q=80'); }
+        .team-3 { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'); }
+        .team-4 { background-image: url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'); }
+        .team-5 { background-image: url('https://images.unsplash.com/photo-1611689103472-5d8d8d8b8b8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'); }
+        .team-6 { background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1888&q=80'); }
+
+        .team-content {
+            padding: 25px;
+            position: relative;
+        }
+
+        .team-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .team-desc {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .responsibilities {
+            margin-top: 15px;
+        }
+
+        .responsibilities h4 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .responsibilities ul {
+            padding-left: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .responsibilities li {
+            margin-bottom: 8px;
+        }
+
+        .social-links {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Company Logos Section */
+        .company-logos {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 0;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logos-title {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .logos-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            height: 80px;
+        }
+
+        .logos-track {
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: scrollLogos 30s linear infinite;
+        }
+
+        @keyframes scrollLogos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .logo-item {
+            height: 60px;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 15px;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0);
+        }
+
+  
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .testimonial-card {
+                width: 340px;
+                min-width: 340px;
+            }
+            
+            .team-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.3rem;
+            }
+            
+            .testimonials-container {
+                height: 350px;
+            }
+            
+            .testimonial-card {
+                width: 300px;
+                min-width: 300px;
+            }
+            
+            .section-title-community {
+                font-size: 1.7rem;
+            }
+            
+            .team-photo {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title-community {
+                font-size: 1.5rem;
+            }
+            
+            .testimonials-container {
+                height: 380px;
+            }
+            
+            .testimonial-card {
+                width: 280px;
+                min-width: 280px;
+                margin: 0 10px;
+            }
+            
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .pause-animation {
+            animation-play-state: paused;
+        }
+
+        /* ================================End Team community=============================== */
+
