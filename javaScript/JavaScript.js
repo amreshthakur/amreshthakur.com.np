@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function handleMouseLeave() {
-      autoChangeInterval = setInterval(changeSlide, 7000);
+      autoChangeInterval = setInterval(changeSlide, 1000);
     }
     
     function activateSlide(slide) {

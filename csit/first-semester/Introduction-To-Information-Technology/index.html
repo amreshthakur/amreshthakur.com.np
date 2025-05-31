@@ -3766,41 +3766,15 @@
     </div>
 
 
-    <script>
-        // sidebar (right sidebar) and (left sidebar) function javascript ending tags 
-// Mobile menu functionality
-document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileSidebar = document.getElementById('mobileSidebar');
-    const sidebarOverlay = document.getElementById('sidebarOverlay');
-    const leftSidebar = document.getElementById('leftSidebar');
-    const rightSidebar = document.getElementById('rightSidebar');
-
-    // Copy desktop sidebar content to mobile sidebar
-    if (leftSidebar && rightSidebar && mobileSidebar) {
-        mobileSidebar.innerHTML = leftSidebar.innerHTML + rightSidebar.innerHTML;
-    }
-
-    // Toggle mobile sidebar
-    menuToggle.addEventListener('click', function () {
-        mobileSidebar.classList.toggle('active');
-        sidebarOverlay.classList.toggle('active');
-    });
-
-    // Close sidebar when clicking overlay
-    sidebarOverlay.addEventListener('click', function () {
-        mobileSidebar.classList.remove('active');
-        sidebarOverlay.classList.remove('active');
-    });
-});
-// sidebar (right sidebar) and (left sidebar) function javascript ending tags 
-    </script>
 
 
 
 
    <!-- function java script files -->
     <script src="../../../javaScript/topnav-main.js"></script>
+
+             <script src="../../../javaScript/JavaScript.js"></script>
+
 
     
 

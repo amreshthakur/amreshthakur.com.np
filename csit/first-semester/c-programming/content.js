@@ -1,19 +1,14 @@
   document.addEventListener('DOMContentLoaded', function() {
-            // Get DOM elements
-            // const menuToggle = document.getElementById('menuToggle');
-            // const mobileSidebar = document.getElementById('mobileSidebar');
-            // const sidebarOverlay = document.getElementById('sidebarOverlay');
-            // const leftSidebar = document.getElementById('leftSidebar');
+       
             const contentDisplay = document.getElementById('contentDisplay');
             const menuLinks = document.querySelectorAll('.menu-link');
             
-            // Copy desktop sidebar content to mobile sidebar
-            // if (leftSidebar && mobileSidebar) {
-            //     mobileSidebar.innerHTML = leftSidebar.innerHTML;
-            // }
-            
+     
             // Content data
             const contentData = {
+
+
+
                 // Hardware topics
                 'hardware-intro': {
                     title: 'Introduction to Computer Hardware',
@@ -171,6 +166,13 @@
                         </table>
                     `
                 },
+
+
+
+
+
+
+                
                 'memory-hierarchy': {
                     title: 'Memory Hierarchy',
                     content: `
@@ -199,6 +201,14 @@
                         </ul>
                     `
                 }
+
+
+
+
+
+
+
+
             };
             
             // Function to load content
