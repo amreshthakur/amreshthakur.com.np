@@ -14,6 +14,8 @@
             
             // Content data
             const contentData = {
+
+
                 // Hardware topics
                 'hardware-intro': {
                     title: 'Introduction to Computer Hardware',
@@ -206,7 +208,8 @@
                 // Show loading state
                 contentDisplay.innerHTML = `
                     <div class="loading">
-                        <div class="spinner"></div>
+                        <div class="spinner">
+                        </div>
                         <p>Loading content...</p>
                     </div>
                 `;
