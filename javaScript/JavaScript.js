@@ -1,6 +1,109 @@
-// sidebar (right sidebar) and (left sidebar) function javascript ending tags 
-// Mobile menu functionality
-document.addEventListener('DOMContentLoaded', function () {
+// JavaScript code for the educational website
+// This script handles dynamic content loading, overlays, navigation, card interactions, mobile sidebar, auto-scrolling, dark mode toggle, and promo carousel functionality.    
+// Ensure the DOM is fully loaded before executing scripts
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize all components
+  loadSubjectsContent();
+  initOverlays();
+  initNavigation();
+  initCardInteractions();
+  initMobileSidebar(); // Mobile sidebar initialization
+  initAutoScroll();
+  initSubjectOverlays();
+  initDarkModeToggle();
+  initPromoCarousel();
+  
+  // Load subjects content
+  function loadSubjectsContent() {
+    fetch('subjects.html')
+      .then(response => response.text())
+      .then(data => {
+        const container = document.getElementById('subjects-container');
+        if (container) {
+          container.innerHTML = data;
+          // Re-initialize handlers after dynamic content loads
+          initOverlays();
+          initNavigation();
+          initCardInteractions();
+          initMobileSidebar(); // Re-init for dynamic content
+        }
+      })
+      .catch(error => console.error('Error loading subjects:', error));
+  }
+
+  // Overlay functionality
+  function initOverlays() {
+    // Open overlay handlers
+    document.querySelectorAll('[data-overlay]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        if (e.target.closest('a, button')) return;
+        const overlayId = button.getAttribute('data-overlay');
+        const overlay = document.getElementById(overlayId);
+        if (overlay) {
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    // Close overlay handlers
+    document.querySelectorAll('.close-overlay').forEach(button => {
+      button.addEventListener('click', function() {
+        const overlay = this.closest('.overlay');
+        if (overlay) {
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // Close when clicking outside content
+    document.querySelectorAll('.overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  }
+
+  // Navigation functionality
+  function initNavigation() {
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', function() {
+        // Update active navigation item
+        document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Show target section
+        const target = this.getAttribute('data-target');
+        if (target) {
+          document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+          const targetSection = document.getElementById(target);
+          if (targetSection) targetSection.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // Card interactions
+  function initCardInteractions() {
+    document.querySelectorAll('.card').forEach(card => {
+      // Hover effects
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+        this.style.transition = 'transform 0.3s ease';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+      });
+    });
+  }
+
+  // Mobile sidebar functionality
+  function initMobileSidebar() {
     const menuToggle = document.getElementById('menuToggle');
     const mobileSidebar = document.getElementById('mobileSidebar');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
@@ -9,329 +112,230 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Copy desktop sidebar content to mobile sidebar
     if (leftSidebar && rightSidebar && mobileSidebar) {
-        mobileSidebar.innerHTML = leftSidebar.innerHTML + rightSidebar.innerHTML;
+      mobileSidebar.innerHTML = leftSidebar.innerHTML + rightSidebar.innerHTML;
     }
 
     // Toggle mobile sidebar
-    menuToggle.addEventListener('click', function () {
+    if (menuToggle && mobileSidebar && sidebarOverlay) {
+      menuToggle.addEventListener('click', function() {
         mobileSidebar.classList.toggle('active');
         sidebarOverlay.classList.toggle('active');
-    });
+        document.body.style.overflow = mobileSidebar.classList.contains('active') 
+          ? 'hidden' : '';
+      });
 
-    // Close sidebar when clicking overlay
-    sidebarOverlay.addEventListener('click', function () {
+      // Close sidebar when clicking overlay
+      sidebarOverlay.addEventListener('click', function() {
         mobileSidebar.classList.remove('active');
         sidebarOverlay.classList.remove('active');
-    });
-});
-// sidebar (right sidebar) and (left sidebar) function javascript ending tags 
+        document.body.style.overflow = '';
+      });
+      
+      // Close when pressing Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
+          mobileSidebar.classList.remove('active');
+          sidebarOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+  }
 
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    // var navbar = document.getElementById("subtopnav");
-
-    // Make the navbar fixed on scroll smoothly ================================
-    // window.addEventListener("scroll", function () {
-    //     if (window.scrollY > 0) {
-    //         navbar.style.position = "fixed";
-    //         navbar.style.top = "0";
-    //         navbar.style.left = "0";
-    //         navbar.style.width = "100%";
-    //         navbar.style.zIndex = "1000";
-    //         navbar.style.transition = "top 0.3s ease-in-out";
-    //     } else {
-    //         navbar.style.position = "relative";
-    //     }
-    // });
-
-    // ================================================================================
-
-    // Auto-scroll effect (continuous left to right)
-    var scrollContainer = document.getElementById("subtopnav");
-    var scrollSpeed = 1; // Adjust scroll speed for smoothness
+  // Auto-scroll functionality
+  function initAutoScroll() {
+    const scrollContainer = document.getElementById("subtopnav");
+    if (!scrollContainer) return;
+    
+    const scrollSpeed = 1;
+    let scrollPosition = 0;
+    let animationFrame;
 
     function autoScroll() {
-        if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
-            scrollContainer.scrollLeft += scrollSpeed;
-            if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-                scrollContainer.scrollLeft = 0; // Reset to start for continuous scrolling
-            }
+      if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
+        scrollPosition += scrollSpeed;
+        if (scrollPosition >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+          scrollPosition = 0;
         }
-    };
-
-    // Use requestAnimationFrame for smoother animation
-    function smoothScroll() {
-        autoScroll();
-        requestAnimationFrame(smoothScroll);
+        scrollContainer.scrollLeft = scrollPosition;
+      }
+      animationFrame = requestAnimationFrame(autoScroll);
     }
 
-    requestAnimationFrame(smoothScroll);
+    // Start scrolling
+    animationFrame = requestAnimationFrame(autoScroll);
+
+    // Pause on hover
+    scrollContainer.addEventListener('mouseenter', () => cancelAnimationFrame(animationFrame));
+    scrollContainer.addEventListener('mouseleave', () => animationFrame = requestAnimationFrame(autoScroll));
+  }
+
+  // Subject overlay functionality
+  function initSubjectOverlays() {
+    // Close when clicking outside or pressing Escape
+    window.addEventListener('click', (event) => {
+      if (event.target === document.getElementById('overlay')) {
+        closeOverlay();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeOverlay();
+      }
+    });
+  }
+
+  // Dark mode functionality
+  function initDarkModeToggle() {
+    const toggleBtn = document.getElementById('tnb-dark-mode-toggle-btn');
+    if (!toggleBtn) return;
+    
+    const icon = toggleBtn.querySelector('i');
+    
+    function updateThemeIcon() {
+      const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      icon.className = theme === 'dark' ? 'fa fa-sun' : 'fa fa-moon';
+    }
+    
+    // Initial setup
+    updateThemeIcon();
+    
+    // Listen for theme changes
+    document.addEventListener('themeChanged', updateThemeIcon);
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateThemeIcon);
+  }
+
+  // Promo carousel functionality
+  function initPromoCarousel() {
+    const container = document.querySelector('.dynamic-promo-carousel');
+    if (!container) return;
+    
+    const slides = container.querySelectorAll('.promo-slide');
+    if (slides.length === 0) return;
+    
+    let currentSlide = 0;
+    let autoChangeInterval;
+    
+    // Initialize carousel
+    activateSlide(slides[0]);
+    autoChangeInterval = setInterval(changeSlide, 7000);
+    
+    // Event handling
+    container.addEventListener('click', handleInteraction);
+    container.addEventListener('mouseenter', handleMouseEnter);
+    container.addEventListener('mouseleave', handleMouseLeave);
+    
+    function handleInteraction(e) {
+      const url = e.target.closest('[data-url]')?.dataset.url;
+      if (url) window.open(url, '_blank');
+    }
+    
+    function handleMouseEnter() {
+      clearInterval(autoChangeInterval);
+    }
+    
+    function handleMouseLeave() {
+      autoChangeInterval = setInterval(changeSlide, 7000);
+    }
+    
+    function activateSlide(slide) {
+      slides.forEach(s => s.classList.remove('active'));
+      slide.classList.add('active');
+    }
+    
+    function changeSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      activateSlide(slides[currentSlide]);
+    }
+  }
 });
 
-
-
-// ============== subject details, list overlay ====================
-
-// Open overlay with subject details
+// Global functions for subject overlays
 function openOverlay(title, subjects) {
-    document.getElementById('overlay').style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+  const overlay = document.getElementById('overlay');
+  if (!overlay) return;
+  
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 
-    const subjectListDiv = document.getElementById('subject-list');
+  const subjectListDiv = document.getElementById('subject-list');
+  if (subjectListDiv) {
     subjectListDiv.innerHTML = `
-                <h2>${title}</h2>
-                <ul>
-                    ${subjects.map((subject, index) => `
-                        <li>
-                            <a href="${subject[1]}" class="subject-link" target="_blank">
-                                <span class="subject-icon">
-                                    <i class="fas fa-${getSubjectIcon(index)}"></i>
-                                </span>
-                                <span class="subject-name">${subject[0]}</span>
-                            </a>
-                            <div class="subject-actions">
-                                <a href="${subject[1]}" class="action-btn view-btn" target="_blank">
-                                    <i class="fas fa-eye"></i> View
-                                </a>
-                                <a href="https://example.com/download/${subject[0].toLowerCase().replace(/\s+/g, '-')}" 
-                                   class="action-btn download-btn" target="_blank">
-                                    <i class="fas fa-download"></i> Download
-                                </a>
-                            </div>
-                        </li>
-                    `).join('')}
-                </ul>
-            `;
-
-    // Scroll to top of overlay content
-    document.getElementById('overlay-container').scrollTop = 0;
+      <h2>${title}</h2>
+      <ul>
+        ${subjects.map((subject, index) => `
+          <li>
+            <a href="${subject[1]}" class="subject-link" target="_blank">
+              <span class="subject-icon">
+                <i class="fas fa-${getSubjectIcon(index)}"></i>
+              </span>
+              <span class="subject-name">${subject[0]}</span>
+            </a>
+            <div class="subject-actions">
+              <a href="${subject[1]}" class="action-btn view-btn" target="_blank">
+                <i class="fas fa-eye"></i> View
+              </a>
+              <a href="https://example.com/download/${subject[0].toLowerCase().replace(/\s+/g, '-')}" 
+                 class="action-btn download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </li>
+        `).join('')}
+      </ul>
+    `;
+  }
 }
 
-// Get appropriate icon for each subject
-function getSubjectIcon(index) {
-    const icons = [
-        'laptop-code', 'project-diagram', 'algorithm', 'chart-line',
-        'lock', 'book', 'cogs', 'globe', 'server', 'file-alt',
-        'database', 'briefcase', 'graduation-cap'
-    ];
-    return icons[index % icons.length];
-}
-
-// Close overlay
 function closeOverlay() {
-    document.getElementById('overlay').style.display = 'none';
+  const overlay = document.getElementById('overlay');
+  if (overlay) {
+    overlay.style.display = 'none';
     document.body.style.overflow = 'auto';
+  }
 }
 
-// Download all content
+function getSubjectIcon(index) {
+  const icons = [
+    'laptop-code', 'project-diagram', 'algorithm', 'chart-line',
+    'lock', 'book', 'cogs', 'globe', 'server', 'file-alt',
+    'database', 'briefcase', 'graduation-cap'
+  ];
+  return icons[index % icons.length];
+}
+
 function downloadContent() {
-    // In a real implementation, this would trigger a zip download
-    console.log('Downloading all materials...');
-    showToast('Preparing all materials for download...');
+  showToast('Preparing all materials for download...');
 }
 
-// Share content
 function shareContent() {
-    // In a real implementation, this would use the Web Share API
-    console.log('Sharing content...');
-    showToast('Share options will appear here');
+  showToast('Share options will appear here');
 }
 
-// Show toast notification
 function showToast(message) {
-    const toast = document.createElement('div');
-    toast.style.position = 'fixed';
-    toast.style.bottom = '20px';
-    toast.style.left = '50%';
-    toast.style.transform = 'translateX(-50%)';
-    toast.style.backgroundColor = 'var(--dark)';
-    toast.style.color = 'white';
-    toast.style.padding = '12px 24px';
-    toast.style.borderRadius = 'var(--border-radius)';
-    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-    toast.style.zIndex = '1001';
-    toast.style.animation = 'fadeIn 0.3s ease-out';
-    toast.textContent = message;
-
-    document.body.appendChild(toast);
-
-    setTimeout(() => {
-        toast.style.animation = 'fadeIn 0.3s ease-out reverse';
-        setTimeout(() => {
-            document.body.removeChild(toast);
-        }, 300);
-    }, 3000);
+  const toast = document.createElement('div');
+  toast.className = 'custom-toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    setTimeout(() => document.body.removeChild(toast), 300);
+  }, 3000);
 }
 
-// Close overlay when clicking outside or pressing Escape
-window.addEventListener('click', (event) => {
-    if (event.target === document.getElementById('overlay')) {
-        closeOverlay();
+// Dark mode toggle function (global)
+window.TopNavBar = window.TopNavBar || {
+  toggleUserPreferredTheme: function() {
+    document.body.classList.toggle('dark-mode');
+    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('tnb-theme', theme);
+    document.dispatchEvent(new CustomEvent('themeChanged'));
+    
+    const icon = document.querySelector('#tnb-dark-mode-toggle-btn i');
+    if (icon) {
+      icon.className = theme === 'dark' ? 'fa fa-sun' : 'fa fa-moon';
     }
-});
-
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        closeOverlay();
-    }
-});
-
-
-// ============== subject details, list overlay ====================
-
-
-// ====================== Dark mode and Light mode javaScript code ===============
-
-
-                document.addEventListener('DOMContentLoaded', function () {
-                    const toggleBtn = document.getElementById('tnb-dark-mode-toggle-btn');
-                    const icon = toggleBtn.querySelector('i');
-
-                    // Detect current theme state
-                    function getCurrentTheme() {
-                        if (document.body.classList.contains('dark-mode')) {
-                            return 'dark';
-                        }
-                        return localStorage.getItem('tnb-theme') ||
-                            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                    }
-
-                    // Update icon based on theme
-                    function updateThemeIcon() {
-                        const theme = getCurrentTheme();
-                        icon.className = theme === 'dark' ? 'fa fa-sun' : 'fa fa-moon';
-                    }
-
-                    // Initial icon setup
-                    updateThemeIcon();
-
-                    // Listen for theme changes
-                    document.addEventListener('themeChanged', updateThemeIcon);
-
-                    // Watch for system theme changes
-                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateThemeIcon);
-                });
-
-                // Mock TopNavBar implementation (replace with your actual one)
-                window.TopNavBar = {
-                    toggleUserPreferredTheme: function () {
-                        document.body.classList.toggle('dark-mode');
-                        const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-                        localStorage.setItem('tnb-theme', theme);
-                        document.dispatchEvent(new CustomEvent('themeChanged'));
-
-                        // Update icon immediately
-                        const icon = document.querySelector('#tnb-dark-mode-toggle-btn i');
-                        icon.className = theme === 'dark' ? 'fa fa-sun' : 'fa fa-moon';
-                    }
-                };
-// ====================== Dark mode and Light mode javaScript code ===============
-
-
-// =========================== Ads Section ===========================
-  // Enhanced JavaScript
-        const createPromoSection = (() => {
-            let currentSlide = 0;
-            let autoChangeInterval;
-            let hoverTimer;
-            let isMouseIn = false;
-            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
-
-            function initCarousel() {
-                const container = document.querySelector('.dynamic-promo-carousel');
-                if (!container) return;
-
-                const slides = container.querySelectorAll('.promo-slide');
-                if (slides.length === 0) return;
-
-                // Event Handling
-                const handleInteraction = (event) => {
-                    const url = event.target.closest('[data-url]')?.dataset.url;
-                    if (url) window.open(url, '_blank');
-                };
-
-                if (isTouchDevice) {
-                    container.addEventListener('touchend', handleInteraction);
-                } else {
-                    container.addEventListener('click', handleInteraction);
-                    container.addEventListener('mouseenter', handleMouseEnter);
-                    container.addEventListener('mouseleave', handleMouseLeave);
-                }
-
-                // Initialize carousel
-                activateSlide(slides[0]);
-                autoChangeInterval = setInterval(changeSlide, 7000);
-
-                function handleMouseEnter() {
-                    isMouseIn = true;
-                    clearInterval(autoChangeInterval);
-                    hoverTimer = setTimeout(redirectToAd, 5000);
-                }
-
-                function handleMouseLeave() {
-                    isMouseIn = false;
-                    clearTimeout(hoverTimer);
-                    autoChangeInterval = setInterval(changeSlide, 7000);
-                }
-
-                function redirectToAd() {
-                    const activeSlide = container.querySelector('.promo-slide.active');
-                    const url = activeSlide?.dataset.url;
-                    if (url) window.open(url, '_blank');
-                }
-
-                function activateSlide(slide) {
-                    slide.classList.add('active');
-                    if (isMouseIn) slide.style.pointerEvents = 'auto';
-                }
-
-                function deactivateSlide(slide) {
-                    slide.classList.remove('active');
-                }
-
-                function changeSlide() {
-                    deactivateSlide(slides[currentSlide]);
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    activateSlide(slides[currentSlide]);
-                }
-            }
-
-            return {
-                init: () => {
-                    setTimeout(() => {
-                        try {
-                            initCarousel();
-                            document.querySelector('.loading-indicator').remove();
-                        } catch (error) {
-                            console.error('Carousel error:', error);
-                            document.querySelector('.loading-indicator').remove();
-                        }
-                    }, 1000);
-                }
-            };
-        })();
-
-        document.addEventListener('DOMContentLoaded', createPromoSection.init);
-
-        // =========================== Ads Section ===========================
-
-
-
-        // course over lay 
-
-       
-
-        // ==================================================================
-
-
-
-
-
-        // overlay  course details
-
-        
+  }
+};
