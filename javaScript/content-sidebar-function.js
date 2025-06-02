@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const initialContentId = window.location.hash.substring(1);
     if (initialContentId && allContentData[initialContentId]) {
         loadContent(initialContentId);
-    };
+    }
 
 
     
