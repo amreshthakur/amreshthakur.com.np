@@ -1,19 +1,12 @@
   document.addEventListener('DOMContentLoaded', function() {
-            // Get DOM elements
-            // const menuToggle = document.getElementById('menuToggle');
-            // const mobileSidebar = document.getElementById('mobileSidebar');
-            // const sidebarOverlay = document.getElementById('sidebarOverlay');
-            // const leftSidebar = document.getElementById('leftSidebar');
+       
             const contentDisplay = document.getElementById('contentDisplay');
             const menuLinks = document.querySelectorAll('.menu-link');
             
-            // Copy desktop sidebar content to mobile sidebar
-            // if (leftSidebar && mobileSidebar) {
-            //     mobileSidebar.innerHTML = leftSidebar.innerHTML;
-            // }
-            
+     
             // Content data
             const contentData = {
+
 
 
                 // Hardware topics
@@ -173,6 +166,13 @@
                         </table>
                     `
                 },
+
+
+
+
+
+
+                
                 'memory-hierarchy': {
                     title: 'Memory Hierarchy',
                     content: `
@@ -201,6 +201,14 @@
                         </ul>
                     `
                 }
+
+
+
+
+
+
+
+
             };
             
             // Function to load content
@@ -208,8 +216,7 @@
                 // Show loading state
                 contentDisplay.innerHTML = `
                     <div class="loading">
-                        <div class="spinner">
-                        </div>
+                        <div class="spinner"></div>
                         <p>Loading content...</p>
                     </div>
                 `;

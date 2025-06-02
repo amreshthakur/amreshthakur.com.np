@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollContainer = document.getElementById("subtopnav");
     if (!scrollContainer) return;
     
-    const scrollSpeed = 1;
+    const scrollSpeed = 0.5; // Adjust speed as needed
     let scrollPosition = 0;
     let animationFrame;
 
