@@ -130,7 +130,8 @@
 
 
     /* Visual Style */
-    background-color: #ffffff;  /* Light background */
+    /* background-color: #ffffff;  Light background */
+    color: black;
     border: 1px solid #eaeaea;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -215,7 +216,7 @@
 .sidebar-section a:hover {
     color: #219ef1;
     transform: translateX(5px);
-    background: #f0f0f0;
+    background: #3d3e3c;
 }
 
 /* Main Content */
@@ -338,7 +339,7 @@
 /* =========================================================== */
 /* Content Cards */
 .content-card {
-    background: #fff;
+    /* background: #fff; */
     border-radius: 8px;
     padding: 30px;
     margin-bottom: 0px;
@@ -381,8 +382,8 @@
 }
 
 .active-link {
-    color: #219ef1 !important;
-    background: #f0f0f0;
+    color: #ffffff !important;
+    background: #161616;
     font-weight: 600;
 }
 
