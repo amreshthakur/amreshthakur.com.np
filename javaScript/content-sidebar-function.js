@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${content.content}
                     </div>
                 `;
-                document.title = `${content.title} | Hardware Academy`;
+                document.title = `${content.title} | Pipara Academy`;
             } else {
                 contentDisplay.innerHTML = `
                     <div class="content-card">
