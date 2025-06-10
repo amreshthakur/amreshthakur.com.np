@@ -156,6 +156,24 @@
       font-size: 0.9rem;
       font-weight: 600;
     }
+    
+    .subject-breakdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    
+    .core-count {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+    
+    .elective-count {
+      color: var(--warning);
+      font-weight: 600;
+    }
 
     .card .semester-number {
       position: absolute;
@@ -176,7 +194,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.85);
       z-index: 1000;
       justify-content: center;
       align-items: center;
@@ -248,6 +266,25 @@
       list-style: none;
       padding: 0;
     }
+    
+    .subject-section {
+      margin-bottom: 30px;
+    }
+    
+    .subject-section-title {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--secondary);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .subject-section-title i {
+      color: var(--secondary);
+    }
 
     .subject-item {
       background: #f8f9fa;
@@ -260,15 +297,15 @@
       position: relative;
       overflow: hidden;
     }
+    
+    .subject-item.elective {
+      border-left: 4px solid var(--warning);
+    }
 
     .subject-item:hover {
       background: #e9ecef;
       transform: translateX(5px);
       border-left: 4px solid var(--accent);
-    }
-
-    .subject-item.elective {
-      border-left: 4px solid var(--warning);
     }
 
     .subject-item.elective:hover {
@@ -287,6 +324,10 @@
 
     .subject-title i {
       color: var(--secondary);
+    }
+    
+    .subject-title.elective i {
+      color: var(--warning);
     }
 
     .subject-desc {
@@ -482,6 +523,11 @@
         padding: 6px 15px;
         font-size: 0.9rem;
       }
+      
+      .subject-breakdown {
+        flex-direction: column;
+        gap: 5px;
+      }
     }
 
     /* Animations */
@@ -549,6 +595,33 @@
       margin-left: 10px;
       vertical-align: middle;
     }
+    
+    .resource-badge {
+      display: inline-block;
+      background: var(--success);
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 5px;
+    }
+    
+    .overlay-close-info {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 0.5; }
+      50% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
   </style>
 </head>
 <body>
@@ -582,6 +655,7 @@
           <ul class="subject-list" id="subject-list"></ul>
         </div>
       </div>
+      <div class="overlay-close-info">Click anywhere outside to close</div>
     </div>
     
     <!-- Unit Overlay -->
@@ -601,11 +675,12 @@
           <div class="unit-list" id="unit-list"></div>
         </div>
       </div>
+      <div class="overlay-close-info">Click anywhere outside to close</div>
     </div>
   </div>
   
   <footer>
-    <p>© 2023 CSIT Curriculum Explorer | Fully Responsive Design for Mobile, Tablet & Desktop</p>
+    <p>© 2023 CSIT Curriculum Explorer | Subjects separated by core and elective</p>
   </footer>
 
   <script>
@@ -844,12 +919,18 @@
     // DOM elements
     const semesterGrid = document.querySelector('.semester-grid');
     const filterBtns = document.querySelectorAll('.filter-btn');
+    const overlay = document.getElementById('overlay');
+    const unitOverlay = document.getElementById('unit-overlay');
     
     // Initialize semester cards
     function initSemesterCards() {
       semesterGrid.innerHTML = '';
       
       semesterData.forEach((semester, index) => {
+        // Calculate core and elective counts
+        const coreCount = semester.subjects.filter(s => !s.elective).length;
+        const electiveCount = semester.subjects.filter(s => s.elective).length;
+        
         const card = document.createElement('div');
         card.className = 'card';
         card.style.setProperty('--delay', index);
@@ -858,6 +939,10 @@
           <h2>${semester.title}</h2>
           <p>${semester.description}</p>
           <span class="subjects-count">${semester.subjects.length} Subjects</span>
+          <div class="subject-breakdown">
+            <span class="core-count">${coreCount} Core</span>
+            <span class="elective-count">${electiveCount} Electives</span>
+          </div>
         `;
         card.addEventListener('click', () => openOverlay(semester.title, semester.subjects));
         semesterGrid.appendChild(card);
@@ -896,27 +981,81 @@
       const list = document.getElementById("subject-list");
       list.innerHTML = "";
       
-      subjects.forEach(subject => {
-        const item = document.createElement("li");
-        item.className = `subject-item ${subject.elective ? 'elective' : ''}`;
-        item.innerHTML = `
-          <h3 class="subject-title">
-            <i class="fas ${subject.elective ? 'fa-star' : 'fa-book'}"></i>
-            ${subject.name}
-            ${subject.elective ? '<span class="elective-tag">ELECTIVE</span>' : ''}
-          </h3>
-          <p class="subject-desc">${subject.description}</p>
-        `;
-        item.addEventListener('click', () => openUnitOverlay(subject.name));
-        list.appendChild(item);
-      });
+      // Separate core and elective subjects
+      const coreSubjects = subjects.filter(s => !s.elective);
+      const electiveSubjects = subjects.filter(s => s.elective);
       
-      document.getElementById("overlay").style.display = "flex";
+      // Create core subjects section
+      if (coreSubjects.length > 0) {
+        const coreSection = document.createElement('div');
+        coreSection.className = 'subject-section';
+        coreSection.innerHTML = `
+          <h3 class="subject-section-title">
+            <i class="fas fa-book"></i>
+            Core Subjects (${coreSubjects.length})
+          </h3>
+        `;
+        
+        const coreList = document.createElement('ul');
+        coreList.className = 'subject-list';
+        
+        coreSubjects.forEach(subject => {
+          const item = document.createElement("li");
+          item.className = `subject-item`;
+          item.innerHTML = `
+            <h3 class="subject-title">
+              <i class="fas fa-book"></i>
+              ${subject.name}
+            </h3>
+            <p class="subject-desc">${subject.description}</p>
+          `;
+          item.addEventListener('click', () => openUnitOverlay(subject.name));
+          coreList.appendChild(item);
+        });
+        
+        coreSection.appendChild(coreList);
+        list.appendChild(coreSection);
+      }
+      
+      // Create elective subjects section
+      if (electiveSubjects.length > 0) {
+        const electiveSection = document.createElement('div');
+        electiveSection.className = 'subject-section';
+        electiveSection.innerHTML = `
+          <h3 class="subject-section-title">
+            <i class="fas fa-star"></i>
+            Elective Subjects (${electiveSubjects.length})
+          </h3>
+        `;
+        
+        const electiveList = document.createElement('ul');
+        electiveList.className = 'subject-list';
+        
+        electiveSubjects.forEach(subject => {
+          const item = document.createElement("li");
+          item.className = `subject-item elective`;
+          item.innerHTML = `
+            <h3 class="subject-title elective">
+              <i class="fas fa-star"></i>
+              ${subject.name}
+              <span class="elective-tag">ELECTIVE</span>
+            </h3>
+            <p class="subject-desc">${subject.description}</p>
+          `;
+          item.addEventListener('click', () => openUnitOverlay(subject.name));
+          electiveList.appendChild(item);
+        });
+        
+        electiveSection.appendChild(electiveList);
+        list.appendChild(electiveSection);
+      }
+      
+      overlay.style.display = "flex";
       document.body.style.overflow = "hidden";
     }
 
     function closeOverlay() {
-      document.getElementById("overlay").style.display = "none";
+      overlay.style.display = "none";
       document.body.style.overflow = "auto";
     }
 
@@ -930,45 +1069,75 @@
         "fa-calculator", "fa-network-wired", "fa-chart-line"
       ];
       
+      const unitThemes = [
+        "Fundamentals and Introduction",
+        "Core Concepts and Principles",
+        "Advanced Techniques",
+        "Practical Applications",
+        "Case Studies and Real-world Examples",
+        "Emerging Trends and Future Directions"
+      ];
+      
+      // Create 5 units for each subject
       for (let i = 1; i <= 5; i++) {
         const unitCard = document.createElement("div");
         unitCard.className = "unit-card";
+        
+        const unitLink = `https://www.example.com/${subjectName.toLowerCase().replace(/\s+/g, '-')}/unit-${i}`;
+        const resourceType = "Tutorial";
+        
         unitCard.innerHTML = `
           <div class="unit-icon">
             <i class="fas ${unitIcons[i-1] || 'fa-book'}"></i>
           </div>
-          <h4>Unit ${i}</h4>
+          <h4>Unit ${i}: ${unitThemes[i-1] || unitThemes[0]}</h4>
           <p>${getUnitDescription(i, subjectName)}</p>
-          <a href="#" onclick="event.preventDefault()">View Content</a>
+          <a href="${unitLink}" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Open ${resourceType}
+          </a>
+          <span class="resource-badge">${resourceType.toUpperCase()}</span>
         `;
         unitList.appendChild(unitCard);
       }
       
-      document.getElementById("overlay").style.display = "none";
-      document.getElementById("unit-overlay").style.display = "flex";
+      overlay.style.display = "none";
+      unitOverlay.style.display = "flex";
     }
     
     function getUnitDescription(unit, subject) {
       const topics = [
-        "Introduction and Fundamental Concepts",
-        "Advanced Techniques and Applications",
-        "Specialized Topics and Case Studies",
-        "Implementation and Practical Approaches",
-        "Future Trends and Research Directions"
+        "Introduction, history, and fundamental concepts",
+        "Core principles, theories, and methodologies",
+        "Advanced techniques, algorithms, and implementations",
+        "Practical applications, case studies, and real-world examples",
+        "Emerging trends, research directions, and future outlook"
       ];
       
-      return `${subject.split(' ')[0]} ${topics[unit-1]}`;
+      return `${subject} ${topics[unit-1]}`;
     }
 
     function closeUnitOverlay() {
-      document.getElementById("unit-overlay").style.display = "none";
+      unitOverlay.style.display = "none";
       document.body.style.overflow = "auto";
     }
 
     function goBackToSubjects() {
-      document.getElementById("unit-overlay").style.display = "none";
-      document.getElementById("overlay").style.display = "flex";
+      unitOverlay.style.display = "none";
+      overlay.style.display = "flex";
     }
+    
+    // Close overlays when clicking outside the container
+    overlay.addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeOverlay();
+      }
+    });
+    
+    unitOverlay.addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeUnitOverlay();
+      }
+    });
     
     // Initialize the application
     document.addEventListener('DOMContentLoaded', () => {
