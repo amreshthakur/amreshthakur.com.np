@@ -164,7 +164,8 @@ function renderUnitCards() {
             // Generate slugs for subject and unit title
             const subjectSlug = generateSlug(currentSubject);
             const unitSlug = generateSlug(unit.title);
-            const unitLink = `https://www.amreshthakur.com.np/${subjectSlug}/${unitSlug}`;
+            // FIXED: Use relative paths instead of absolute URLs
+            const unitLink = `${subjectSlug}/${unitSlug}.html`;
             const resourceType = "Tutorial";
             const iconIndex = index % unitIcons.length;
 
@@ -211,7 +212,8 @@ function renderUnitCards() {
             // Generate slugs for subject and unit title
             const subjectSlug = generateSlug(currentSubject);
             const unitSlug = generateSlug(unitTitle);
-            const unitLink = `https://www.amreshthakur.com.np/${subjectSlug}/${unitSlug}`;
+            // FIXED: Use relative paths instead of absolute URLs
+            const unitLink = `${subjectSlug}/${unitSlug}.html`;
             const resourceType = "Tutorial";
             const iconIndex = (i - 1) % unitIcons.length;
 
@@ -254,7 +256,8 @@ function showUnitDetails(unit, unitNumber) {
     // Generate slugs for subject and unit title
     const subjectSlug = generateSlug(currentSubject);
     const unitSlug = generateSlug(unit.title);
-    const unitLink = `https://www.amreshthakur.com.np/${subjectSlug}/${unitSlug}`;
+    // FIXED: Use relative paths instead of absolute URLs
+    const unitLink = `${subjectSlug}/${unitSlug}.html`;
 
     // Hide the unit list and show the unit details
     document.getElementById("pipara-academy-course-unit-content").innerHTML = `
@@ -300,56 +303,20 @@ function showUnitDetails(unit, unitNumber) {
                     
                     <div style="margin-bottom: 1.5rem;">
                         <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: #4facfe;">Learning Resources</h4>
-                <!-- HTML -->
-<div class="resource-links">
-    <a href="${unitLink}" class="resource-btn" target="_blank">
-        <i class="fas fa-book"></i> Study Material
-    </a>
-    <a href="${unitLink}/videos" class="resource-btn" target="_blank">
-        <i class="fas fa-video"></i> Video Lectures
-    </a>
-    <a href="${unitLink}/exercises" class="resource-btn" target="_blank">
-        <i class="fas fa-tasks"></i> Practice Exercises
-    </a>
-    <a href="${unitLink}/quiz" class="resource-btn" target="_blank">
-        <i class="fas fa-question-circle"></i> Unit Quiz
-    </a>
-</div>
-
-<!-- CSS -->
-<style>
-.resource-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.resource-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    color: #fff;
-    padding: 0.75rem 1.4rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.resource-btn:hover {
-    background: linear-gradient(135deg, #2980b9 0%, #1c6396 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.resource-btn i {
-    font-size: 1.1rem;
-}
-</style>
-
+                        <div class="resource-links">
+                            <a href="${unitLink}" class="resource-btn" target="_blank">
+                                <i class="fas fa-book"></i> Study Material
+                            </a>
+                            <a href="${unitLink}" class="resource-btn" target="_blank">
+                                <i class="fas fa-video"></i> Video Lectures
+                            </a>
+                            <a href="${unitLink}" class="resource-btn" target="_blank">
+                                <i class="fas fa-tasks"></i> Practice Exercises
+                            </a>
+                            <a href="${unitLink}" class="resource-btn" target="_blank">
+                                <i class="fas fa-question-circle"></i> Unit Quiz
+                            </a>
+                        </div>
                     </div>
                     
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
@@ -415,3 +382,7 @@ unitOverlay.addEventListener('click', function (e) {
 document.addEventListener('DOMContentLoaded', () => {
     initSemesterCards();
 });
+
+// Expose navigation functions to global scope
+window.goBackToUnitList = goBackToUnitList;
+window.goBackToSubjects = goBackToSubjects;
