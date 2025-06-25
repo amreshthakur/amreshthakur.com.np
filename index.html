@@ -105,42 +105,7 @@
     </div>
 
     <script>
-        const semesterData = [
-            {
-                title: "First Semester",
-                description: "Introduction to fundamental concepts of computer science",
-                subjects: [
-                    { name: "Programming Fundamentals", description: "Basic programming concepts and problem solving", elective: false },
-                    { name: "Discrete Mathematics", description: "Mathematical foundations for computer science", elective: false },
-                    { name: "Digital Logic", description: "Boolean algebra and digital circuit design", elective: false }
-                ]
-            },
-            {
-                title: "Second Semester",
-                description: "Intermediate computer science concepts and applications",
-                subjects: [
-                    { name: "Data Structures", description: "Organization and storage of data", elective: false },
-                    { name: "Linear Algebra", description: "Matrix operations and vector spaces", elective: false },
-                    { name: "Computer Graphics", description: "Principles of 2D/3D graphics", elective: true }
-                ]
-            }
-        ];
-
-        const subjectUnits = {
-            "Programming Fundamentals": [
-                { title: "Introduction to Programming", description: "Basic syntax and program structure", topics: ["Variables", "Data Types", "Operators"] },
-                { title: "Control Structures", description: "Conditionals and loops", topics: ["If-else", "Loops", "Switch"] }
-            ],
-            "Discrete Mathematics": [
-                { title: "Set Theory", description: "Sets and their properties" },
-                { title: "Logic and Proofs", description: "Propositional and predicate logic" }
-            ],
-            "Data Structures": [
-                { title: "Arrays and Lists", description: "Linear data structures" },
-                { title: "Trees and Graphs", description: "Non-linear data structures" }
-            ]
-        };
-
+     
         const semesterGrid = document.querySelector('.pipara-academy-course-semester-grid');
         const filterBtns = document.querySelectorAll('.pipara-academy-course-filter-btn');
         const overlay = document.getElementById('pipara-academy-course-overlay');
@@ -336,5 +301,8 @@
         window.closeUnitOverlay = closeUnitOverlay;
         window.goBackToSubjects = goBackToSubjects;
     </script>
+
+    <script src="semesterData.js"></script>
+    <script src="subjectUnits.js"></script>
 </body>
 </html>
