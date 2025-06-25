@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster Pro - Level & Unit Selection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #f72585;
+            --success: #4cc9f0;
+            --danger: #f94144;
+            --warning: #f8961e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            text-decoration: none;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: #e11573;
+        }
+
+        .btn-success {
+            background: var(--success);
+        }
+
+        .btn-success:hover {
+            background: #3bb0d4;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+        }
+
+        .btn-danger:hover {
+            background: #e03134;
+        }
+
+        .btn-warning {
+            background: var(--warning);
+            color: var(--dark);
+        }
+
+        .btn-warning:hover {
+            background: #e0861b;
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 30px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .level-indicator {
+            background: var(--light);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Home Page Styles */
+        #home-page .card {
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .welcome-text {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+
+        /* Level Selection Page */
+        #level-page .card {
+            text-align: center;
+        }
+
+        .level-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .level-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 25px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .level-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .level-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .level-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Unit Selection Page */
+        #unit-page .card {
+            text-align: center;
+        }
+
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .unit-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 25px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .unit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary);
+        }
+
+        .unit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .unit-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .unit-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Quiz Page Styles */
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .timer {
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timer.warning {
+            background: var(--warning);
+        }
+
+        .timer.danger {
+            background: var(--danger);
+        }
+
+        .progress {
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        .question-container {
+            margin-bottom: 30px;
+        }
+
+        .question {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .option:hover {
+            background: #e6e9ff;
+            border-color: var(--primary);
+        }
+
+        .option.selected {
+            background: #d7e3fc;
+            border-color: var(--primary);
+        }
+
+        .option input {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .quiz-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .clear-btn {
+            background: transparent;
+            border: none;
+            color: var(--danger);
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .clear-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* Result Page Styles */
+        .result-summary {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(var(--success) 0% var(--percentage), var(--light-gray) var(--percentage) 100%);
+            margin: 0 auto 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .score-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .score-text {
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+
+        .result-details {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .result-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            min-width: 180px;
+            text-align: center;
+        }
+
+        .result-card h3 {
+            margin-bottom: 10px;
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .result-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .result-card .correct .value {
+            color: var(--success);
+        }
+
+        .result-card .incorrect .value {
+            color: var(--danger);
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Review Page Styles */
+        .review-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .review-item {
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background: var(--light);
+            border-left: 4px solid var(--gray);
+        }
+
+        .review-item.correct {
+            border-left-color: var(--success);
+        }
+
+        .review-item.incorrect {
+            border-left-color: var(--danger);
+        }
+
+        .review-question {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .review-answers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .answer {
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        .user-answer {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .correct-answer {
+            background: var(--success);
+            color: white;
+        }
+
+        .answer-status {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .correct .answer-status {
+            color: var(--success);
+        }
+
+        .incorrect .answer-status {
+            color: var(--danger);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 30px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            .card {
+                padding: 20px;
+                margin: 20px auto;
+            }
+            
+            .quiz-controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .quiz-controls .btn {
+                width: 100%;
+            }
+            
+            .score-circle {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .score-value {
+                font-size: 2.5rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .level-grid, .unit-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quiz-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .result-details {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .result-actions {
+                flex-direction: column;
+            }
+            
+            .result-actions .btn {
+                width: 100%;
+            }
+
+            .level-grid, .unit-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" onclick="showPage('home-page')">
+                    <i class="fas fa-brain"></i>
+                    <span>QuizMaster Pro</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="card">
+                <h1>Welcome to QuizMaster Pro!</h1>
+                <p class="welcome-text">Test your knowledge across multiple levels and units. Select your level and unit to get started!</p>
+                
+                <div class="result-actions">
+                    <button class="btn btn-secondary" onclick="showPage('level-page')">
+                        <i class="fas fa-layer-group"></i> Select Level
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Level Selection Page -->
+        <section id="level-page" class="page">
+            <div class="card">
+                <h1>Choose Your Level</h1>
+                <p>Select a difficulty level that matches your knowledge and expertise.</p>
+                
+                <div class="level-grid" id="level-grid">
+                    <!-- Levels will be populated by JavaScript -->
+                </div>
+                
+                <div class="result-actions">
+                    <button class="btn" onclick="showPage('home-page')">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unit Selection Page -->
+        <section id="unit-page" class="page">
+            <div class="card">
+                <h1>Choose Your Unit</h1>
+                <p>Select a unit within the <span id="selected-level-name">Beginner</span> level.</p>
+                
+                <div class="unit-grid" id="unit-grid">
+                    <!-- Units will be populated by JavaScript -->
+                </div>
+                
+                <div class="result-actions">
+                    <button class="btn" onclick="showPage('level-page')">
+                        <i class="fas fa-arrow-left"></i> Back to Levels
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Page -->
+        <section id="quiz-page" class="page">
+            <div class="card">
+                <div class="quiz-header">
+                    <div class="timer">
+                        <i class="fas fa-clock"></i>
+                        <span id="time-remaining">05:00</span>
+                    </div>
+                    <div class="progress">
+                        Question <span id="current-question">1</span> of <span id="total-questions">10</span>
+                    </div>
+                    <div class="level-indicator">
+                        <i class="fas fa-layer-group"></i>
+                        <span id="quiz-level-unit">Beginner: Geography</span>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <h2 class="question" id="question-text">What is the capital of France?</h2>
+                    <div class="options" id="options-container">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                    <button class="clear-btn" id="clear-selection" onclick="clearSelection()">
+                        <i class="fas fa-times-circle"></i> Clear Selection
+                    </button>
+                </div>
+                
+                <div class="quiz-controls">
+                    <button class="btn btn-outline" id="prev-btn" onclick="prevQuestion()">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button class="btn" id="next-btn" onclick="nextQuestion()">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Result Page -->
+        <section id="result-page" class="page">
+            <div class="card">
+                <div class="result-summary">
+                    <h1>Quiz Completed!</h1>
+                    <div class="score-circle">
+                        <div class="score-value" id="score-percentage">85%</div>
+                        <div class="score-text">Your Score</div>
+                    </div>
+                    
+                    <div class="result-details">
+                        <div class="result-card">
+                            <h3>Total Questions</h3>
+                            <div class="value" id="total-questions-result">10</div>
+                        </div>
+                        <div class="result-card">
+                            <h3>Correct Answers</h3>
+                            <div class="value correct" id="correct-answers">8</div>
+                        </div>
+                        <div class="result-card">
+                            <h3>Incorrect Answers</h3>
+                            <div class="value incorrect" id="incorrect-answers">2</div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button class="btn" onclick="showPage('level-page')">
+                            <i class="fas fa-layer-group"></i> Choose Level
+                        </button>
+                        <button class="btn btn-secondary" onclick="showReviewPage()">
+                            <i class="fas fa-list"></i> Review Answers
+                        </button>
+                        <button class="btn btn-success" onclick="restartQuiz()">
+                            <i class="fas fa-redo"></i> Try Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Review Page -->
+        <section id="review-page" class="page">
+            <div class="card">
+                <h1>Quiz Review</h1>
+                <p>Review your answers and see where you can improve.</p>
+                
+                <div class="review-container" id="review-container">
+                    <!-- Review items will be populated by JavaScript -->
+                </div>
+                
+                <div class="result-actions">
+                    <button class="btn" onclick="showPage('result-page')">
+                        <i class="fas fa-arrow-left"></i> Back to Results
+                    </button>
+                    <button class="btn btn-success" onclick="restartQuiz()">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2023 QuizMaster Pro. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Quiz Data - Organized by levels and units
+        const quizData = {
+            levels: [
+                {
+                    id: 1,
+                    title: "Beginner",
+                    icon: "fa-seedling",
+                    units: [
+                        {
+                            id: 101,
+                            title: "Geography",
+                            icon: "fa-globe",
+                            questions: [
+                                {
+                                    question: "What is the capital of France?",
+                                    options: ["Berlin", "Madrid", "Paris", "Rome"],
+                                    correctAnswer: "Paris",
+                                    type: "single"
+                                },
+                                {
+                                    question: "Which planet is known as the Red Planet?",
+                                    options: ["Venus", "Mars", "Jupiter", "Saturn"],
+                                    correctAnswer: "Mars",
+                                    type: "single"
+                                }
+                            ]
+                        },
+                        {
+                            id: 102,
+                            title: "Science",
+                            icon: "fa-flask",
+                            questions: [
+                                {
+                                    question: "What is the chemical symbol for Gold?",
+                                    options: ["Go", "Gd", "Au", "Ag"],
+                                    correctAnswer: "Au",
+                                    type: "single"
+                                },
+                                {
+                                    question: "What is the largest mammal in the world?",
+                                    options: ["African Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+                                    correctAnswer: "Blue Whale",
+                                    type: "single"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    title: "Intermediate",
+                    icon: "fa-graduation-cap",
+                    units: [
+                        {
+                            id: 201,
+                            title: "Programming",
+                            icon: "fa-code",
+                            questions: [
+                                {
+                                    question: "Which of the following are programming languages?",
+                                    options: ["Python", "HTML", "CSS", "JavaScript"],
+                                    correctAnswer: ["Python", "JavaScript"],
+                                    type: "multiple"
+                                },
+                                {
+                                    question: "Which of the following are JavaScript frameworks?",
+                                    options: ["React", "Angular", "Django", "Vue.js"],
+                                    correctAnswer: ["React", "Angular", "Vue.js"],
+                                    type: "multiple"
+                                }
+                            ]
+                        },
+                        {
+                            id: 202,
+                            title: "History",
+                            icon: "fa-landmark",
+                            questions: [
+                                {
+                                    question: "Who painted the Mona Lisa?",
+                                    options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
+                                    correctAnswer: "Leonardo da Vinci",
+                                    type: "single"
+                                },
+                                {
+                                    question: "In which year did World War II end?",
+                                    options: ["1943", "1945", "1947", "1950"],
+                                    correctAnswer: "1945",
+                                    type: "single"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 3,
+                    title: "Advanced",
+                    icon: "fa-rocket",
+                    units: [
+                        {
+                            id: 301,
+                            title: "Mathematics",
+                            icon: "fa-calculator",
+                            questions: [
+                                {
+                                    question: "What is the value of π (pi) to two decimal places?",
+                                    options: ["3.12", "3.14", "3.16", "3.18"],
+                                    correctAnswer: "3.14",
+                                    type: "single"
+                                },
+                                {
+                                    question: "What is the derivative of x²?",
+                                    options: ["x", "2x", "x²", "2x²"],
+                                    correctAnswer: "2x",
+                                    type: "single"
+                                }
+                            ]
+                        },
+                        {
+                            id: 302,
+                            title: "Literature",
+                            icon: "fa-book",
+                            questions: [
+                                {
+                                    question: "Who wrote 'Romeo and Juliet'?",
+                                    options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+                                    correctAnswer: "William Shakespeare",
+                                    type: "single"
+                                },
+                                {
+                                    question: "In which century was 'Pride and Prejudice' published?",
+                                    options: ["17th century", "18th century", "19th century", "20th century"],
+                                    correctAnswer: "19th century",
+                                    type: "single"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+
+        // Quiz State
+        let currentQuestionIndex = 0;
+        let currentLevel = null;
+        let currentUnit = null;
+        let userAnswers = [];
+        let score = 0;
+        let timer;
+        let timeRemaining = 300; // 5 minutes
+
+        // DOM Elements
+        const timeRemainingElement = document.getElementById('time-remaining');
+        const currentQuestionElement = document.getElementById('current-question');
+        const totalQuestionsElement = document.getElementById('total-questions');
+        const questionTextElement = document.getElementById('question-text');
+        const optionsContainerElement = document.getElementById('options-container');
+        const clearSelectionBtn = document.getElementById('clear-selection');
+        const nextButton = document.getElementById('next-btn');
+        const prevButton = document.getElementById('prev-btn');
+        const scorePercentageElement = document.getElementById('score-percentage');
+        const totalQuestionsResultElement = document.getElementById('total-questions-result');
+        const correctAnswersElement = document.getElementById('correct-answers');
+        const incorrectAnswersElement = document.getElementById('incorrect-answers');
+        const reviewContainerElement = document.getElementById('review-container');
+        const quizLevelElement = document.getElementById('quiz-level-unit');
+        const levelGridElement = document.getElementById('level-grid');
+        const unitGridElement = document.getElementById('unit-grid');
+        const selectedLevelNameElement = document.getElementById('selected-level-name');
+
+        // Initialize Level Selection
+        function initLevelSelection() {
+            levelGridElement.innerHTML = '';
+            
+            quizData.levels.forEach(level => {
+                const levelCard = document.createElement('div');
+                levelCard.className = 'level-card';
+                levelCard.innerHTML = `
+                    <div class="level-icon">
+                        <i class="fas ${level.icon}"></i>
+                    </div>
+                    <div class="level-title">${level.title}</div>
+                    <div class="level-desc">${level.units.length} units available</div>
+                `;
+                
+                levelCard.addEventListener('click', () => {
+                    currentLevel = level;
+                    selectedLevelNameElement.textContent = level.title;
+                    showPage('unit-page');
+                    initUnitSelection();
+                });
+                
+                levelGridElement.appendChild(levelCard);
+            });
+        }
+
+        // Initialize Unit Selection
+        function initUnitSelection() {
+            unitGridElement.innerHTML = '';
+            
+            currentLevel.units.forEach(unit => {
+                const unitCard = document.createElement('div');
+                unitCard.className = 'unit-card';
+                unitCard.innerHTML = `
+                    <div class="unit-icon">
+                        <i class="fas ${unit.icon}"></i>
+                    </div>
+                    <div class="unit-title">${unit.title}</div>
+                    <div class="unit-desc">${unit.questions.length} questions</div>
+                `;
+                
+                unitCard.addEventListener('click', () => {
+                    currentUnit = unit;
+                    startQuiz();
+                });
+                
+                unitGridElement.appendChild(unitCard);
+            });
+        }
+
+        // Start the quiz
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            userAnswers = Array(currentUnit.questions.length).fill(null);
+            score = 0;
+            timeRemaining = 300;
+            
+            // Update level/unit display
+            quizLevelElement.textContent = `${currentLevel.title}: ${currentUnit.title}`;
+            
+            // Show quiz page
+            showPage('quiz-page');
+            
+            // Start timer
+            startTimer();
+            
+            // Load first question
+            loadQuestion();
+        }
+
+        // Start the quiz timer
+        function startTimer() {
+            // Clear existing timer if any
+            if (timer) clearInterval(timer);
+            
+            // Update timer display immediately
+            updateTimerDisplay();
+            
+            // Set interval to update timer every second
+            timer = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay();
+                
+                if (timeRemaining <= 0) {
+                    clearInterval(timer);
+                    submitQuiz();
+                }
+            }, 1000);
+        }
+
+        // Update timer display
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            timeRemainingElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            // Change color based on time remaining
+            const timerElement = document.querySelector('.timer');
+            timerElement.classList.remove('warning', 'danger');
+            
+            if (timeRemaining <= 60) {
+                timerElement.classList.add('danger');
+            } else if (timeRemaining <= 120) {
+                timerElement.classList.add('warning');
+            }
+        }
+
+        // Load current question
+        function loadQuestion() {
+            const currentQuestion = currentUnit.questions[currentQuestionIndex];
+            
+            // Update question counter
+            currentQuestionElement.textContent = currentQuestionIndex + 1;
+            totalQuestionsElement.textContent = currentUnit.questions.length;
+            
+            // Update question text
+            questionTextElement.textContent = currentQuestion.question;
+            
+            // Clear previous options
+            optionsContainerElement.innerHTML = '';
+            
+            // Create options
+            currentQuestion.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'option';
+                
+                // Check if this option is selected
+                const isSelected = userAnswers[currentQuestionIndex] && 
+                                  (currentQuestion.type === 'single' 
+                                   ? userAnswers[currentQuestionIndex] === option
+                                   : userAnswers[currentQuestionIndex].includes(option));
+                
+                if (isSelected) {
+                    optionElement.classList.add('selected');
+                }
+                
+                optionElement.innerHTML = `
+                    <input type="${currentQuestion.type === 'single' ? 'radio' : 'checkbox'}" 
+                           name="option" 
+                           value="${option}" 
+                           ${isSelected ? 'checked' : ''}
+                           onchange="selectOption(this)">
+                    <label>${option}</label>
+                `;
+                
+                // Add click handler to the entire option container
+                optionElement.addEventListener('click', function(e) {
+                    // Only handle if the click is not on the input element
+                    if (e.target.tagName !== 'INPUT') {
+                        const input = this.querySelector('input');
+                        input.checked = !input.checked;
+                        selectOption(input);
+                    }
+                });
+                
+                optionsContainerElement.appendChild(optionElement);
+            });
+            
+            // Add clear selection button
+            const clearBtn = document.createElement('button');
+            clearBtn.className = 'clear-btn';
+            clearBtn.innerHTML = '<i class="fas fa-times-circle"></i> Clear Selection';
+            clearBtn.onclick = clearSelection;
+            optionsContainerElement.appendChild(clearBtn);
+            
+            // Update button states
+            prevButton.disabled = currentQuestionIndex === 0;
+            
+            if (currentQuestionIndex === currentUnit.questions.length - 1) {
+                nextButton.innerHTML = 'Submit Quiz <i class="fas fa-paper-plane"></i>';
+            } else {
+                nextButton.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
+            }
+            
+            // Show/hide clear button based on selection
+            updateClearButton();
+        }
+
+        // Update clear button visibility
+        function updateClearButton() {
+            const currentAnswer = userAnswers[currentQuestionIndex];
+            const clearBtn = document.querySelector('.clear-btn');
+            
+            if (clearBtn) {
+                if (currentAnswer === null || 
+                   (Array.isArray(currentAnswer) && currentAnswer.length === 0)) {
+                    clearBtn.style.display = 'none';
+                } else {
+                    clearBtn.style.display = 'block';
+                }
+            }
+        }
+
+        // Clear current selection
+        function clearSelection() {
+            userAnswers[currentQuestionIndex] = null;
+            
+            // Uncheck all inputs
+            const inputs = optionsContainerElement.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.checked = false;
+            });
+            
+            // Remove selected class
+            const options = optionsContainerElement.querySelectorAll('.option');
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Hide clear button
+            updateClearButton();
+        }
+
+        // Handle option selection
+        function selectOption(optionElement) {
+            const currentQuestion = currentUnit.questions[currentQuestionIndex];
+            const optionValue = optionElement.value;
+            
+            if (currentQuestion.type === 'single') {
+                // If clicking the already selected option, clear selection
+                if (userAnswers[currentQuestionIndex] === optionValue) {
+                    clearSelection();
+                    return;
+                }
+                
+                // For single choice, set the selected option
+                userAnswers[currentQuestionIndex] = optionValue;
+                
+                // Update UI to show selected option
+                const options = document.querySelectorAll('.option');
+                options.forEach(opt => opt.classList.remove('selected'));
+                optionElement.closest('.option').classList.add('selected');
+            } else {
+                // For multiple choice, add/remove the option
+                if (!userAnswers[currentQuestionIndex]) {
+                    userAnswers[currentQuestionIndex] = [];
+                }
+                
+                if (optionElement.checked) {
+                    userAnswers[currentQuestionIndex].push(optionValue);
+                    optionElement.closest('.option').classList.add('selected');
+                } else {
+                    userAnswers[currentQuestionIndex] = userAnswers[currentQuestionIndex].filter(
+                        val => val !== optionValue
+                    );
+                    optionElement.closest('.option').classList.remove('selected');
+                }
+            }
+            
+            // Update clear button visibility
+            updateClearButton();
+        }
+
+        // Go to next question
+        function nextQuestion() {
+            // Check if current question is answered
+            if (userAnswers[currentQuestionIndex] === null || 
+                (Array.isArray(userAnswers[currentQuestionIndex]) && 
+                 userAnswers[currentQuestionIndex].length === 0)) {
+                alert('Please select an answer before proceeding.');
+                return;
+            }
+            
+            // If it's the last question, submit the quiz
+            if (currentQuestionIndex === currentUnit.questions.length - 1) {
+                submitQuiz();
+                return;
+            }
+            
+            // Go to next question
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+
+        // Go to previous question
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        // Submit the quiz
+        function submitQuiz() {
+            // Clear timer
+            clearInterval(timer);
+            
+            // Calculate score
+            score = 0;
+            currentUnit.questions.forEach((question, index) => {
+                const userAnswer = userAnswers[index];
+                
+                if (question.type === 'single') {
+                    if (userAnswer === question.correctAnswer) {
+                        score++;
+                    }
+                } else {
+                    // For multiple choice, check if all correct answers are selected
+                    // and no incorrect answers are selected
+                    if (Array.isArray(userAnswer) && 
+                        userAnswer.length === question.correctAnswer.length &&
+                        userAnswer.every(val => question.correctAnswer.includes(val))) {
+                        score++;
+                    }
+                }
+            });
+            
+            // Calculate percentage
+            const percentage = Math.round((score / currentUnit.questions.length) * 100);
+            
+            // Update result page
+            scorePercentageElement.textContent = `${percentage}%`;
+            totalQuestionsResultElement.textContent = currentUnit.questions.length;
+            correctAnswersElement.textContent = score;
+            incorrectAnswersElement.textContent = currentUnit.questions.length - score;
+            
+            // Set CSS variable for score circle
+            document.documentElement.style.setProperty('--percentage', `${percentage}%`);
+            
+            // Show result page
+            showPage('result-page');
+        }
+
+        // Show review page
+        function showReviewPage() {
+            // Clear previous review
+            reviewContainerElement.innerHTML = '';
+            
+            // Create review items
+            currentUnit.questions.forEach((question, index) => {
+                const userAnswer = userAnswers[index];
+                const isCorrect = question.type === 'single' 
+                    ? userAnswer === question.correctAnswer
+                    : Array.isArray(userAnswer) && 
+                      userAnswer.length === question.correctAnswer.length &&
+                      userAnswer.every(val => question.correctAnswer.includes(val));
+                
+                const reviewItem = document.createElement('div');
+                reviewItem.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
+                
+                // Format user answer for display
+                let userAnswerDisplay = '';
+                if (question.type === 'single') {
+                    userAnswerDisplay = userAnswer || 'No answer';
+                } else {
+                    userAnswerDisplay = Array.isArray(userAnswer) && userAnswer.length > 0 
+                        ? userAnswer.join(', ') 
+                        : 'No answer';
+                }
+                
+                // Format correct answer for display
+                const correctAnswerDisplay = Array.isArray(question.correctAnswer)
+                    ? question.correctAnswer.join(', ')
+                    : question.correctAnswer;
+                
+                reviewItem.innerHTML = `
+                    <div class="review-question">${index + 1}. ${question.question}</div>
+                    <div class="answer-status">
+                        ${isCorrect ? 'Correct' : 'Incorrect'}
+                    </div>
+                    <div class="review-answers">
+                        <div class="answer user-answer">Your Answer: ${userAnswerDisplay}</div>
+                        ${!isCorrect ? `<div class="answer correct-answer">Correct Answer: ${correctAnswerDisplay}</div>` : ''}
+                    </div>
+                `;
+                
+                reviewContainerElement.appendChild(reviewItem);
+            });
+            
+            // Show review page
+            showPage('review-page');
+        }
+
+        // Restart quiz
+        function restartQuiz() {
+            startQuiz();
+        }
+
+        // Show specific page and hide others
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show requested page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initLevelSelection();
+        });
+    </script>
+</body>
+</html>
