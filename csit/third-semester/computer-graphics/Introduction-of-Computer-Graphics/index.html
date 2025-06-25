@@ -1,55 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-
-    <meta name="google-site-verification" content="FITdzHukrQTwVoxMRJt2mu9fKe21KB-2SxQ5XWe33SU" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Pipara Academy",
-      "alternateName": ["Pipara Academy", "Students Helpline"],
-      "description": "Pipara Academy provides quality education and tutoring services for students of all ages.",
-      "url": "https://amreshthakur.com.np/",
-      "telephone": "+9779819829717",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Pipara Ward No. 4", 
-        "addressLocality": "Pipara",
-        "addressRegion": "Janakpur",
-        "postalCode": "45700",
-        "addressCountry": "NP"
-      },
-      "image": "https://amreshthakur.com.np/logo.jpg",
-      "priceRange": "$50 - $500",
-      "founder": {
-        "@type": "Person",
-        "name": "Amresh Thakur"
-      },
-        "foundingDate": "2023-01-01",
-      "sameAs": [
-        "https://www.facebook.com/piparaacademy",
-        "https://twitter.com/piparaacademy",
-        "https://www.linkedin.com/company/piparaacademy"
-      ]
-    }
-  </script>
-
     <meta name="Keywords"
         content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, PAN.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Courses, Programming, Web Development, Training, Learning, Quiz, Notes, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website">
     <meta name="Description"
         content="Well organized and easy to understand Web building Courses with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more.">
     <meta name="author" content="Your Name">
 
-
     <!-- Website Webpage Names -->
-    <title>Pipara Academy Online Education Center</title>
+    <title>BSc CSIT Notes, Old Questions - All Semesters | Pipara Academy</title>
 
     <!-- Open Graph Meta Tags (Facebook, WhatsApp) -->
     <meta property="og:type" content="website">
@@ -83,26 +46,30 @@
     <!-- HTML Language -->
     <html lang="en">
 
+
+
+
+    <!-- <script src="JavaScript/content-sidebar-function.js"></script> -->
+
+
     <!-- CSS and JavaScript links go here -->
-    <link rel="stylesheet" href="../../../../main.css">
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <script src="JavaScript/side-bar.js"></script>
+    <script src="JavaScript/General.js"></script>
+    <script src="JavaScript/lesson1Data.js"></script>
+
+
+
+
+
 
     <!-- icon cnd link fa fa-caret-down and fa fa-caret-up -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-    <!-- JavaScript links go here -->
-
-    <script src="lesson1Data.js"></script>
-
-
-
-    <!-- google search on websites Search box -->
-    <script src="../../../../javaScript/JavaScript.js"></script>
-    <!-- google search on websites Search box -->
-    <link rel="stylesheet" href="../../../../style/style.css">
-
 </head>
 
 <body>
+
 
     <div id="pipara-acadeny-search-suggestions"></div>
     <div id="nav-bar" class="modern">
@@ -151,15 +118,79 @@
 
             <div id="tnb-google-search-container" class="PAN-bar-item">
                 <div id="tnb-google-search-inner-container">
-                    <label for="tnb-google-search-input" class="tnb-soft-hide">
-                        Search field
-                    </label>
+                    <!-- Search trigger -->
+                    <div class="search-trigger" id="searchTrigger">
+                        <i class="fas fa-search"></i>
+                        <span>Click here to search for ...</span>
+                    </div>
 
-                    <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off"
+                    <!-- Overlay -->
+                    <div class="overlay" id="searchOverlay">
+                        <div class="overlay-content">
+                            <div class="overlay-header">
+                                <button class="biru-nepal-filter-btn active" data-filter="all">All</button>
+                                <button class="biru-nepal-filter-btn" data-filter="semester">Semesters</button>
+                                <button class="biru-nepal-filter-btn" data-filter="subject">Subjects</button>
+                                <button class="biru-nepal-filter-btn" data-filter="unit">Units</button>
+                            </div>
+
+                            <button class="close-btn" id="closeOverlay">&times;</button>
+
+
+                            <!-- Search functionality system -->
+                            <div>
+                                <div class="biru-nepal-search-box">
+                                    <div class="biru-nepal-search-box-inner" id="biru-nepal-search-box-inner">
+                                        <input type="text" id="biru-nepal-search-input"
+                                            placeholder="Search for semesters, subjects or units...">
+                                        <button class="biru-nepal-search-btn">
+                                            <i class="fas fa-search"></i> Search
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="biru-nepal-filter-container">
+
+                                </div>
+
+                                <div class="biru-nepal-results-stats">
+                                    <div>Found: <span id="biru-nepal-result-count">0</span> results</div>
+                                    <div>Search time: <span id="biru-nepal-search-time">0.00</span>ms</div>
+                                </div>
+                            </div>
+
+                            <h2 class="biru-nepal-results-title" id="biru-nepal-results-title">
+                            </h2>
+                            <div class="biru-nepal-results-grid" id="biru-nepal-results-grid">
+                                <!-- Initial placeholder -->
+                                <div class="biru-nepal-no-results">
+                                    <i class="fas fa-search"></i>
+                                    <h3>Search the Curriculum</h3>
+                                    <p>Enter keywords related to semesters, subjects, units, or topics in the search box
+                                        above to
+                                        get started.</p>
+
+                                    <div class="biru-nepal-quick-links">
+                                        <div class="biru-nepal-quick-link">Computer Networks</div>
+                                        <div class="biru-nepal-quick-link">Algorithms</div>
+                                        <div class="biru-nepal-quick-link">Database</div>
+                                        <div class="biru-nepal-quick-link">Fourth Semester</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- <label for="tnb-google-search-input" class="tnb-soft-hide">
+                        Search field
+                    </label> -->
+
+                    <!-- <input id="tnb-google-search-input" type="text" placeholder="Search..." autocomplete="off"
                         onkeydown="TopNavBar.googleSearchAttachKeyPressHandler(event)" aria-label="Search field"
                         oninput="TopNavBar.searchWithSuggestions(this)" onfocus="TopNavBar.searchWithSuggestions(this)"
-                        onblur="TopNavBar.searchFieldLostFocus(event)" />
-
+                        onblur="TopNavBar.searchFieldLostFocus(event)" /> -->
+                    <!-- 
                     <div id="tnb-google-search-submit-btn" class="tnb-button-light" role="button"
                         aria-label="Button to search" onclick="TopNavBar.googleSearchSubmit()">
                         <svg id="tnb-google-search-icon" viewBox="0 0 17 16" fill="none" xmlns="/">
@@ -167,8 +198,12 @@
                                 d="M11.8153 10.3439C12.6061 9.2673 13.0732 7.9382 13.0732 6.5C13.0732 2.91015 10.163 0 6.57318 0C2.98333 0 0.0731812 2.91015 0.0731812 6.5C0.0731812 10.0899 2.98333 13 6.57318 13C8.01176 13 9.3412 12.5327 10.4179 11.7415L10.4171 11.7422C10.4466 11.7822 10.4794 11.8204 10.5156 11.8566L14.3661 15.7071C14.7566 16.0976 15.3898 16.0976 15.7803 15.7071C16.1708 15.3166 16.1708 14.6834 15.7803 14.2929L11.9298 10.4424C11.8936 10.4062 11.8553 10.3734 11.8153 10.3439ZM12.0732 6.5C12.0732 9.53757 9.61075 12 6.57318 12C3.53561 12 1.07318 9.53757 1.07318 6.5C1.07318 3.46243 3.53561 1 6.57318 1C9.61075 1 12.0732 3.46243 12.0732 6.5Z"
                                 fill="black"></path>
                         </svg>
-                    </div>
+                    </div> -->
                 </div>
+
+
+
+
 
                 <div id="tnb-google-search-mobile-action-btns">
                     <div id="tnb-google-search-mobile-show" class="tnb-button"
@@ -189,6 +224,8 @@
                 </div>
             </div>
 
+
+
             <div id="tnb-dark-mode-toggle-wrapper" class="PAN-bar-item">
                 <a id="tnb-dark-mode-toggle-btn" href="javascript:void(0);"
                     class="tnb-button fa ga-nav ga-dark-mode-toggle" onclick="TopNavBar.toggleUserPreferredTheme()"
@@ -196,6 +233,8 @@
                     <i class="fa fa-moon"></i>
                 </a>
             </div>
+
+
             <!-- open nav tab and mobile menu open  -->
             <div class="tnb-right-section">
                 <!-- first code remove  -->
@@ -272,10 +311,7 @@
                         <i class="fa-brands fa-instagram-square"></i>
                     </a>
 
-                    <a class="PAN-button PAN-round ga-fp" target="_blank" href="/"
-                        title="Join the Pipara Academy community on Discord">
-                        <i class="fa-brands fa-discord-square" aria-hidden="true"></i>
-                    </a>
+
 
                     <a class="PAN-button PAN-round ga-fp" target="_blank" href="/"
                         title="Join the Pipara Academy community on Twitter">
@@ -332,7 +368,7 @@
                                     </h3>
                                     <div data-name="csit" data-category="html_and_css">
                                         <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-html"
-                                            href="/" title="CSIT Tutorial">
+                                            href="../../../../csit" title="CSIT Tutorial">
                                             <span class="learn-span">Learn</span>
                                             CSIT
                                         </a>
@@ -346,172 +382,14 @@
                                             Reference
                                         </a>
                                     </div>
-                                    <div data-name="css" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-css"
-                                            href="/" title="CSS Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            CSS
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-css" href="/"
-                                            title="CSS Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-css" href="/"
-                                            title="CSS Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="rwd" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-rwd"
-                                            href="/" title="Responsive Web Design Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            RWD
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-rwd" href="/"
-                                            title="Responsive Web Design Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="bootstrap" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-bs"
-                                            href="/" title="Bootstrap Courses">
-                                            <span class="learn-span">Learn</span>
-                                            Bootstrap
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-bs" href="/"
-                                            title="Bootstrap Courses">
-                                            Overview
-                                        </a>
-                                    </div>
-                                    <div data-name="PAN.css" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-PANcss"
-                                            href="/" title="PAN.CSS Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            PAN.CSS
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-PANcss" href="/"
-                                            title="PAN.CSS Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-PANcss" href="/"
-                                            title="PAN.CSS Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="sass" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-sass"
-                                            href="/" title="SASS Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Sass
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-sass" href="/"
-                                            title="SASS Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-sass" href="/"
-                                            title="SASS Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="colors" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-colors"
-                                            href="/" title="Colors Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Colors
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-colors" href="/"
-                                            title="Colors Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-colors" href="/"
-                                            title="Colors Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="icons" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-icons"
-                                            href="/" title="Icons Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Icons
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-icons" href="/"
-                                            title="Icons Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-icons" href="/"
-                                            title="Icons Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="svg" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-svg"
-                                            href="/" title="SVG Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            SVG
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-svg" href="/"
-                                            title="SVG Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-svg" href="/"
-                                            title="SVG Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="canvas" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-canvas"
-                                            href="/" title="Canvas Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Canvas
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-canvas" href="/"
-                                            title="Canvas Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-canvas" href="/"
-                                            title="Canvas Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="graphics" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-graphics"
-                                            href="/" title="Graphics Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Graphics
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-graphics" href="/"
-                                            title="Graphics Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="charsets" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-charsets"
-                                            href="/" title="Character Sets Reference">
-                                            <span class="learn-span">Learn</span>
-                                            Character Sets
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-canvas" href="/"
-                                            title="Character Sets Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="how to" data-category="html_and_css">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-howto"
-                                            href="/" title="How To - Code Snippets">
-                                            <span class="learn-span">Learn</span>
-                                            How To
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-howto" href="/"
-                                            title="How To - Code Snippets">
-                                            Tutorial
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
 
                                 <div id="Courses_data_analytics_links_list_desktop" class="PAN-hide-small">
                                     <h3 class="tnb-nav-section-title" data-heading="data_analytics_title">
                                         Data Analytics
                                     </h3>
+
                                     <div data-name="ai" data-category="data_analytics">
                                         <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-ai"
                                             href="/" title="Artificial Intelligence Tutorial">
@@ -523,155 +401,15 @@
                                             Tutorial
                                         </a>
                                     </div>
-                                    <div data-name="generative ai" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-genai"
-                                            href="/" title="Generative AI Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Generative AI
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-genai" href="/"
-                                            title="Generative AI Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="chatgpt-3.5" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-chatgpt35"
-                                            href="/" title="ChatGPT-3.5 Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            ChatGPT-3.5
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-chatgpt35" href="/"
-                                            title="ChatGPT-3.5  Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="chatgpt-4" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-chatgpt4"
-                                            href="/" title="ChatGPT-4 Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            ChatGPT-4
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-chatgpt35" href="/"
-                                            title="ChatGPT-4 Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="google bard" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-bard"
-                                            href="/" title="Google Bard Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Google Bard
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-bard" href="/"
-                                            title="Google Bard Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="machine learning" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-ml"
-                                            href="/" title="Machine Learning Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Machine Learning
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-ml" href="/"
-                                            title="Machine Learning Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="data science" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-ds"
-                                            href="/" title="Data Science Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Data Science
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-ds" href="/"
-                                            title="Data Science Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="numpy" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-numpy"
-                                            href="/" title="NumPy Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            NumPy
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-numpy" href="/"
-                                            title="NumPy Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="pandas" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-pandas"
-                                            href="/" title="Pandas Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Pandas
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-pandas" href="/"
-                                            title="Pandas Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="scipy" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-scipy"
-                                            href="/" title="SciPy Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            SciPy
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-scipy" href="/"
-                                            title="SciPy Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="matplotlib" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-matplotlib"
-                                            href="/" title="Matplotlib Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Matplotlib
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-matplotlib"
-                                            href="/" title="Matplotlib Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="statistics" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-stat"
-                                            href="/" title="Statistics Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Statistics
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-stat" href="/"
-                                            title="Statistics Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="excel" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-excel"
-                                            href="/" title="Excel Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Excel
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-excel" href="/"
-                                            title="Excel Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="google sheet" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-sheets"
-                                            href="/" title="Google Sheets Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Google Sheets
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-sheets" href="/"
-                                            title="Google Sheets Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
+
                                 </div>
 
                                 <div id="Courses_web_building_links_list_tablet" class="PAN-hide-large PAN-hide-small">
                                     <h3 class="tnb-nav-section-title" data-heading="web_building_title">
                                         Web Building
                                     </h3>
+
                                     <div data-name="create a website" data-category="web_building">
                                         <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-spaces fixpaddingsmallmenu"
                                             href="/" title="Get Your Own Website With PANshools Spaces">
@@ -681,81 +419,8 @@
                                             </span>
                                         </a>
                                     </div>
-                                    <div data-name="create a server" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-server fixpaddingsmallmenu"
-                                            href="/" title="Get Your Own Server With PANshools Spaces">
-                                            Create a Server
-                                            <span class="ribbon-topnav ws-green">NEW</span>
-                                        </a>
-                                    </div>
-                                    <div data-name="where to start" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-wheretostart fixpaddingsmallmenu"
-                                            href="/" title="Where To Start - Web Development">
-                                            Where To Start
-                                        </a>
-                                    </div>
-                                    <div data-name="web templates" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-templates fixpaddingsmallmenu"
-                                            href="/" title="Free Web Templates">
-                                            Web Templates
-                                        </a>
-                                    </div>
-                                    <div data-name="web statistics" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-webstats fixpaddingsmallmenu"
-                                            href="/" title="Web Statistics">
-                                            Web Statistics
-                                        </a>
-                                    </div>
-                                    <div data-name="web Web" data-category="web_building">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-Web fixpaddingsmallmenu"
-                                            title="Web">
-                                            Web Web
-                                        </a>
-                                    </div>
-                                    <div data-name="web development" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-web-development fixpaddingsmallmenu"
-                                            href="/" title="Web Development Roadmaps">
-                                            Web Development
-                                        </a>
-                                    </div>
-                                    <div data-name="code editor" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-code-editor fixpaddingsmallmenu"
-                                            href="/" title="Try it - Code Editor">
-                                            Code Editor
-                                        </a>
-                                    </div>
-                                    <div data-name="test your typing speed" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-typingspeed fixpaddingsmallmenu"
-                                            href="/" title="Test Your Typing Speed">
-                                            Test Your Typing Speed
-                                        </a>
-                                    </div>
-                                    <div data-name="play a code game" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-codegame fixpaddingsmallmenu"
-                                            href="/" title="Play a Code Game">
-                                            Play a Code Game
-                                        </a>
-                                    </div>
-                                    <div data-name="cyber security" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-cybersec fixpaddingsmallmenu"
-                                            href="/" title="Cyber Security Tutorial">
-                                            Cyber Security
-                                        </a>
-                                    </div>
-                                    <div data-name="accessibility" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-accessi fixpaddingsmallmenu"
-                                            href="/" title="Accessibility Security Tutorial">
-                                            Accessibility
-                                        </a>
-                                    </div>
-                                    <div data-name="join our newsletter" data-category="web_building">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-newsletter fixpaddingsmallmenu"
-                                            title="Piparaacademy Newsletter">
-                                            Join our Newsletter
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
+
                                 </div>
                             </div>
 
@@ -779,118 +444,9 @@
                                             Reference
                                         </a>
                                     </div>
-                                    <div data-name="react" data-category="javascript">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-react"
-                                            href="/" title="React Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            React
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-react" href="/"
-                                            title="React Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="jquery" data-category="javascript">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-jquery"
-                                            href="/" title="jQuery Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            jQuery
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-jquery" href="/"
-                                            title="jQuery Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-jquery" href="/"
-                                            title="jQuery Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="vue" data-category="javascript">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-vue"
-                                            href="/" title="Vue Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Vue
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-vue" href="/"
-                                            title="Vue Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-vue" href="/"
-                                            title="Vue Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="angularjs" data-category="javascript">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-angularjs"
-                                            href="/" title="Angular Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            AngularJS
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-angularjs" href="/"
-                                            title="Angular Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-angularjs" href="/"
-                                            title="Angular Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="json" data-category="javascript">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-json"
-                                            href="/" title="JSON Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            JSON
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-json" href="/"
-                                            title="JSON Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-json" href="/"
-                                            title="JSON Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="ajax" data-category="javascript">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-ajax"
-                                            href="/" title="AJAX Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            AJAX
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-ajax" href="/"
-                                            title="AJAX Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="appml" data-category="javascript">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-appml"
-                                            href="/" title="AppML Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            AppML
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-appml" href="/"
-                                            title="AppML Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-appml" href="/"
-                                            title="AppML Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="PAN.js" data-category="javascript">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-PANjs"
-                                            href="/" title="PAN.JS Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            PAN.JS
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-PANjs" href="/"
-                                            title="PAN.JS Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-PANjs" href="/"
-                                            title="PAN.JS Reference">
-                                            Reference
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
+
+
                                 </div>
                                 <div id="Courses_web_building_links_list_desktop"
                                     class="PAN-hide-medium PAN-hide-small">
@@ -906,6 +462,7 @@
                                             </span>
                                         </a>
                                     </div>
+
                                     <div data-name="create a server" data-category="web_building">
                                         <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-server" href="/"
                                             title="Get Your Own Server With PANshools Spaces">
@@ -913,74 +470,8 @@
                                             <span class="ribbon-topnav ws-green">NEW</span>
                                         </a>
                                     </div>
-                                    <div data-name="where to start" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-wheretostart"
-                                            href="/" title="Where To Start - Web Development">
-                                            Where To Start
-                                        </a>
-                                    </div>
-                                    <div data-name="web templates" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-templates"
-                                            href="/" title="Free Web Templates">
-                                            Web Templates
-                                        </a>
-                                    </div>
-                                    <div data-name="web statistics" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-webstats"
-                                            href="/" title="Web Statistics">
-                                            Web Statistics
-                                        </a>
-                                    </div>
-                                    <div data-name="web Web" data-category="web_building">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-Web"
-                                            title="Web">
-                                            Web Web
-                                        </a>
-                                    </div>
-                                    <div data-name="web development" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-web-development"
-                                            href="/" title="Web Development Roadmaps">
-                                            Web Development
-                                        </a>
-                                    </div>
-                                    <div data-name="code editor" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-code-editor"
-                                            href="/" title="Try it - Code Editor">
-                                            Code Editor
-                                        </a>
-                                    </div>
-                                    <div data-name="test your typing speed" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-typingspeed"
-                                            href="/" title="Test Your Typing Speed">
-                                            Test Your Typing Speed
-                                        </a>
-                                    </div>
-                                    <div data-name="play a code game" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-codegame"
-                                            href="/" title="Play a Code Game">
-                                            Play a Code Game
-                                        </a>
-                                    </div>
-                                    <div data-name="cyber security" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-cybersec"
-                                            href="/" title="Cyber Security Tutorial">
-                                            Cyber Security
-                                        </a>
-                                    </div>
-                                    <div data-name="accessibility" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-accessi"
-                                            href="/" title="Accessibility Security Tutorial">
-                                            Accessibility
-                                        </a>
-                                    </div>
-                                    <div data-name="join our news letter" data-category="web_building">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-newsletter"
-                                            title="Piparaacademy Newsletter">
-                                            Join our Newsletter
-                                        </a>
-                                    </div>
+
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
                             </div>
 
@@ -1004,258 +495,7 @@
                                             Reference
                                         </a>
                                     </div>
-                                    <div data-name="sql" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-sql"
-                                            href="/" title="SQL Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            SQL
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-sql" href="/"
-                                            title="SQL Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-sql" href="/"
-                                            title="SQL Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="mysql" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-mysql"
-                                            href="/" title="MySQL Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            MySQL
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-mysql" href="/"
-                                            title="MySQL Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-mysql" href="/"
-                                            title="MySQL Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="php" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-php"
-                                            href="/" title="PHP Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            PHP
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-php" href="/"
-                                            title="PHP Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-php" href="/"
-                                            title="PHP Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="java" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-java"
-                                            href="/" title="Java Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Java
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-java" href="/"
-                                            title="Java Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-java" href="/"
-                                            title="Java Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="c" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-c"
-                                            href="/" title="C Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            C
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-c" href="/"
-                                            title="C Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="c++" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-cpp"
-                                            href="/" title="C++ Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            C++
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-cpp" href="/"
-                                            title="C++ Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="c#" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-cs"
-                                            href="/" title="C# Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            C#
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-cs" href="/"
-                                            title="C# Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="r" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop pan-top-drop-tut-r"
-                                            href="/" title="R Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            R
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop pan-top-drop-tut-r"
-                                            href="/" title="R Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="kotlin" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-kotlin"
-                                            href="/" title="Kotlin Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Kotlin
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-kotlin" href="/"
-                                            title="Kotlin Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="go" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-go"
-                                            href="/" title="Go Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Go
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-go" href="/"
-                                            title="Go Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="django" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-django"
-                                            href="/" title="Django Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Django
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-django" href="/"
-                                            title="Django Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-django" href="/"
-                                            title="Django Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="postgresql" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-postgresql"
-                                            href="/" title="PostgreSQL Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            PostgreSQL
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-postgresql"
-                                            href="/" title="PostgreSQL Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="typescript" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-typescript"
-                                            href="/" title="TypeScript Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            TypeScript
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-typescript"
-                                            href="/" title="TypeScript Reference">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="asp" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-asp"
-                                            href="/" title="ASP Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            ASP
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-asp" href="/"
-                                            title="ASP Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-asp" href="/"
-                                            title="ASP Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="node.js" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-nodejs"
-                                            href="/" title="Node.js Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Node.js
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-nodejs" href="/"
-                                            title="Node.js Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-nodejs" href="/"
-                                            title="Node.js Reference">
-                                            Reference
-                                        </a>
-                                    </div>
-                                    <div data-name="raspberry pi" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-rpi"
-                                            href="/" title="Raspberry Pi Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Raspberry Pi
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-rpi" href="/"
-                                            title="Raspberry Pi Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="git" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-git"
-                                            href="/" title="Git Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Git
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-git" href="/"
-                                            title="Git Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="mongodb" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-mongodb"
-                                            href="/" title="MongoDB Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            MongoDB
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-mongodb" href="/"
-                                            title="MongoDB Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="aws cloud" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-aws-cloud"
-                                            href="/" title="AWS Cloud Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            AWS Cloud
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-aws-cloud" href="/"
-                                            title="AWS Cloud Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="xml" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-xml"
-                                            href="/" title="XML Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            XML
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-xml" href="/"
-                                            title="XML Tutorial">
-                                            Tutorial
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ref-xml" href="/"
-                                            title="XML Reference">
-                                            Reference
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
 
                                 <div id="tutotials_data_analytics_links_list_mobile"
@@ -1285,138 +525,7 @@
                                             Tutorial
                                         </a>
                                     </div>
-                                    <div data-name="chatgpt-3.5" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-chatgpt35"
-                                            href="/" title="ChatGPT-3.5 Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            ChatGPT-3.5
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-chatgpt35" href="/"
-                                            title="ChatGPT-3.5  Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="chatgpt-4" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-chatgpt4"
-                                            href="/" title="ChatGPT-4 Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            ChatGPT-4
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-chatgpt35" href="/"
-                                            title="ChatGPT-4 Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="google bard" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-bard"
-                                            href="/" title="Google Bard Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Google Bard
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-bard" href="/"
-                                            title="Google Bard Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="machine learning" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-ml"
-                                            href="/" title="Machine Learning Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Machine Learning
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-ml" href="/"
-                                            title="Machine Learning Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="data science" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-ds"
-                                            href="/" title="Data Science Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Data Science
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-ds" href="/"
-                                            title="Data Science Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="numpy" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-numpy"
-                                            href="/" title="NumPy Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            NumPy
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-numpy" href="/"
-                                            title="NumPy Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="pandas" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-pandas"
-                                            href="/" title="Pandas Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Pandas
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-pandas" href="/"
-                                            title="Pandas Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="scipy" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-scipy"
-                                            href="/" title="SciPy Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            SciPy
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-scipy" href="/"
-                                            title="SciPy Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="matplotlib" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-matplotlib"
-                                            href="/" title="Matplotlib Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Matplotlib
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-matplotlib"
-                                            href="/" title="Matplotlib Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="statistics" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-stat"
-                                            href="/" title="Statistics Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Statistics
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-stat" href="/"
-                                            title="Statistics Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="excel" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-excel"
-                                            href="/" title="Excel Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Excel
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-excel" href="/"
-                                            title="Excel Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
-                                    <div data-name="google sheets" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-tut-sheets"
-                                            href="/" title="Google Sheets Tutorial">
-                                            <span class="learn-span">Learn</span>
-                                            Google Sheets
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-tut-sheets" href="/"
-                                            title="Google Sheets Tutorial">
-                                            Tutorial
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
 
                                 <div id="Courses_web_building_links_list_mobile" class="PAN-hide-large PAN-hide-medium">
@@ -1439,74 +548,7 @@
                                             <span class="ribbon-topnav ws-green">NEW</span>
                                         </a>
                                     </div>
-                                    <div data-name="where to start" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-wheretostart fixpaddingsmallmenu"
-                                            href="/" title="Where To Start - Web Development">
-                                            Where To Start
-                                        </a>
-                                    </div>
-                                    <div data-name="web templates" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-templates fixpaddingsmallmenu"
-                                            href="/" title="Free Web Templates">
-                                            Web Templates
-                                        </a>
-                                    </div>
-                                    <div data-name="web statistics" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-webstats fixpaddingsmallmenu"
-                                            href="/" title="Web Statistics">
-                                            Web Statistics
-                                        </a>
-                                    </div>
-                                    <div data-name="web Web" data-category="web_building">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-Web fixpaddingsmallmenu"
-                                            title="Web">
-                                            Web Web
-                                        </a>
-                                    </div>
-                                    <div data-name="web development" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-web-development fixpaddingsmallmenu"
-                                            href="/" title="Web Development Roadmaps">
-                                            Web Development
-                                        </a>
-                                    </div>
-                                    <div data-name="code editor" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-code-editor fixpaddingsmallmenu"
-                                            href="/" title="Try it - Code Editor">
-                                            Code Editor
-                                        </a>
-                                    </div>
-                                    <div data-name="test your typing speed" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-typingspeed fixpaddingsmallmenu"
-                                            href="/" title="Test Your Typing Speed">
-                                            Test Your Typing Speed
-                                        </a>
-                                    </div>
-                                    <div data-name="play a code game" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-codegame fixpaddingsmallmenu"
-                                            href="/" title="Play a Code Game">
-                                            Play a Code Game
-                                        </a>
-                                    </div>
-                                    <div data-name="cyber security" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-cybersec fixpaddingsmallmenu"
-                                            href="/" title="Cyber Security Tutorial">
-                                            Cyber Security
-                                        </a>
-                                    </div>
-                                    <div data-name="accessibility" data-category="web_building">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-accessi fixpaddingsmallmenu"
-                                            href="/" title="Accessibility Security Tutorial">
-                                            Accessibility
-                                        </a>
-                                    </div>
-                                    <div data-name="join our newsletter" data-category="web_building">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button pan-top-drop pan-top-drop-tut-newsletter fixpaddingsmallmenu"
-                                            title="Piparaacademy Newsletter">
-                                            Join our Newsletter
-                                        </a>
-                                    </div>
+
                                 </div>
                             </div>
                             <br />
@@ -1524,6 +566,7 @@
                 <nav id="nav_Notes" class="dropdown-nav PAN-hide-small navex" tabindex="-1" aria-label="Notes menu">
                     <div class="PAN-content menu-content">
                         <div id="Notes_list" class="PAN-row-padding PAN-bar-block">
+
                             <div class="nav-heading-container PAN-container">
                                 <div class="nav-heading-container-title">
                                     <h2 style="color: #fff4a3"><b>Notes</b></h2>
@@ -1669,6 +712,7 @@
                                 <h3 class="tnb-nav-section-title" data-heading="javascript_title">
                                     JavaScript
                                 </h3>
+
                                 <div data-name="javascript" data-category="javascript">
                                     <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-js"
                                         href="/" title="JavaScript Notes">
@@ -1683,48 +727,7 @@
                                         Quiz
                                     </a>
                                 </div>
-                                <div data-name="react" data-category="javascript">
-                                    <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-react"
-                                        href="/" title="React Notes">
-                                        React
-                                    </a>
-                                    <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-react" href="/"
-                                        title="React Notes">
-                                        Exercise
-                                    </a>
-                                    <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-react" href="/"
-                                        title="React Quizzes">
-                                        Quiz
-                                    </a>
-                                </div>
-                                <div data-name="jquery" data-category="javascript">
-                                    <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-jquery"
-                                        href="/" title="jQuery Notes">
-                                        jQuery
-                                    </a>
-                                    <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-jquery" href="/"
-                                        title="jQuery Notes">
-                                        Exercise
-                                    </a>
-                                    <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-jquery" href="/"
-                                        title="jQuery Quizzes">
-                                        Quiz
-                                    </a>
-                                </div>
-                                <div data-name="vue" data-category="javascript">
-                                    <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-vue"
-                                        href="/" title="Vue Notes">
-                                        Vue
-                                    </a>
-                                    <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-vue" href="/"
-                                        title="Vue Notes">
-                                        Exercise
-                                    </a>
-                                    <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-vue" href="/"
-                                        title="Vue Quizzes">
-                                        Quiz
-                                    </a>
-                                </div>
+                                <!-- Add more courses here. ✅ -->
                             </div>
 
                             <div class="PAN-col l4 m6">
@@ -1746,222 +749,7 @@
                                             Quiz
                                         </a>
                                     </div>
-                                    <div data-name="sql" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-sql"
-                                            href="/" title="SQL Notes">
-                                            SQL
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-sql" href="/"
-                                            title="SQL Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-sql" href="/"
-                                            title="SQL Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="mysql" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-mysql"
-                                            href="/" title="MySQL Notes">
-                                            MySQL
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-mysql" href="/"
-                                            title="MySQL Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-mysql" href="/"
-                                            title="MySQL Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="php" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-php"
-                                            href="/" title="PHP Notes">
-                                            PHP
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-php" href="/"
-                                            title="PHP Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-php" href="/"
-                                            title="PHP Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="java" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-java"
-                                            href="/" title="Java Notes">
-                                            Java
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-java" href="/"
-                                            title="Java Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-java" href="/"
-                                            title="Java Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="c" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-c"
-                                            href="/" title="C Notes">
-                                            C
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-c" href="/"
-                                            title="C Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-c" href="/"
-                                            title="C Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="c++" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-cpp"
-                                            href="/" title="C++ Notes">
-                                            C++
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-cpp" href="/"
-                                            title="C++ Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-cpp" href="/"
-                                            title="C++ Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="c#" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-cs"
-                                            href="/" title="C# Notes">
-                                            C#
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-cs" href="/"
-                                            title="C# Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-cs" href="/"
-                                            title="C# Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="r" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-r"
-                                            href="/" title="R Notes">
-                                            R
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-r" href="/"
-                                            title="R Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-r" href="/"
-                                            title="R Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="kotlin" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-kotlin"
-                                            href="/" title="Kotlin Notes">
-                                            Kotlin
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-kotlin" href="/"
-                                            title="Kotlin Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-kotlin" href="/"
-                                            title="Kotlin Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="django" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-django"
-                                            href="/" title="Django Notes">
-                                            Django
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-django" href="/"
-                                            title="Django Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-django" href="/"
-                                            title="Django Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="postgresql" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-postgresql"
-                                            href="/" title="PostgreSQL Notes">
-                                            PostgreSQL
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-postgresql" href="/"
-                                            title="PostgreSQL Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-postgresql" href="/"
-                                            title="PostgreSQL Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="typescript" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-typescript"
-                                            href="/" title="TypeScript Notes">
-                                            TypeScript
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-typescript" href="/"
-                                            title="TypeScript Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-typescript" href="/"
-                                            title="TypeScript Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="git" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-git"
-                                            href="/" title="Git Notes">
-                                            Git
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-git" href="/"
-                                            title="Git Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-git" href="/"
-                                            title="Git Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="go" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-go"
-                                            href="/" title="Go Notes">
-                                            Go
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-go" href="/"
-                                            title="Go Notes">
-                                            Exercise
-                                        </a>
-                                    </div>
-                                    <div data-name="mongodb" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-mongodb"
-                                            href="/" title="MongoDB Notes">
-                                            MongoDB
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-mongodb" href="/"
-                                            title="MongoDB Notes">
-                                            Exercise
-                                        </a>
-                                    </div>
-                                    <div data-name="aws cloud" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-aws-cloud"
-                                            href="/" title="AWS Cloud Notes">
-                                            AWS Cloud
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-aws-cloud" href="/"
-                                            title="AWS Cloud Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-aws-cloud" href="/"
-                                            title="AWS Cloud Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
                                 <div class="PAN-hide-large PAN-hide-medium" id="Notes_data_analytics_links_list">
                                     <h3 class="tnb-nav-section-title" data-heading="data_analytics_title">
@@ -1981,56 +769,7 @@
                                             Quiz
                                         </a>
                                     </div>
-                                    <div data-name="pandas" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-pandas"
-                                            href="/" title="Pandas Notes">
-                                            Pandas
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-pandas" href="/"
-                                            title="Pandas Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-pandas" href="/"
-                                            title="Pandas Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="scipy" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-scipy"
-                                            href="/" title="SciPy Notes">
-                                            SciPy
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-scipy" href="/"
-                                            title="SciPy Notes">
-                                            Exercise
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-qz-scipy" href="/"
-                                            title="SciPy Quizzes">
-                                            Quiz
-                                        </a>
-                                    </div>
-                                    <div data-name="excel" data-category="data_analytics">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-ex-excel"
-                                            href="/" title="Excel Notes">
-                                            Excel
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-ex-excel" href="/"
-                                            title="Excel Notes">
-                                            Exercise
-                                        </a>
-                                    </div>
-                                    <div class="black-box-container">
-                                        <a class="PAN-bar-item PAN-button pan-top-drop PAN-center PAN-round pan-top-drop-Notes"
-                                            href="/" title="Piparaacademy Notes"
-                                            style="display: block; background-color: #21232c; border: 1px solid grey; width: 195px; margin-bottom: 16px">
-                                            What is an Exercise?
-                                        </a>
-                                        <a class="PAN-bar-item PAN-button pan-top-drop PAN-center PAN-round pan-top-drop-quiztest"
-                                            href="/" title="Piparaacademy Quizzes"
-                                            style="display: block; background-color: #21232c; border: 1px solid grey; width: 195px">
-                                            What is a Quiz?
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
                             </div>
                         </div>
@@ -2094,69 +833,7 @@
                                             Course
                                         </a>
                                     </div>
-                                    <div data-name="css" data-category="html_and_css">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-css"
-                                            title="CSS Certification Exam">
-                                            CSS
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-css"
-                                            title="CSS Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-css"
-                                            title="Paid CSS Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="bootstrap" data-category="html_and_css">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-bs3"
-                                            title="Bootstrap 3 Certification Exam">
-                                            Bootstrap 3
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-bs3"
-                                            title="Bootstrap 3 Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-bs3"
-                                            title="Paid Bootstrap 3 Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="bootstrap4" data-category="html_and_css">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-bs4"
-                                            title="Bootstrap 4 Certification Exam">
-                                            Bootstrap 4
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-bs4"
-                                            title="Bootstrap 4 Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-bs4"
-                                            title="Paid Bootstrap 4 Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="bootstrap5" data-category="html_and_css">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-bs5"
-                                            title="Bootstrap 5 Certification Exam">
-                                            Bootstrap 5
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-bs5"
-                                            title="Bootstrap 5 Certification Exam">
-                                            Certificate
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
 
                                 <div id="certified_data_analytics_links_list_desktop" class="PAN-hide-small">
@@ -2175,72 +852,7 @@
                                             Course
                                         </a>
                                     </div>
-                                    <div data-name="numpy" data-category="data_analytics">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-numpy"
-                                            title="NumPy Certification Exam">
-                                            NumPy
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-numpy"
-                                            title="NumPy Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-numpy"
-                                            title="Paid NumPy Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="pandas" data-category="data_analytics">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-pandas"
-                                            title="Pandas Certification Exam">
-                                            Pandas
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-pandas"
-                                            title="Pandas Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-pandas"
-                                            title="Paid Pandas Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="excel" data-category="data_analytics">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-excel"
-                                            title="Excel Certification Exam">
-                                            Excel
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-excel"
-                                            title="Excel Certification Exam">
-                                            Certificate
-                                        </a>
-                                    </div>
-                                    <div data-name="social media" data-category="data_analytics">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-course-some"
-                                            title="Paid Social Media Course">
-                                            Social Media
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-some"
-                                            title="Paid Social Media Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div class="black-box-container">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button pan-top-drop PAN-center PAN-round pan-top-drop-campus"
-                                            title="Piparaacademy Campus"
-                                            style="display: block; background-color: #21232c; border: 1px solid grey; width: 195px; margin-bottom: 16px">
-                                            What is a Certificate?
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
 
                                 <div class="certified_programs_links_list PAN-hide-large PAN-hide-small">
@@ -2258,74 +870,7 @@
                                             </span>
                                         </a>
                                     </div>
-                                    <div data-name="front end" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-front-end"
-                                            title="Paid Front End Course">
-                                            Front End
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-front-end"
-                                            title="Front End Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-front-end"
-                                            title="Paid Front End Development Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="web design" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-web-dev"
-                                            title="Web Development Certification">
-                                            Web Dev.
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-web-dev"
-                                            title="Web Development Certification">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-web-dev"
-                                            title="Paid Web Development Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="web development" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-web-app"
-                                            title="Web Application Development Certification">
-                                            Web App
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-web-app"
-                                            title="Web Application Development Certification">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-web-app"
-                                            title="Paid Web Application Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="web app" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-web-design"
-                                            title="Web Design Certification Exam">
-                                            Web Design
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-web-design"
-                                            title="Web Design Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-web-design"
-                                            title="Paid Web Design Course">
-                                            Course
-                                        </a>
-                                    </div>
+
                                 </div>
                             </div>
 
@@ -2368,52 +913,13 @@
                                             Course
                                         </a>
                                     </div>
-                                    <div data-name="jquery" data-category="javascript">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-jquery"
-                                            title="jQuery Certification Exam">
-                                            jQuery
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-jquery"
-                                            title="jQuery Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-jquery"
-                                            title="Paid jQuery Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="vue" data-category="javascript">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-vue"
-                                            title="Vue Certification Exam">
-                                            Vue
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-vue"
-                                            title="Vue Certification Exam">
-                                            Certificate
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
 
                                 <div class="certified_programs_links_list PAN-hide-medium PAN-hide-large">
                                     <h3 class="tnb-nav-section-title" data-heading="programs_title">
                                         Programs
                                     </h3>
-                                    <div data-name="full access" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-course-fullaccess"
-                                            title="Paid Full Access Course">
-                                            Full Access
-                                            <span class="ribbon-topnav ws-green"
-                                                style="font-size: 13px; font-weight: normal">
-                                                Best Value!
-                                            </span>
-                                        </a>
-                                    </div>
                                     <div data-name="front end" data-category="programs">
                                         <a target="_blank" href="/e"
                                             class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-front-end"
@@ -2448,57 +954,14 @@
                                             Course
                                         </a>
                                     </div>
-                                    <div data-name="web app" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-web-app"
-                                            title="Web Application Development Certification">
-                                            Web App
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-web-app"
-                                            title="Web Application Development Certification">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-web-app"
-                                            title="Paid Web Application Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="web design" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-web-design"
-                                            title="Web Design Certification Exam">
-                                            Web Design
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-web-design"
-                                            title="Web Design Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-web-design"
-                                            title="Paid Web Design Course">
-                                            Course
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
                                 <div class="certified_programs_links_list PAN-hide-medium PAN-hide-small"
                                     id="certified_programs_links_list_desktop">
                                     <h3 class="tnb-nav-section-title" data-heading="programs_title">
                                         Programs
                                     </h3>
-                                    <div data-name="full access" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-course-fullaccess"
-                                            title="Paid Full Access Course">
-                                            Full Access
-                                            <span class="ribbon-topnav ws-green"
-                                                style="font-size: 13px; font-weight: normal">
-                                                Best Value!
-                                            </span>
-                                        </a>
-                                    </div>
+
                                     <div data-name="front end" data-category="programs">
                                         <a target="_blank" href="/e"
                                             class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-front-end"
@@ -2516,57 +979,7 @@
                                             Course
                                         </a>
                                     </div>
-                                    <div data-name="web dev." data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-web-dev"
-                                            title="Web Development Certification">
-                                            Web Dev.
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-web-dev"
-                                            title="Web Development Certification">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-web-dev"
-                                            title="Paid Web Development Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="web app" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-web-app"
-                                            title="Web Application Development Certification">
-                                            Web App
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-web-app"
-                                            title="Web Application Development Certification">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-web-app"
-                                            title="Paid Web Application Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="web design" data-category="programs">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-web-design"
-                                            title="Web Design Certification Exam">
-                                            Web Design
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-web-design"
-                                            title="Web Design Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-web-design"
-                                            title="Paid Web Design Course">
-                                            Course
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
                             </div>
 
@@ -2593,229 +1006,7 @@
                                             Course
                                         </a>
                                     </div>
-                                    <div data-name="sql" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-sql"
-                                            title="SQL Certification Exam">
-                                            SQL
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-sql"
-                                            title="SQL Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-sql"
-                                            title="SQL Python Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="mysql" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-mysql"
-                                            title="MySQL Certification Exam">
-                                            MySQL
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-mysql"
-                                            title="MySQL Certification Exam">
-                                            Certificate
-                                        </a>
-                                    </div>
-                                    <div data-name="php" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-php"
-                                            title="PHP Certification Exam">
-                                            PHP
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-php"
-                                            title="PHP Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-php"
-                                            title="Paid PHP Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="java" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-java"
-                                            title="Java Certification Exam">
-                                            Java
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-java"
-                                            title="Java Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-java"
-                                            title="Paid Java Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="c" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-c"
-                                            title="C Certification Exam">
-                                            C
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-c"
-                                            title="C Certification Exam">
-                                            Certificate
-                                        </a>
-                                    </div>
-                                    <div data-name="c++" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-cpp"
-                                            title="C++ Certification Exam">
-                                            C++
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-cpp"
-                                            title="C++ Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-cpp"
-                                            title="Paid C++ Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="c#" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-cs"
-                                            title="C# Certification Exam">
-                                            C#
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-cs"
-                                            title="C# Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-cs"
-                                            title="Paid C# Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="r" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-r"
-                                            title="Paid R Course">
-                                            R
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-r"
-                                            title="Paid R Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="django" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-django"
-                                            title="Django Certification Exam">
-                                            Django
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-django"
-                                            title="Django Certification Exam">
-                                            Certificate
-                                        </a>
-                                    </div>
-                                    <div data-name="typescript" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-typescript"
-                                            title="TypeScript Certification Exam">
-                                            TypeScript
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-typescript"
-                                            title="TypeScript Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-typescript"
-                                            title="Paid TypeScript Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="xml" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-xml"
-                                            title="XML Certification Exam">
-                                            XML
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-xml"
-                                            title="XML Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-xml"
-                                            title="Paid XML Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="cyber security" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-cyber-sec"
-                                            title="Cyber Security Certification Exam">
-                                            Cyber Security
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-cyber-sec"
-                                            title="Cyber Security Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-cyber-sec"
-                                            title="Paid Cyber Security Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="accessibility" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-accessi"
-                                            title="Accessibility Certification Exam">
-                                            Accessibility
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-accessi"
-                                            title="Accessibility Certification Exam">
-                                            Certificate
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-accessi"
-                                            title="Paid Accessibility Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="python apps on aws" data-category="backend">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-course-python-apps-aws"
-                                            title="Building Modern Python Apps on AWS">
-                                            Python Apps on AWS
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-python-apps-aws"
-                                            title="Building Modern Python Apps on AWS">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="aws training" data-category="backend">
-                                        <a class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-course-aws-training"
-                                            href="/" title="AWS Training">
-                                            AWS Training
-                                        </a>
-                                        <a class="pan-btn acclink-text pan-top-drop pan-top-drop-course-aws-training"
-                                            href="/" title="AWS Training">
-                                            Courses
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
                                 <div class="PAN-hide-large PAN-hide-medium" id="certified_data_analytics_links_list">
                                     <h3 class="tnb-nav-section-title" data-heading="data_analytics_title">
@@ -2845,50 +1036,7 @@
                                             Course
                                         </a>
                                     </div>
-                                    <div data-name="pandas" data-category="data_analytics">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-course-scipy"
-                                            title="Paid SciPy Course">
-                                            Pandas
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-scipy"
-                                            title="Paid SciPy Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div data-name="excel" data-category="data_analytics">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-cert-excel"
-                                            title="Excel Certification Exam">
-                                            Excel
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-cert-excel"
-                                            title="Excel Certification Exam">
-                                            Certificate
-                                        </a>
-                                    </div>
-                                    <div data-name="social media" data-category="data_analytics">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button acctop-link pan-top-drop pan-top-drop-course-some"
-                                            title="Paid Social Media Course">
-                                            Social Media
-                                        </a>
-                                        <a target="_blank" href="/"
-                                            class="pan-btn acclink-text pan-top-drop pan-top-drop-course-some"
-                                            title="Paid Social Media Course">
-                                            Course
-                                        </a>
-                                    </div>
-                                    <div class="black-box-container">
-                                        <a target="_blank" href="/"
-                                            class="PAN-bar-item PAN-button pan-top-drop PAN-center PAN-round pan-top-drop-campus"
-                                            title="Piparaacademy Campus"
-                                            style="display: block; background-color: #21232c; border: 1px solid grey; width: 195px; margin-bottom: 16px">
-                                            What is a Certificate?
-                                        </a>
-                                    </div>
+                                    <!-- Add more courses here. ✅ -->
                                 </div>
                             </div>
                         </div>
@@ -2927,6 +1075,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="nav-heading-container PAN-container">
@@ -3593,6 +1742,7 @@
 
 
 
+
         <div id='subtopnav' onclick='return pellessii(event)' onmousedown='startscrolling_subtopnav(event)'
             onmousemove='scrolling_subtopnav(event)' onmouseup='endscrolling_subtopnav(event)'>
 
@@ -3602,7 +1752,7 @@
                 <span onmousedown='scrollmenow(-1)' onmouseout='stopscrollmenow()' onmouseup='stopscrollmenow()' />
             </div>
 
-            <a class='ga-nav subtopnav_firstitem' href='#'
+            <a class='ga-nav subtopnav_firstitem' href='../../../../csit/'
                 title='BSc Computer Science and Information Technology'>BSc.CSIT</a>
             <!-- First Semester -->
             <a class='ga-nav' href='/csit/first-semester/introduction-to-information-technology/'
@@ -3737,6 +1887,8 @@
                 title='Embedded Systems Programming'>Embedded Systems Programming</a>
             <a class='ga-nav' href='/csit/eighth-semester/international-business-management/'
                 title='International Business Management'>International Business Management</a>
+
+
             <div id='btn_container_subtopnav'>
                 <div class='w3-hide-medium w3-hide-small' id='scroll_right_btn'>
                     <span onmousedown='scrollmenow(1)' onmouseout='stopscrollmenow()' onmouseup='stopscrollmenow()' />
@@ -3750,107 +1902,156 @@
 
 
 
-
-
-
-    <!-- Mobile Menu Toggle -->
-    <!-- <button class="menu-toggle" id="menuToggle">☰ Menu</button> -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <!-- Mobile Sidebar -->
-    <div class="mobile-sidebar" id="mobileSidebar"></div>
-
-    <!-- Main Content -->
-    <div class="main-wrapper">
-        <!-- Left Sidebar -->
-
-        <aside class="sidebar left-sidebar" id="leftSidebar">
-            <div class="sidebar-section">
-                <h2>Computer System Hardware</h2>
-                <ul>
-                    <li><a href="#" data-content="hardware-intro" class="menu-link">Introduction</a></li>
-                    <li><a href="#" data-content="hardware-cpu" class="menu-link">Central Processing Unit</a></li>
-                    <li><a href="#" data-content="hardware-memory" class="menu-link">Memory Unit</a></li>
-                    <li><a href="#" data-content="hardware-format" class="menu-link">Instruction Format</a></li>
-                    <li><a href="#" data-content="hardware-set" class="menu-link">Instruction Set</a></li>
-                    <li><a href="#" data-content="hardware-cycle" class="menu-link">Instruction Cycle</a></li>
-                    <li><a href="#" data-content="hardware-micro" class="menu-link">Microprocessor</a></li>
-                    <li><a href="#" data-content="hardware-interconnect" class="menu-link">Interconnecting the Units</a>
-                    </li>
-                    <li><a href="#" data-content="hardware-cabinet" class="menu-link">Inside a Computer Cabinet</a></li>
-                </ul>
+    <!-- =============================================================================================================== -->
+    <!-- course explorer start -->
+    <!-- =============================================================================================================== -->
+    <div class="pipara-academy-course-container">
+        <header class="pipara-academy-course-header">
+            <h1 class="pipara-academy-course-title">Pipara Academy Course Explorer</h1>
+            <div class="pipara-academy-course-filter-container">
+                <button class="pipara-academy-course-filter-btn pipara-academy-course-active" data-filter="all">All
+                    Semesters</button>
+                <button class="pipara-academy-course-filter-btn" data-filter="core">Core Subjects</button>
+                <button class="pipara-academy-course-filter-btn" data-filter="elective">Electives</button>
             </div>
-        </aside>
+        </header>
+        <div class="pipara-academy-course-semester-grid">
+            <!-- Semester cards will be dynamically generated -->
+        </div>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="post-content" id="contentDisplay">
-                <div class="content-card">
-                    <h1>Computer Hardware & Memory Documentation</h1>
-                    <p>Welcome to the comprehensive guide on computer hardware and memory systems.</p>
-                    <p>Select a topic from the left or right sidebar to explore detailed information about computer
-                        system components, memory hierarchy, and storage technologies.</p>
-
-                    <div class="flex-container">
-                        <div class="flex-item">
-                            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d6?auto=format&fit=crop&w=600"
-                                alt="Computer Hardware">
-                            <p>Computer Hardware Components</p>
-                        </div>
-                        <div class="flex-item">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600"
-                                alt="Memory Systems">
-                            <p>Memory Hierarchy</p>
-                        </div>
+        <!-- Semester Overlay -->
+        <div id="pipara-academy-course-overlay" class="pipara-academy-course-overlay">
+            <div class="pipara-academy-course-overlay-container">
+                <div class="pipara-academy-course-overlay-header">
+                    <h2 id="pipara-academy-course-semester-title">First Semester</h2>
+                    <p>Select a subject to view its units</p>
+                    <button class="pipara-academy-course-close-btn" onclick="closeOverlay()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="pipara-academy-course-overlay-content">
+                    <button class="pipara-academy-course-back-btn" onclick="closeOverlay()">
+                        <i class="fas fa-arrow-left"></i> Back to Semesters
+                    </button>
+                    <div id="pipara-academy-course-subject-content">
+                        <div class="pipara-academy-course-unit-list" id="pipara-academy-course-subject-list"></div>
                     </div>
-
-                    <h2>Getting Started</h2>
-                    <p>This documentation is divided into two main sections:</p>
-                    <ul>
-                        <li><strong>Computer System Hardware</strong> - Explore the physical components that make up a
-                            computer system</li>
-                        <li><strong>Computer Memory</strong> - Learn about different types of memory and storage
-                            technologies</li>
-                    </ul>
                 </div>
             </div>
-        </main>
+        </div>
 
-        <!-- Right Sidebar -->
-        <aside class="sidebar right-sidebar" id="rightSidebar">
-            <div class="sidebar-section">
-                <h2>Computer Memory</h2>
-                <ul>
-                    <li><a href="#" data-content="memory-intro" class="menu-link">Introduction</a></li>
-                    <li><a href="#" data-content="memory-representation" class="menu-link">Memory Representation</a>
-                    </li>
-                    <li><a href="#" data-content="memory-hierarchy" class="menu-link">Memory Hierarchy</a></li>
-                    <li><a href="#" data-content="memory-registers" class="menu-link">CPU Registers</a></li>
-                    <li><a href="#" data-content="memory-cache" class="menu-link">Cache Memory</a></li>
-                    <li><a href="#" data-content="memory-primary" class="menu-link">Primary Memory</a></li>
-                    <li><a href="#" data-content="memory-secondary" class="menu-link">Secondary Memory</a></li>
-                    <li><a href="#" data-content="memory-access" class="menu-link">Access Types of Storage</a></li>
-                    <li><a href="#" data-content="memory-tape" class="menu-link">Magnetic Tape</a></li>
-                    <li><a href="#" data-content="memory-disk" class="menu-link">Magnetic Disk</a></li>
-                    <li><a href="#" data-content="memory-optical" class="menu-link">Optical Disk</a></li>
-                    <li><a href="#" data-content="memory-magneto" class="menu-link">Magneto-Optical Disk</a></li>
-                    <li><a href="#" data-content="memory-usage" class="menu-link">How Computer Uses Memory</a></li>
-                </ul>
+        <!-- Unit Overlay -->
+        <div id="pipara-academy-course-unit-overlay" class="pipara-academy-course-overlay">
+            <div class="pipara-academy-course-overlay-container">
+                <div class="pipara-academy-course-overlay-header">
+                    <h2 id="pipara-academy-course-subject-title">Programming Fundamentals</h2>
+                    <p id="pipara-academy-course-overlay-subtitle">Select a unit to view content</p>
+                    <button class="pipara-academy-course-close-btn" onclick="closeUnitOverlay()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="pipara-academy-course-overlay-content">
+                    <button class="pipara-academy-course-back-btn" onclick="goBackToSubjects()">
+                        <i class="fas fa-arrow-left"></i> Back to Subjects
+                    </button>
+                    <div id="pipara-academy-course-unit-content">
+                        <div class="pipara-academy-course-unit-list" id="pipara-academy-course-unit-list"></div>
+                    </div>
+                </div>
             </div>
-        </aside>
+        </div>
     </div>
 
+    <!-- =============================================================================================================== -->
+    <!-- course explorer end -->
+    <!-- =============================================================================================================== -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: About -->
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <p>Your premier destination for coding tutorials and tech education. We make complex concepts simple
+                        with hands-on projects and real-world examples.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address"
+                            aria-label="Email for newsletter">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" aria-label="Home">Home</a></li>
+                        <li><a href="#" aria-label="Courses">Courses</a></li>
+                        <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
+                        <li><a href="#" aria-label="Blog">Blog</a></li>
+                        <li><a href="#" aria-label="Code Challenges">Code Challenges</a></li>
+                        <li><a href="#" aria-label="Contact Us">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" aria-label="Home">Home</a></li>
+                        <li><a href="#" aria-label="Courses">Courses</a></li>
+                        <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
+                        <li><a href="#" aria-label="Blog">Blog</a></li>
+                        <li><a href="#" aria-label="Code Challenges">Code Challenges</a></li>
+                        <li><a href="#" aria-label="Contact Us">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources -->
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" aria-label="Documentation">Documentation</a></li>
+                        <li><a href="#" aria-label="GitHub Repository">GitHub Repos</a></li>
+                        <li><a href="#" aria-label="Cheat Sheets">Cheat Sheets</a></li>
+                        <li><a href="#" aria-label="Developer Tools">Dev Tools</a></li>
+                        <li><a href="#" aria-label="API Reference">API Reference</a></li>
+                        <li><a href="#" aria-label="Community Forum">Community Forum</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- Column 4: Social Media -->
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <p>Join our community for updates, tips, and exclusive content:</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> <span id="websiteName"></span>. All rights reserved. Designed
+                    with ♥ for developers.</p>
+            </div>
+
+        </div>
+    </footer>
 
 
 
-    <!-- function java script files -->
-    <script src="../../../../javaScript/topnav-main.js"></script>
-    <script src="../../../../javaScript/JavaScript.js"></script>
-    <script src="../../../../javaScript/content-sidebar-function.js"></script>
 
+    <script src="JavaScript/subejct-unit-semester.js"></script>
+    <script src="csit/data/subjectunit.js"></script>
+    <script src="csit/data/semesterData.js"></script>
+    <script src="javaScript/topnav-main.js"></script>
 
-
-    <!-- function java script files -->
 </body>
 
 </html>
