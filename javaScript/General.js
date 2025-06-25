@@ -1,12 +1,3 @@
-
-// ==========================footer code starting tag===============================
-// / ==========================footer code starting tag===============================
-
-// ==================================footer code ending tag========================================
-
-
-// ===========================================social media open=============================================
-
      function openYouTubeApp() {
                         const app = "vnd.youtube://channel/UCl2IeC8anS0ae_nOYYkjSFg";
                         const web = "https://www.youtube.com/channel/UCl2IeC8anS0ae_nOYYkjSFg";

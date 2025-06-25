@@ -302,23 +302,7 @@ var TopNavBar = {
     // execution order priority: high
     TopNavBar.initUserPreferredTheme();
   
-    // blind lookup
-    var subscriptionPlan = UserSession.getUserSubscriptionPlan(null);
-  
-    var loggedIn = subscriptionPlan !== null;
-  
-    TopNavBar.loggedIn = loggedIn;
-  
-    if (subscriptionPlan === null) {
-      subscriptionPlan = 'free';
-    }
-  
-    // execution order priority: high
-    TopNavBar._applyUserSessionUiTweaks({
-      loggedIn: loggedIn,
-      subscriptionPlan: subscriptionPlan
-    });
-  
+
     // execution order priority: high
     if (TopNavBar._inIframe()) {
       TopNavBar._iframeInit();

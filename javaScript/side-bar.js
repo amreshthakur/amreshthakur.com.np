@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM Elements
     const contentDisplay = document.getElementById('contentDisplay');
     const menuToggle = document.getElementById('menuToggle');
     const mobileSidebar = document.getElementById('mobileSidebar');

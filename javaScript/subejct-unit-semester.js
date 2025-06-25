@@ -1,4 +1,3 @@
-// DOM elements
 const semesterGrid = document.querySelector('.pipara-academy-course-semester-grid');
 const filterBtns = document.querySelectorAll('.pipara-academy-course-filter-btn');
 const overlay = document.getElementById('pipara-academy-course-overlay');
