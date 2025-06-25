@@ -1,0 +1,204 @@
+    // < !-- =============================================================================================================== -->
+    // < !--course explorer start-- >
+    // < !-- =============================================================================================================== -->
+
+const semesterGrid = document.querySelector('.pipara-academy-course-semester-grid');
+const filterBtns = document.querySelectorAll('.pipara-academy-course-filter-btn');
+const overlay = document.getElementById('pipara-academy-course-overlay');
+const unitOverlay = document.getElementById('pipara-academy-course-unit-overlay');
+const subjectList = document.getElementById('pipara-academy-course-subject-list');
+const unitList = document.getElementById('pipara-academy-course-unit-list');
+
+function generateSlug(text) {
+    return encodeURIComponent(text.toLowerCase().replace(/\s+/g, '-'));
+}
+
+let currentSubject = "";
+let currentSemesterTitle = "";
+let currentUnits = [];
+
+filterBtns.forEach(button => {
+    button.addEventListener('click', function () {
+        filterBtns.forEach(btn => btn.classList.remove('pipara-academy-course-active'));
+        this.classList.add('pipara-academy-course-active');
+        const filterValue = this.dataset.filter;
+        document.querySelectorAll('.pipara-academy-course-card').forEach(card => {
+            if (filterValue === 'all') card.style.display = 'block';
+            else {
+                const semesterIndex = Array.from(semesterGrid.children).indexOf(card);
+                const semester = semesterData[semesterIndex];
+                const hasElectives = semester.subjects.some(s => s.elective && filterValue === 'elective');
+                const hasCore = semester.subjects.some(s => !s.elective && filterValue === 'core');
+                card.style.display = (filterValue === 'elective' && hasElectives) ||
+                    (filterValue === 'core' && hasCore) ? 'block' : 'none';
+            }
+        });
+    });
+});
+
+function initSemesterCards() {
+    semesterGrid.innerHTML = '';
+    semesterData.forEach((semester, index) => {
+        const coreCount = semester.subjects.filter(s => !s.elective).length;
+        const electiveCount = semester.subjects.filter(s => s.elective).length;
+        const card = document.createElement('div');
+        card.className = 'pipara-academy-course-card';
+        if (electiveCount > 0) card.classList.add('elective');
+        card.style.setProperty('--delay', index);
+        card.innerHTML = `
+                    <div class="pipara-academy-course-semester-number">${index + 1}</div>
+                    <h2>${semester.title}</h2>
+                    <p>${semester.description}</p>
+                    <span class="pipara-academy-course-subjects-count">${semester.subjects.length} Subjects</span>
+                    <div class="pipara-academy-course-subject-breakdown">
+                        <span class="pipara-academy-course-core-count">${coreCount} Core</span>
+                        <span class="pipara-academy-course-elective-count">${electiveCount} Electives</span>
+                    </div>
+                `;
+        card.addEventListener('click', () => openOverlay(semester.title, semester.subjects));
+        semesterGrid.appendChild(card);
+    });
+}
+
+function openOverlay(title, subjects) {
+    currentSemesterData = subjects;
+    currentSemesterTitle = title;
+    document.getElementById("pipara-academy-course-semester-title").textContent = title;
+    renderSubjectCards();
+    overlay.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function renderSubjectCards() {
+    subjectList.innerHTML = "";
+    const subjectIcons = ["fa-book", "fa-laptop-code", "fa-calculator", "fa-network-wired"];
+    currentSemesterData.forEach((subject, index) => {
+        const unitCount = subjectUnits[subject.name]?.length || 0;
+        const card = document.createElement("div");
+        card.className = "pipara-academy-course-unit-card";
+        card.style.animationDelay = `${index * 0.05}s`;
+        card.innerHTML = `
+                    <div class="pipara-academy-course-unit-header">
+                        <div class="pipara-academy-course-unit-icon">
+                            <i class="fas ${subjectIcons[index % subjectIcons.length]}"></i>
+                        </div>
+                        <div class="pipara-academy-course-unit-title-container">
+                            <h4>${subject.name}</h4>
+                            ${subject.elective ? '<span class="pipara-academy-course-resource-badge">ELECTIVE</span>' : ''}
+                        </div>
+                    </div>
+                    <p>${subject.description}</p>
+                    <div class="pipara-academy-course-units-count">${unitCount} Units</div>
+                `;
+        card.addEventListener('click', () => openUnitOverlay(subject.name));
+        subjectList.appendChild(card);
+    });
+}
+
+function closeOverlay() {
+    overlay.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function openUnitOverlay(subjectName) {
+    currentSubject = subjectName;
+    document.getElementById("pipara-academy-course-subject-title").textContent = subjectName;
+    document.getElementById("pipara-academy-course-overlay-subtitle").textContent = "Select a unit to view content";
+    currentUnits = subjectUnits[subjectName] || [];
+    renderUnitCards();
+    unitOverlay.style.display = "flex";
+    overlay.style.display = "none";
+}
+
+function renderUnitCards() {
+    unitList.innerHTML = "";
+    const unitIcons = ["fa-book-open", "fa-laptop-code", "fa-shapes", "fa-calculator"];
+
+    if (currentUnits.length > 0) {
+        currentUnits.forEach((unit, index) => {
+            const unitNumber = index + 1;
+            const subjectSlug = generateSlug(currentSubject);
+            const unitSlug = generateSlug(unit.title);
+            const unitLink = `${subjectSlug}/${unitSlug}.html`;
+            const unitCard = document.createElement("div");
+            unitCard.className = "pipara-academy-course-unit-card";
+            unitCard.style.animationDelay = `${index * 0.05}s`;
+            unitCard.innerHTML = `
+                        <div class="pipara-academy-course-unit-header">
+                            <div class="pipara-academy-course-unit-icon">
+                                <i class="fas ${unitIcons[index % unitIcons.length]}"></i>
+                            </div>
+                            <div class="pipara-academy-course-unit-title-container">
+                                <div class="pipara-academy-course-unit-number">Unit ${unitNumber}</div>
+                                <h4>${unit.title}</h4>
+                            </div>
+                        </div>
+                        <p>${unit.description}</p>
+                        <a href="${unitLink}" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Open Tutorial
+                        </a>
+                        <span class="pipara-academy-course-resource-badge">TUTORIAL</span>
+                        <div class="pipara-academy-course-unit-progress">
+                            <div class="pipara-academy-course-unit-progress-bar" style="width: ${Math.floor(Math.random() * 100)}%"></div>
+                        </div>
+                    `;
+            unitCard.addEventListener('click', () => showUnitDetails(unit, unitNumber));
+            unitList.appendChild(unitCard);
+        });
+    } else {
+        for (let i = 1; i <= 5; i++) {
+            const unitTitle = `Unit ${i}: ${['Fundamentals', 'Core Concepts', 'Advanced Techniques', 'Applications', 'Case Studies'][i - 1]}`;
+            const unitCard = document.createElement("div");
+            unitCard.className = "pipara-academy-course-unit-card";
+            unitCard.style.animationDelay = `${i * 0.05}s`;
+            unitCard.innerHTML = `
+                        <div class="pipara-academy-course-unit-header">
+                            <div class="pipara-academy-course-unit-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="pipara-academy-course-unit-title-container">
+                                <div class="pipara-academy-course-unit-number">Unit ${i}</div>
+                                <h4>${unitTitle}</h4>
+                            </div>
+                        </div>
+                        <p>Essential concepts and practical applications</p>
+                        <a href="#" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Open Tutorial
+                        </a>
+                        <span class="pipara-academy-course-resource-badge">TUTORIAL</span>
+                        <div class="pipara-academy-course-unit-progress">
+                            <div class="pipara-academy-course-unit-progress-bar" style="width: ${Math.floor(Math.random() * 100)}%"></div>
+                        </div>
+                    `;
+            unitList.appendChild(unitCard);
+        }
+    }
+}
+
+function closeUnitOverlay() {
+    unitOverlay.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function goBackToSubjects() {
+    unitOverlay.style.display = "none";
+    overlay.style.display = "flex";
+}
+
+overlay.addEventListener('click', (e) => { if (e.target === overlay) closeOverlay(); });
+unitOverlay.addEventListener('click', (e) => { if (e.target === unitOverlay) closeUnitOverlay(); });
+
+document.addEventListener('DOMContentLoaded', () => {
+    initSemesterCards();
+});
+
+// Expose functions for button clicks
+window.closeOverlay = closeOverlay;
+window.closeUnitOverlay = closeUnitOverlay;
+window.goBackToSubjects = goBackToSubjects;
+
+
+
+    // <!-- =============================================================================================================== -->
+    // <!-- course explorer end -->
+    // <!-- =============================================================================================================== -->

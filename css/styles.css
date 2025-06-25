@@ -1,0 +1,806 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --success: #27ae60;
+      --warning: #f39c12;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* background: linear-gradient(135deg, #1a2a6c, #2c3e50); */
+      /* color: #fff; */
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+        /* <!-- =============================================================================================================== --> */
+    /* <!-- course explorer start --> */
+    /* <!-- =============================================================================================================== --> */
+    .pipara-academy-course-container {
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 20px;
+
+      /* padding: 2rem; */
+    }
+
+    /* Header Styles */
+    .pipara-academy-course-header {
+      text-align: left;
+      margin-bottom: 1.5rem;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
+    }
+
+    .pipara-academy-course-title {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-align: center;
+      color: transparent;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .pipara-academy-course-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    /* View Toggle */
+    .pipara-academy-course-view-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .pipara-academy-course-view-btn {
+      padding: 0.8rem 1.8rem;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pipara-academy-course-view-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .pipara-academy-course-view-btn.pipara-academy-course-active {
+      background: linear-gradient(to right, #3498db, #2ecc71);
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+      border-color: transparent;
+    }
+
+    /* Filter Styles */
+    .pipara-academy-course-filter-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .pipara-academy-course-filter-btn {
+      padding: 0.8rem 1.8rem;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      font-size: 1rem;
+    }
+
+    .pipara-academy-course-filter-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .pipara-academy-course-filter-btn.pipara-academy-course-active {
+      background: linear-gradient(to right, #3498db, #2ecc71);
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+      border-color: transparent;
+    }
+
+    /* Semester Grid */
+    .pipara-academy-course-semester-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .pipara-academy-course-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 1rem;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeIn 0.5s calc(var(--delay) * 0.1s) both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .pipara-academy-course-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .pipara-academy-course-semester-number {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #3498db, #2ecc71);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .pipara-academy-course-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #3498db;
+    }
+
+    .pipara-academy-course-card p {
+      /* margin-bottom: 1.5rem; */
+      opacity: 0.85;
+      min-height: 70px;
+    }
+
+    .pipara-academy-course-subjects-count {
+      display: block;
+      background: rgba(52, 152, 219, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      width: fit-content;
+      margin-bottom: 1rem;
+    }
+
+    .pipara-academy-course-subject-breakdown {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .pipara-academy-course-core-count,
+    .pipara-academy-course-elective-count {
+      background: rgba(46, 204, 113, 0.2);
+      padding: 0.4rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+    }
+
+    .pipara-academy-course-elective-count {
+      background: rgba(155, 89, 182, 0.2);
+    }
+
+    /* Overlay Styles */
+    .pipara-academy-course-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      display: none;
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+
+    .pipara-academy-course-overlay-container {
+      max-width: 1920px;
+      width: 100%;
+      margin: 2rem auto;
+      /* background: rgba(30, 30, 50, 0.95); */
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pipara-academy-course-overlay-header {
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .pipara-academy-course-overlay-header h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #3498db;
+    }
+
+    .pipara-academy-course-overlay-header p {
+      opacity: 0.8;
+    }
+
+    .pipara-academy-course-close-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .pipara-academy-course-close-btn:hover {
+      background: #e74c3c;
+      transform: rotate(90deg);
+    }
+
+    .pipara-academy-course-overlay-content {
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 100vw;
+      max-height: 56vh;
+      overflow: auto;
+      /* enables scrolling inside the content box */
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+
+
+    }
+
+    .pipara-academy-course-overlay-close-info {
+      text-align: center;
+      margin-top: 1rem;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Subject Card Styles */
+    .pipara-academy-course-subject-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      transition: all 0.3s ease;
+      border-left: 4px solid #3498db;
+      cursor: pointer;
+    }
+
+    .pipara-academy-course-subject-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateX(5px);
+    }
+
+    .pipara-academy-course-subject-card.pipara-academy-course-elective {
+      border-left-color: #9b59b6;
+    }
+
+    .pipara-academy-course-subject-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .pipara-academy-course-subject-title.pipara-academy-course-elective {
+      color: #9b59b6;
+    }
+
+    .pipara-academy-course-subject-desc {
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .pipara-academy-course-elective-tag {
+      background: rgba(155, 89, 182, 0.2);
+      padding: 0.2rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+    }
+
+    .pipara-academy-course-units-count {
+      background: rgba(241, 196, 15, 0.2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    /* Unit List Styles - Compact Cards */
+    .pipara-academy-course-back-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .pipara-academy-course-back-btn:hover {
+      background: rgba(52, 152, 219, 0.3);
+      transform: translateX(-5px);
+    }
+
+    .pipara-academy-course-unit-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    /* Compact Unit Card Design */
+    .pipara-academy-course-unit-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .pipara-academy-course-unit-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .pipara-academy-course-unit-header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+    }
+
+    .pipara-academy-course-unit-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-right: 0.8rem;
+    }
+
+    .pipara-academy-course-unit-title-container {
+      flex: 1;
+    }
+
+    .pipara-academy-course-unit-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: #3498db;
+      line-height: 1.3;
+    }
+
+    .pipara-academy-course-unit-number {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-bottom: 0.2rem;
+    }
+
+    .pipara-academy-course-unit-card p {
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+      opacity: 0.85;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .pipara-academy-course-unit-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(46, 204, 113, 0.2);
+      color: white;
+      padding: 0.5rem 0.9rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.85rem;
+      width: fit-content;
+    }
+
+    .pipara-academy-course-unit-card a:hover {
+      background: rgba(46, 204, 113, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .pipara-academy-course-resource-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+    }
+
+    /* Progress bar */
+    .pipara-academy-course-unit-progress {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      margin-top: 0.8rem;
+      overflow: hidden;
+    }
+
+    .pipara-academy-course-unit-progress-bar {
+      height: 100%;
+      border-radius: 2px;
+    }
+
+    /* Wide Unit Card Design */
+    .pipara-academy-course-wide-unit-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      border-left: 4px solid #3498db;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pipara-academy-course-wide-unit-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+    }
+
+    .pipara-academy-course-wide-unit-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .pipara-academy-course-wide-unit-title-container {
+      flex: 1;
+    }
+
+    .pipara-academy-course-wide-unit-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #3498db;
+    }
+
+    .pipara-academy-course-wide-unit-number {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    .pipara-academy-course-wide-unit-desc {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .pipara-academy-course-unit-topics {
+      margin-bottom: 1.5rem;
+    }
+
+    .pipara-academy-course-unit-topics h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #4facfe;
+    }
+
+    .pipara-academy-course-topic-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .pipara-academy-course-topic-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 0.8rem;
+      font-size: 0.95rem;
+      border-left: 3px solid #3498db;
+    }
+
+    .pipara-academy-course-unit-resources {
+      margin-bottom: 1.5rem;
+    }
+
+    .pipara-academy-course-unit-resources h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #4facfe;
+    }
+
+    .pipara-academy-course-resource-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .pipara-academy-course-resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(52, 152, 219, 0.2);
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .pipara-academy-course-resource-link:hover {
+      background: rgba(52, 152, 219, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .pipara-academy-course-wide-unit-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .pipara-academy-course-unit-progress-wide {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    /* Subject Card View */
+    .pipara-academy-course-subject-card-view {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .pipara-academy-course-subject-card {
+      border-radius: 15px;
+      padding: 1.8rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 5px solid #3498db;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .pipara-academy-course-subject-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .pipara-academy-course-subject-card.elective {
+      border-left-color: #9b59b6;
+    }
+
+    .pipara-academy-course-subject-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .pipara-academy-course-subject-card-title {
+      font-size: 1.5rem;
+      color: #3498db;
+    }
+
+    .pipara-academy-course-subject-card-title.elective {
+      color: #9b59b6;
+    }
+
+    .pipara-academy-course-subject-card-type {
+      background: rgba(155, 89, 182, 0.2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .pipara-academy-course-subject-card-desc {
+      margin-bottom: 1.2rem;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .pipara-academy-course-subject-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pipara-academy-course-subject-card-units {
+      background: rgba(241, 196, 15, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1100px) {
+      .pipara-academy-course-unit-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .pipara-academy-course-unit-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pipara-academy-course-semester-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pipara-academy-course-title {
+        font-size: 2.2rem;
+      }
+
+      .pipara-academy-course-overlay-container {
+        margin: 1rem;
+      }
+
+      .pipara-academy-course-unit-list {
+        grid-template-columns: 1fr;
+      }
+
+      .pipara-academy-course-topic-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .pipara-academy-course-unit-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Unit Card Animation */
+    @keyframes cardAppear {
+      0% {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .pipara-academy-course-unit-card {
+      animation: cardAppear 0.3s ease-out;
+      animation-fill-mode: both;
+    }
+
+    /* Color Variations */
+    .pipara-academy-course-unit-card:nth-child(4n+1) .pipara-academy-course-unit-icon {
+      background: rgba(52, 152, 219, 0.2);
+      color: #3498db;
+    }
+
+    .pipara-academy-course-unit-card:nth-child(4n+2) .pipara-academy-course-unit-icon {
+      background: rgba(46, 204, 113, 0.2);
+      color: #2ecc71;
+    }
+
+    .pipara-academy-course-unit-card:nth-child(4n+3) .pipara-academy-course-unit-icon {
+      background: rgba(155, 89, 182, 0.2);
+      color: #9b59b6;
+    }
+
+    .pipara-academy-course-unit-card:nth-child(4n+4) .pipara-academy-course-unit-icon {
+      background: rgba(241, 196, 15, 0.2);
+      color: #f1c40f;
+    }
+
+    /* Wide card color variations */
+    .pipara-academy-course-wide-unit-card:nth-child(4n+1) {
+      border-left-color: #3498db;
+    }
+
+    .pipara-academy-course-wide-unit-card:nth-child(4n+1) .pipara-academy-course-unit-progress-bar {
+      background: linear-gradient(to right, #3498db, #2ecc71);
+    }
+
+    .pipara-academy-course-wide-unit-card:nth-child(4n+2) {
+      border-left-color: #2ecc71;
+    }
+
+    .pipara-academy-course-wide-unit-card:nth-child(4n+2) .pipara-academy-course-unit-progress-bar {
+      background: linear-gradient(to right, #2ecc71, #3498db);
+    }
+
+    .pipara-academy-course-wide-unit-card:nth-child(4n+3) {
+      border-left-color: #9b59b6;
+    }
+
+    .pipara-academy-course-wide-unit-card:nth-child(4n+3) .pipara-academy-course-unit-progress-bar {
+      background: linear-gradient(to right, #9b59b6, #3498db);
+    }
+
+    .pipara-academy-course-wide-unit-card:nth-child(4n+4) {
+      border-left-color: #f1c40f;
+    }
+
+    .pipara-academy-course-wide-unit-card:nth-child(4n+4) .pipara-academy-course-unit-progress-bar {
+      background: linear-gradient(to right, #f1c40f, #3498db);
+    }
+
+
+    /* <!-- =============================================================================================================== --> */
+    /* <!-- course explorer end --> */
+    /* <!-- =============================================================================================================== --> */
