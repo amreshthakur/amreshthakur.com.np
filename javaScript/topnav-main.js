@@ -1605,7 +1605,7 @@ function renderUnitCards() {
             const subjectSlug = generateSlug(currentSubject);
             const unitSlug = generateSlug(unit.title);
             // FIXED: Use relative paths instead of absolute URLs
-            const unitLink = `${subjectSlug}/${unitSlug}.html`;
+            const unitLink = `${subjectSlug}/${unitSlug}/`;
             const resourceType = "Tutorial";
             const iconIndex = index % unitIcons.length;
 
@@ -1653,7 +1653,7 @@ function renderUnitCards() {
             const subjectSlug = generateSlug(currentSubject);
             const unitSlug = generateSlug(unitTitle);
             // FIXED: Use relative paths instead of absolute URLs
-            const unitLink = `${subjectSlug}/${unitSlug}.html`;
+            const unitLink = `${subjectSlug}/${unitSlug}/`;
             const resourceType = "Tutorial";
             const iconIndex = (i - 1) % unitIcons.length;
 
@@ -1697,7 +1697,7 @@ function showUnitDetails(unit, unitNumber) {
     const subjectSlug = generateSlug(currentSubject);
     const unitSlug = generateSlug(unit.title);
     // FIXED: Use relative paths instead of absolute URLs
-    const unitLink = `${subjectSlug}/${unitSlug}.html`;
+    const unitLink = `${subjectSlug}/${unitSlug}/`;
 
     // Hide the unit list and show the unit details
     document.getElementById("pipara-academy-course-unit-content").innerHTML = `
