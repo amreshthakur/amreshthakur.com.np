@@ -46,12 +46,61 @@
     <!-- HTML Language -->
     <html lang="en">
 
-    <!-- CSS and JavaScript links go here -->
-    <link href="main.css" rel="stylesheet" type="text/css">
-    <link href="style/style.css" rel="stylesheet" type="text/css">
-    <script src="JavaScript/side-bar.js"></script>
-    <script src="JavaScript/General.js"></script>
-    <script src="JavaScript/lesson1Data.js"></script>
+    <!-- ✅ Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Statistics II",
+        "description": "Complete BSc CSIT Statistics II course with notes, examples and solutions",
+        "educationalLevel": "undergraduate",
+        "provider": {
+            "@type": "Organization",
+            "name": "Pipara Academy",
+            "url": "https://www.piparaacademy.com",
+            "logo": "https://www.piparaacademy.com/logo.png"
+        },
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "location": {
+                "@type": "VirtualLocation",
+                "url": "https://www.piparaacademy.com/courses/bsc-csit/third-semester/statistics-ii/"
+            },
+            "audience": {
+                "@type": "EducationalAudience",
+                "audienceType": "CSIT students"
+            }
+        },
+        "teaches": [
+            "Probability theory",
+            "Probability distributions",
+            "Statistical inference",
+            "Hypothesis testing",
+            "Correlation and regression analysis",
+            "Sampling theory",
+            "Chi-square and t-tests"
+        ],
+        "timeRequired": "PT45H"
+    }
+    </script>
+  <!-- ✅ CSS Stylesheets -->
+  <link href="../../../../main.css" rel="stylesheet" type="text/css" />
+  <link href="../../../../style/style.css" rel="stylesheet" type="text/css" />
+
+  <!-- ✅ Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- ✅ JavaScript (deferred for performance) -->
+  <script src="../../../../JavaScript/side-bar.js" defer></script>
+  <script src="../../../../JavaScript/lesson1Data.js" defer></script>
+
+
+    <!-- search functionality and footer credit and social media launcher -->
+    <script src="../../../../JavaScript/Search-Script.js"></script>
+    <script src="../../../../JavaScript/Footer-credit.js"></script>
+    <script src="../../../../JavaScript/Social-Media-Launcher.js"></script>
+    <!-- search functionality and footer credit and social media launcher -->
 
 
 
