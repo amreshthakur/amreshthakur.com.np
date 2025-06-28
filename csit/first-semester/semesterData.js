@@ -7,32 +7,32 @@ const semesterData = [
         {
             name: "Introduction to Computer",
             description: "Overview of basic computer concepts and evolution.",
-            elective: false
+           
         },
         {
             name: "The Computer System Hardware",
             description: "Understanding physical components of a computer system.",
-            elective: false
+            // elective: false
         },
         {
             name: "Computer Memory",
             description: "Types, hierarchy, and functions of memory in computing.",
-            elective: false
+            // elective: false
         },
         {
             name: "Input and Output Devices",
             description: "Devices used to interact with and receive data from computers.",
-            elective: false
+            // elective: false
         },
         {
             name: "Data Representation",
             description: "Binary number systems, encoding schemes, and data formats.",
-            elective: false
+            // elective: false
         },
         {
             name: "Computer Software",
             description: "System and application software with types and examples.",
-            elective: false
+            // elective: false
         },
         {
             name: "Data Communication and Computer Network",
@@ -447,33 +447,3 @@ const semesterData = [
 }
 
 ];
-// Export the semester data for use in other modules
-// export default semesterData;
-//             {
-//                 title: "Discrete Structures",
-//                 description: "Sets, relations, functions, graphs, and combinatorics in computing.",
-//                 subjects: [
-//                     {
-//                         name: "Discrete Structures",
-//                         description: "Sets, relations, functions, graphs, and combinatorics in computing.",
-//                         elective: false
-//                     },
-//                     {
-//                         name: "Object Oriented Programming",
-//                         description: "Concepts like classes, inheritance, and polymorphism using Java/C++",
-//                         elective: false
-//                     },
-//                     {
-//                         name: "Microprocessor",
-//                         description: "Architecture and assembly-level programming of Intel 8085/8086",
-//                         elective: false
-//                     },
-//                     {
-//                         name: "Mathematics II",
-//                         description: "Linear algebra, matrices, and numerical solutions for equations",
-//                         elective: false
-//                     },
-//                     {
-//                         name: "Statistics I",
-//                         description: "Probability theory, data analysis, and statistical distributions",
-//                         elective: false

@@ -1,9 +1,7 @@
 // ========================================================================================
-// Search functionality for curriculum
+// Search functionality for curriculum (Improved Link Handling)
 // ========================================================================================
 
-
-// 📦 Simplified Curriculum Search Script (for GitHub Pages)
 document.addEventListener('DOMContentLoaded', () => {
   const $ = id => document.getElementById(id);
 
@@ -21,12 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentFilter = "all";
 
-  const toggleOverlay = show => searchOverlay.classList.toggle('active', show);
+  const toggleOverlay = show => {
+    searchOverlay.classList.toggle('active', show);
+    if (show) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = '';
+  };
 
   searchTrigger.addEventListener('click', () => {
     toggleOverlay(true);
     searchInput.focus();
   });
+  
   closeOverlay.addEventListener('click', () => toggleOverlay(false));
   document.addEventListener('keydown', e => e.key === 'Escape' && toggleOverlay(false));
   searchOverlay.addEventListener('click', e => e.target === searchOverlay && toggleOverlay(false));
@@ -100,7 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
           subjects: semester.subjects.length,
           core: semester.subjects.filter(s => !s.elective).length,
           electives: semester.subjects.filter(s => s.elective).length,
-          link: `csit/${semSlug}/`,
+          // Make root-relative link
+          link: `/csit/${semSlug}/`,
           semesterIndex: si
         });
       }
@@ -114,7 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
             title: subject.name,
             description: subject.description,
             semester: semester.title,
-            link: `csit/${semSlug}/${subjSlug}/`
+            // Make root-relative link
+            link: `/csit/${semSlug}/${subjSlug}/`
           });
         }
 
@@ -131,7 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
               topics: unit.topics,
               subject: subject.name,
               semester: semester.title,
-              link: `csit/${semSlug}/${subjSlug}/${toSlug(unit.title)}`
+              // Make root-relative link
+              link: `/csit/${semSlug}/${subjSlug}/${toSlug(unit.title)}`
             });
           }
         });
@@ -199,11 +205,17 @@ document.addEventListener('DOMContentLoaded', () => {
             ${r.semester ? `<span><i class="fas fa-calendar-alt"></i> ${highlight(r.semester, query)}</span>` : ''}
             ${r.subject ? `<span><i class="fas fa-book"></i> ${highlight(r.subject, query)}</span>` : ''}
           </div>
+          <!-- Add proper href to anchor tag -->
           <a href="${r.link}" class="biru-nepal-view-link">View ${title} Details</a>`;
       }
 
-      card.addEventListener('click', e => {
-        if (e.target.tagName !== 'A') location.href = r.link;
+      // Improved click handling
+      card.addEventListener('click', (e) => {
+        // Ignore if clicked on anchor element
+        if (e.target.tagName === 'A') return;
+        
+        // Navigate to original link
+        window.location.href = r.link;
       });
 
       resultsContainer.appendChild(card);
