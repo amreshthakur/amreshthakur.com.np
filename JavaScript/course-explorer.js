@@ -1,4 +1,3 @@
-
 // ==================================================================================================================================================================================
 
 const semesterGrid = document.querySelector('.pipara-academy-course-semester-grid');
@@ -6,8 +5,7 @@ const filterBtns = document.querySelectorAll('.pipara-academy-course-filter-btn'
 const overlay = document.getElementById('pipara-academy-course-overlay');
 const unitOverlay = document.getElementById('pipara-academy-course-unit-overlay');
 const subjectList = document.getElementById('pipara-academy-course-subject-list');
-// Change to let since we'll need to reassign it
-let unitList = document.getElementById('pipara-academy-course-unit-list');
+const unitList = document.getElementById('pipara-academy-course-unit-list');
 
 // Helper function to generate slugs
 function generateSlug(text) {
@@ -22,7 +20,7 @@ function generateUnitLink(subject, unitTitle) {
     const semesterSlug = generateSlug(currentSemesterTitle);
     const subjectSlug = generateSlug(subject);
     const unitSlug = generateSlug(unitTitle);
-    return `${courseSlug}/${semesterSlug}/${subjectSlug}/${unitSlug}/`;
+    return `/${courseSlug}/${semesterSlug}/${subjectSlug}/${unitSlug}/`;
 }
 
 // Store current state
@@ -164,9 +162,7 @@ function openUnitOverlay(subjectName) {
 }
 
 function renderUnitCards() {
-    // Get the current unitList reference
-    const currentUnitList = document.getElementById('pipara-academy-course-unit-list');
-    currentUnitList.innerHTML = "";
+    unitList.innerHTML = "";
     
     const unitIcons = [
         "fa-book-open", "fa-laptop-code", "fa-shapes",
@@ -181,7 +177,6 @@ function renderUnitCards() {
             const unitNumber = index + 1;
             // Generate proper unit link
             const unitLink = generateUnitLink(currentSubject, unit.title);
-            const resourceType = "Tutorial";
             const iconIndex = index % unitIcons.length;
 
             const unitCard = document.createElement("div");
@@ -198,16 +193,35 @@ function renderUnitCards() {
                             </div>
                         </div>
                         <p>${unit.description}</p>
-                        <a href="${unitLink}" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Open ${resourceType}
-                        </a>
-                        <span class="pipara-academy-course-resource-badge">${resourceType.toUpperCase()}</span>
                         <div class="pipara-academy-course-unit-progress">
                             <div class="pipara-academy-course-unit-progress-bar" style="width: ${Math.floor(Math.random() * 100)}%"></div>
                         </div>
                     `;
-            unitCard.addEventListener('click', () => showUnitDetails(unit, unitNumber));
-            currentUnitList.appendChild(unitCard);
+                    
+            // Add click handler to navigate to the unit
+            unitCard.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                // Show loading indicator
+                const loadingOverlay = document.getElementById('loadingOverlay');
+                const loadingText = document.getElementById('loadingText');
+                if (loadingOverlay && loadingText) {
+                    loadingText.textContent = `Opening ${unit.title}...`;
+                    loadingOverlay.classList.add('active');
+                }
+                
+                // Use smooth navigation without page reload
+                setTimeout(() => {
+                    // Use location.replace to prevent creating new history entries
+                    location.replace(unitLink);
+                }, 300);
+            });
+
+
+            
+            
+            unitList.appendChild(unitCard);
         });
     } else {
         // Fallback to default units if no external data
@@ -226,7 +240,6 @@ function renderUnitCards() {
             
             // Generate proper unit link
             const unitLink = generateUnitLink(currentSubject, unitTitle);
-            const resourceType = "Tutorial";
             const iconIndex = (i - 1) % unitIcons.length;
 
             const unitCard = document.createElement("div");
@@ -243,115 +256,34 @@ function renderUnitCards() {
                             </div>
                         </div>
                         <p>${getUnitDescription(i, currentSubject)}</p>
-                        <a href="${unitLink}" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Open ${resourceType}
-                        </a>
-                        <span class="pipara-academy-course-resource-badge">${resourceType.toUpperCase()}</span>
                         <div class="pipara-academy-course-unit-progress">
                             <div class="pipara-academy-course-unit-progress-bar" style="width: ${Math.floor(Math.random() * 100)}%"></div>
                         </div>
                     `;
-            unitCard.addEventListener('click', () => showUnitDetails({
-                title: unitTitle,
-                description: getUnitDescription(i, currentSubject)
-            }, i));
-            currentUnitList.appendChild(unitCard);
+                    
+            // Add click handler to navigate to the unit
+            unitCard.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                // Show loading indicator
+                const loadingOverlay = document.getElementById('loadingOverlay');
+                const loadingText = document.getElementById('loadingText');
+                if (loadingOverlay && loadingText) {
+                    loadingText.textContent = `Opening ${unitTitle}...`;
+                    loadingOverlay.classList.add('active');
+                }
+                
+                // Use smooth navigation without page reload
+                setTimeout(() => {
+                    // Use location.replace to prevent creating new history entries
+                    location.replace(unitLink);
+                }, 300);
+            });
+            
+            unitList.appendChild(unitCard);
         }
     }
-}
-
-function showUnitDetails(unit, unitNumber) {
-    // Update the overlay to show unit details
-    document.getElementById("pipara-academy-course-subject-title").textContent = unit.title;
-    document.getElementById("pipara-academy-course-overlay-subtitle").textContent = `Unit ${unitNumber} of ${currentSubject}`;
-
-    // Generate proper unit link
-    const unitLink = generateUnitLink(currentSubject, unit.title);
-
-    // Hide the unit list and show the unit details
-    document.getElementById("pipara-academy-course-unit-content").innerHTML = `
-                <button class="pipara-academy-course-back-btn" onclick="goBackToUnitList()">
-                    <i class="fas fa-arrow-left"></i> Back to Units
-                </button>
-                
-                <div class="pipara-academy-course-unit-card" style="animation: none; padding: 2rem;">
-                    <div class="pipara-academy-course-unit-header">
-                        <div class="pipara-academy-course-unit-icon" style="width: 60px; height: 60px; font-size: 1.8rem; margin-right: 1.2rem;">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <div class="pipara-academy-course-unit-title-container">
-                            <div class="pipara-academy-course-unit-number" style="font-size: 1.1rem;">Unit ${unitNumber} of ${currentUnits.length || 5}</div>
-                            <h4 style="font-size: 1.5rem; margin-bottom: 0.8rem;">${unit.title}</h4>
-                        </div>
-                    </div>
-                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">${unit.description}</p>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: #4facfe;">Topics Covered</h4>
-                        <ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.8rem;">
-                            ${unit.topics ? unit.topics.map(topic => `
-                                <li style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border-left: 3px solid #3498db;">
-                                    ${topic}
-                                </li>
-                            `).join('') : `
-                                <li style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border-left: 3px solid #3498db;">
-                                    Introduction to ${unit.title}
-                                </li>
-                                <li style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border-left: 3px solid #3498db;">
-                                    Core concepts and principles
-                                </li>
-                                <li style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border-left: 3px solid #3498db;">
-                                    Advanced techniques
-                                </li>
-                                <li style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 0.8rem; border-left: 3px solid #3498db;">
-                                    Practical applications
-                                </li>
-                            `}
-                        </ul>
-                    </div>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: #4facfe;">Learning Resources</h4>
-                        <div class="resource-links">
-                            <a href="${unitLink}" class="resource-btn" target="_blank">
-                                <i class="fas fa-book"></i> Study Material
-                            </a>
-                            <a href="${unitLink}" class="resource-btn" target="_blank">
-                                <i class="fas fa-video"></i> Video Lectures
-                            </a>
-                            <a href="${unitLink}" class="resource-btn" target="_blank">
-                                <i class="fas fa-tasks"></i> Practice Exercises
-                            </a>
-                            <a href="${unitLink}" class="resource-btn" target="_blank">
-                                <i class="fas fa-question-circle"></i> Unit Quiz
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
-                        <a href="${unitLink}" style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(46, 204, 113, 0.2); color: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; transition: all 0.3s ease; font-size: 1rem;" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Open Full Unit
-                        </a>
-                        <span class="pipara-academy-course-resource-badge" style="position: static; font-size: 0.9rem;">TUTORIAL</span>
-                    </div>
-                </div>
-            `;
-}
-
-function goBackToUnitList() {
-    // Restore the unit list view
-    document.getElementById("pipara-academy-course-unit-content").innerHTML = `
-                <button class="pipara-academy-course-back-btn" onclick="goBackToSubjects()">
-                    <i class="fas fa-arrow-left"></i> Back to Subjects
-                </button>
-                <div class="pipara-academy-course-unit-list" id="pipara-academy-course-unit-list"></div>
-            `;
-
-    // Update the unitList reference
-    unitList = document.getElementById('pipara-academy-course-unit-list');
-    
-    // Render the units again
-    renderUnitCards();
 }
 
 function getUnitDescription(unit, subject) {
@@ -393,8 +325,16 @@ unitOverlay.addEventListener('click', function (e) {
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     initSemesterCards();
+    
+    // Hide loading overlay after page loads
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    if (loadingOverlay) {
+        // Set timeout to ensure loading overlay is hidden even if it was active
+        setTimeout(() => {
+            loadingOverlay.classList.remove('active');
+        }, 500);
+    }
 });
 
 // Expose navigation functions to global scope
-window.goBackToUnitList = goBackToUnitList;
 window.goBackToSubjects = goBackToSubjects;

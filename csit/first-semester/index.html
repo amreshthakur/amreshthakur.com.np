@@ -94,10 +94,6 @@
     <link rel="stylesheet" href="../../main.css" />
     <link rel="stylesheet" href="../../style/style.css" />
 
-    <!-- ✅ JavaScript Files (deferred for better performance) -->
-    <script src="../../JavaScript/side-bar.js" defer></script>
-    <script src="../../JavaScript/lesson1Data.js" defer></script>
-
 
        <!-- search functionality and footer credit and social media launcher -->
     <script src="../../JavaScript/Search-Script.js"></script>
@@ -107,9 +103,11 @@
 
 
         <!-- subejctunit.js and semesterData.js -->
+         <!-- first-semester subject data only -->
     <script src="semesterData.js"></script>
     <script src="subjectunit.js"></script>
-    <!-- subejctunit.js and semesterData.js -->
+             <!-- first-semester subject data only -->
+
 
 
     <!-- icon cnd link fa fa-caret-down and fa fa-caret-up -->
@@ -1966,55 +1964,34 @@
     <!-- =============================================================================================================== -->
     <div class="pipara-academy-course-container">
         <header class="pipara-academy-course-header">
-            <h1 class="pipara-academy-course-title">Pipara Academy Course Explorer</h1>
-            <div class="pipara-academy-course-filter-container">
-                <button class="pipara-academy-course-filter-btn pipara-academy-course-active" data-filter="all">All
-                    Semesters</button>
-                <button class="pipara-academy-course-filter-btn" data-filter="core">Core Subjects</button>
-                <button class="pipara-academy-course-filter-btn" data-filter="elective">Electives</button>
+            <h1 class="pipara-academy-course-title">BSc CSIT First Semester</h1>
+              <div class="pa-filter-container">
+                <button class="pa-filter-btn pa-active" data-filter="all">All Subjects</button>
+                <button class="pa-filter-btn" data-filter="core">Core Subjects</button>
+                <button class="pa-filter-btn" data-filter="elective">Elective Subjects</button>
             </div>
         </header>
-        <div class="pipara-academy-course-semester-grid">
-            <!-- Semester cards will be dynamically generated -->
-        </div>
-
-        <!-- Semester Overlay -->
-        <div id="pipara-academy-course-overlay" class="pipara-academy-course-overlay">
-            <div class="pipara-academy-course-overlay-container">
-                <div class="pipara-academy-course-overlay-header">
-                    <h2 id="pipara-academy-course-semester-title">First Semester</h2>
-                    <p>Select a subject to view its units</p>
-                    <button class="pipara-academy-course-close-btn" onclick="closeOverlay()">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="pipara-academy-course-overlay-content">
-                    <button class="pipara-academy-course-back-btn" onclick="closeOverlay()">
-                        <i class="fas fa-arrow-left"></i> Back to Semesters
-                    </button>
-                    <div id="pipara-academy-course-subject-content">
-                        <div class="pipara-academy-course-unit-list" id="pipara-academy-course-subject-list"></div>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="pa-subject-grid" id="pa-subject-grid">
+            <!-- Subject cards will be dynamically generated -->
         </div>
 
         <!-- Unit Overlay -->
-        <div id="pipara-academy-course-unit-overlay" class="pipara-academy-course-overlay">
-            <div class="pipara-academy-course-overlay-container">
-                <div class="pipara-academy-course-overlay-header">
-                    <h2 id="pipara-academy-course-subject-title">Programming Fundamentals</h2>
-                    <p id="pipara-academy-course-overlay-subtitle">Select a unit to view content</p>
-                    <button class="pipara-academy-course-close-btn" onclick="closeUnitOverlay()">
+        <div id="pa-unit-overlay" class="pa-overlay">
+            <div class="pa-overlay-container">
+                <div class="pa-overlay-header">
+                    <h2 id="pa-subject-title">Programming Fundamentals</h2>
+                    <p id="pa-overlay-subtitle">Select a unit to open its tutorial</p>
+                    <button class="pa-close-btn" onclick="closeUnitOverlay()">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
-                <div class="pipara-academy-course-overlay-content">
-                    <button class="pipara-academy-course-back-btn" onclick="goBackToSubjects()">
+                <div class="pa-overlay-content">
+                    <button class="pa-back-btn" onclick="closeUnitOverlay()">
                         <i class="fas fa-arrow-left"></i> Back to Subjects
                     </button>
-                    <div id="pipara-academy-course-unit-content">
-                        <div class="pipara-academy-course-unit-list" id="pipara-academy-course-unit-list"></div>
+                    <div class="pa-unit-grid" id="pa-unit-grid">
+                        <!-- Unit cards will be dynamically generated -->
                     </div>
                 </div>
             </div>
@@ -2117,6 +2094,7 @@
 
   
     <script src="../../javaScript/topnav-main.js"></script>
+    <script src="../../JavaScript/subjcet/subject.js"></script>
 
 </body>
 

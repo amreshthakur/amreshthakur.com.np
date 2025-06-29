@@ -1,164 +1,223 @@
+const unitData = {
+    "Introduction to Information Technology": [
+        { title: "Introduction to Computer", description: "Learn the history, evolution, and fundamental concepts of computing technology" },
+        { title: "The Computer System Hardware", description: "Explore the physical components that make up a computer system" },
+        { title: "Computer Memory", description: "Understand different types of memory and their roles in computer systems" },
+        { title: "Input and Output Devices", description: "" },
+        { title: "Data Representation", description: "" },
+        { title: "Computer Software", description: "" },
+        { title: "Data Communication and Computer Network", description: "" },
+        { title: "The Internet and Internet Services", description: "" },
+        { title: "Fundamentals of Database", description: "" },
+        { title: "Multimedia", description: "" },
+        { title: "Computer Security", description: "" }
+    ],
+    "C Programming": [
+        { title: "Problem Solving with Computer", description: "Learn algorithmic thinking and problem-solving techniques" },
+        { title: "Elements of C", description: "Master the fundamental building blocks of the C programming language" },
+        { title: "Input and Output", description: "" },
+        { title: "Operators and Expression", description: "" },
+        { title: "Control Statement", description: "" },
+        { title: "Arrays", description: "" },
+        { title: "Functions", description: "Understand function design, implementation, and usage in C" },
+        { title: "Structure and Union", description: "" },
+        { title: "Pointers", description: "" },
+        { title: "File Handling in C", description: "" },
+        { title: "Introduction to Graphics", description: "" }
+    ],
+    "Digital Logic": [
+        { title: "Binary Systems", description: "Explore the foundation of digital computing with binary numbers" },
+        { title: "Boolean Algebra and Logic Gates", description: "Learn the mathematical foundation of digital circuit design" },
+        { title: "Simplification of Boolean Functions", description: "" },
+        { title: "Combinational Logic", description: "Design and analyze circuits with outputs based solely on current inputs" },
+        { title: "Combinational Logic with MSI and LSI", description: "" },
+        { title: "Synchronous and Asynchronous Sequential Logic", description: "" },
+        { title: "Registers and Counters", description: "" }
+    ],
+    "Mathematics I (Calculus)": [
+        { title: "Function of One Variable", description: "Explore mathematical functions and their properties" },
+        { title: "Limits and Continuity", description: "Understand the fundamental concepts of calculus" },
+        { title: "Derivatives", description: "Master the concept of rates of change and slopes of curves" },
+        { title: "Applications of Derivatives", description: "" },
+        { title: "Antiderivatives", description: "" },
+        { title: "Applications of Antiderivatives", description: "" },
+        { title: "Ordinary Differential Equations", description: "" },
+        { title: "Infinite Sequence and Series", description: "" },
+        { title: "Plane and Space Vectors", description: "" },
+        { title: "Partial Derivatives and Multiple Integrals", description: "" },
+        { title: "Old Syllabus", description: "" }
+    ],
+    "Physics": [
+        { title: "Rotational Dynamics and Oscillatory Motion", description: "Study motion of rigid bodies and periodic oscillations" },
+        { title: "Electric and Magnetic Field", description: "Explore the fundamental forces of electromagnetism" },
+        { title: "Fundamentals of Atomic Theory", description: "" },
+        { title: "Methods of Quantum Mechanics", description: "" },
+        { title: "Fundamentals of Solid State Physics", description: "" },
+        { title: "Semiconductor and Semiconductor devices", description: "Understand the physics behind modern electronic components" },
+        { title: "Universal Gates and Physics of Integrated Circuits", description: "" }
+    ]
+};
+
+
+
+
+
+
+
+
 const subjectUnits = {
-    "Introduction to Computer": [
+    "Introduction to Information Technology": [
         {
-            title: "Introduction to Computers",
+            title: "Introduction to Computer",
+            description: "Learn the history, evolution, and fundamental concepts of computing technology",
+            topics: ["Computer generations", "Computer classification", "Basic computer architecture"]
+        },
+        {
+            title: "The Computer System Hardware",
+            description: "Explore the physical components that make up a computer system",
+            topics: ["CPU architecture", "Motherboard components", "Storage devices", "Peripherals"]
+        },
+        {
+            title: "Computer Memory",
+            description: "Understand different types of memory and their roles in computer systems",
+            topics: ["RAM vs ROM", "Cache memory", "Virtual memory", "Storage hierarchies"]
+        },
+        {
+            title: "Input and Output Devices",
             description: "",
             topics: []
         },
         {
-            title: "Digital and Analog Computers",
+            title: "Data Representation",
             description: "",
             topics: []
         },
         {
-            title: "Characteristics of Computers",
+            title: "Computer Software",
             description: "",
             topics: []
         },
         {
-            title: "History of Computers",
+            title: "Data Communication and Computer Network",
             description: "",
             topics: []
         },
         {
-            title: "Generations of Computers",
+            title: "The Internet and Internet Services",
             description: "",
             topics: []
         },
         {
-            title: "Classification of Computers",
+            title: "Fundamentals of Database",
             description: "",
             topics: []
         },
         {
-            title: "The Computer System",
+            title: "Multimedia",
             description: "",
             topics: []
         },
         {
-            title: "Applications of Computers",
+            title: "Computer Security",
             description: "",
             topics: []
         }
     ],
- "The Computer System Hardware": [
-    {
-        title: "Relational Model Concepts",
-        description: "This topic covers the fundamental concepts of the relational model, including domains, attributes, tuples, and relations, as well as the characteristics of relations.",
-        topics: ["TH-1"]
-    },
-    {
-        title: "Relational Model Constraints",
-        description: "This topic explores the different types of constraints in the relational model, including domain constraints, key constraints, and constraints on null values.",
-        topics: ["TH-2"]
-    },
-    {
-        title: "Relational Database Schemas",
-        description: "This topic discusses the concept of relational database schemas, including relational database state, entity integrity, referential integrity, and foreign keys.",
-        topics: ["TH-3"]
-    },
-    {
-        title: "Update Operations and Transactions",
-        description: "This topic covers update operations, transactions, and how to deal with constraint violations, including insert, delete, and update operations, as well as restrict, cascade, set null, and set default.",
-        topics: ["TH-4"]
-    },
-    {
-        title: "Basic Relational Algebra Operations",
-        description: "This topic introduces basic relational algebra operations, including unary operations (select, project, rename) and binary operations (set theory, Cartesian product, join, and outer join).",
-        topics: ["TH-5"]
-    },
-    {
-        title: "XML Schema",
-        description: "Defining the structure and constraints of XML documents using XML Schema.",
-        topics: ["TH-6"]
-    },
-    {
-        title: "Simple and Complex Types",
-        description: "Understanding simple and complex data types in XML Schema.",
-        topics: ["TH-7"]
-    },
-    {
-        title: "XSD Attributes",
-        description: "Using attributes in XML Schema to provide additional information.",
-        topics: ["TH-8"]
-    },
-    {
-        title: "Default and Fixed Values",
-        description: "Specifying default and fixed values for elements and attributes in XML Schema.",
-        topics: ["TH-9"]
-    }
-]
-,
-  "Computer Memory": [
-    {
-    title: "Basic Logic Gates",
-    description: "This topic covers the fundamental logic gates NOT, OR, and AND, including their symbols, truth tables, and applications.",
-    topics: ["CO-01"]
-},
-{
-    title: "Universal Logic Gates",
-    description: "This topic explores the universal logic gates NOR and NAND, their properties, and how they can be used to implement other logic gates.",
-    topics: ["CO-02"]
-},
-{
-    title: "EX-OR and EX-NOR Gates",
-    description: "This topic discusses the EX-OR and EX-NOR gates, their truth tables, and applications in digital circuits.",
-    topics: ["CO-03"]
-},
-{
-    title: "Boolean Algebra",
-    description: "This topic introduces Boolean algebra, including postulates, theorems, and canonical forms, and how they are used to simplify logic functions.",
-    topics: ["CO-04"]
-},
-{
-    title: "Simplification of Logic Functions Using Karnaugh Map",
-    description: "This topic covers the use of Karnaugh maps to simplify logic functions, including analysis of SOP and POS expressions.",
-    topics: ["CO-05"]
-},
-{
-    title: "Implementation of Combinational Logic Functions",
-    description: "This topic explores the implementation of combinational logic functions using encoders, decoders, half adders, and full adders.",
-    topics: ["CO-06"]
-},
-{
-    title: "Implementation of Data Processing Circuits",
-    description: "This topic covers the implementation of data processing circuits, including multiplexers, de-multiplexers, parallel adders, and parity generators/checkers.",
-    topics: ["CO-07"]
-},
-{
-    title: "Basic Concepts of Programmable Logic",
-    description: "This topic introduces the basic concepts of programmable logic, including PROM, EPROM, PAL, and PLA.",
-    topics: ["CO-08"]
-},
-{
-    title: "Programmable Logic Array (PLA)",
-    description: "A type of digital integrated circuit that can be programmed to perform a specific digital function.",
-    topics: ["CO-09"]
-},
-{
-    title: "Programmable Array Logic (PAL)",
-    description: "A type of digital integrated circuit that can be programmed to perform a specific digital function, similar to PLA but with some differences.",
-    topics: ["CO-10"]
-},
-{
-    title: "Optical Disk",
-    description: "A type of secondary storage that uses light to read and write data, including CDs, DVDs, and Blu-ray discs.",
-    topics: ["CO-11"]
-},
-{
-    title: "Magneto-Optical Disk",
-    description: "A type of secondary storage that uses a combination of magnetic and optical technologies to store data.",
-    topics: ["CO-12"]
-},
-{
-    title: "How the Computer uses its Memory",
-    description: "The process of how a computer uses its memory to execute instructions and perform tasks.",
-    topics: ["CO-13"]
-}
-
-]
-,
-    "Input and Output Devices": [
+    "C Programming": [
+        {
+            title: "Problem Solving with Computer",
+            description: "Learn algorithmic thinking and problem-solving techniques",
+            topics: ["Algorithm design", "Flowcharts", "Pseudocode", "Problem decomposition"]
+        },
+        {
+            title: "Elements of C",
+            description: "Master the fundamental building blocks of the C programming language",
+            topics: ["Data types", "Variables", "Operators", "Control structures"]
+        },
+        {
+            title: "Input and Output",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Operators and Expression",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Control Statement",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Arrays",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Functions",
+            description: "Understand function design, implementation, and usage in C",
+            topics: ["Function declaration", "Parameters", "Recursion", "Scope rules"]
+        },
+        {
+            title: "Structure and Union",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Pointers",
+            description: "",
+            topics: []
+        },
+        {
+            title: "File Handling in C",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Introduction to Graphics",
+            description: "",
+            topics: []
+        }
+    ],
+    "Digital Logic": [
+        {
+            title: "Binary Systems",
+            description: "Explore the foundation of digital computing with binary numbers",
+            topics: ["Binary arithmetic", "Number conversions", "Signed numbers", "Binary codes"]
+        },
+        {
+            title: "Boolean Algebra and Logic Gates",
+            description: "Learn the mathematical foundation of digital circuit design",
+            topics: ["Boolean operators", "Logic gates", "Truth tables", "Boolean laws"]
+        },
+        {
+            title: "Simplification of Boolean Functions",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Combinational Logic",
+            description: "Design and analyze circuits with outputs based solely on current inputs",
+            topics: ["Adders", "Multiplexers", "Decoders", "Combinational circuit design"]
+        },
+        {
+            title: "Combinational Logic with MSI and LSI",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Synchronous and Asynchronous Sequential Logic",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Registers and Counters",
+            description: "",
+            topics: []
+        }
+    ],
+    "Mathematics I (Calculus)": [
         {
             title: "Function of One Variable",
             description: "Explore mathematical functions and their properties",
@@ -2282,6 +2341,7 @@ const subjectUnits = {
             title: "Cloud Service Models",
             description: "",
             topics: []
+            
         },
         {
             title: "Building Cloud Networks",
@@ -2357,3 +2417,5 @@ const subjectUnits = {
     "Embedded Systems Programming": [],
     "International Business Management": []
 };
+
+

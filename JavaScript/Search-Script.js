@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    return { results: results.slice(0, 8), searchTime: (performance.now() - t0).toFixed(2) };
+    return { results: results.slice(0, 18), searchTime: (performance.now() - t0).toFixed(2) };
   }
 
   function renderResults(results, query) {

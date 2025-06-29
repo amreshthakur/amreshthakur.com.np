@@ -1429,3 +1429,252 @@ var TopNavBar = {
   TopNavBar.init();
 
 
+// ======================================================================================
+// Wrap in IIFE to avoid global scope pollution
+(function() {
+    // DOM Elements
+    const semesterGrid = document.querySelector('.pipara-academy-course-semester-grid');
+    const filterBtns = document.querySelectorAll('.pipara-academy-course-filter-btn');
+    const overlay = document.getElementById('pipara-academy-course-overlay');
+    const unitOverlay = document.getElementById('pipara-academy-course-unit-overlay');
+    const subjectList = document.getElementById('pipara-academy-course-subject-list');
+    const unitList = document.getElementById('pipara-academy-course-unit-list');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const loadingText = document.getElementById('loadingText');
+
+    // State
+    let currentSubject = "";
+    let currentSemesterTitle = "";
+    let currentUnits = [];
+    const subjectIcons = [
+        "fa-book", "fa-laptop-code", "fa-calculator",
+        "fa-network-wired", "fa-microchip", "fa-database",
+        "fa-code", "fa-brain", "fa-server", "fa-cloud",
+        "fa-shield-alt", "fa-mobile-alt", "fa-globe", "fa-cogs"
+    ];
+    const unitIcons = [
+        "fa-book-open", "fa-laptop-code", "fa-shapes",
+        "fa-calculator", "fa-network-wired", "fa-chart-line",
+        "fa-database", "fa-microchip", "fa-code", "fa-brain",
+        "fa-cogs", "fa-server", "fa-cloud", "fa-shield-alt",
+        "fa-lock", "fa-mobile-alt", "fa-globe", "fa-sitemap"
+    ];
+
+    // Helper Functions
+    const generateSlug = (text) => {
+        const cleanedText = text.replace(/^BSC\.CSIT\s*:\s*/i, '');
+        return encodeURIComponent(
+            cleanedText
+                .toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^\w-]+/g, '')
+        );
+    };
+
+    const generateUnitLink = (subject, unitTitle) => {
+        const courseSlug = "csit";
+        const semesterSlug = generateSlug(currentSemesterTitle);
+        const subjectSlug = generateSlug(subject);
+        const unitSlug = generateSlug(unitTitle);
+        return `/${courseSlug}/${semesterSlug}/${subjectSlug}/${unitSlug}/`;
+    };
+
+    const getUnitDescription = (unit, subject) => {
+        const topics = [
+            "Introduction, history, and fundamental concepts",
+            "Core principles, theories, and methodologies",
+            "Advanced techniques, algorithms, and implementations",
+            "Practical applications, case studies, and real-world examples",
+            "Emerging trends, research directions, and future outlook"
+        ];
+        return topics[(unit - 1) % topics.length];
+    };
+
+    // Card Rendering Functions
+    const renderSemesterCards = () => {
+        semesterGrid.innerHTML = '';
+        semesterData.forEach((semester, index) => {
+            const coreCount = semester.subjects.filter(s => !s.elective).length;
+            const electiveCount = semester.subjects.filter(s => s.elective).length;
+            
+            const card = document.createElement('div');
+            card.className = 'pipara-academy-course-card';
+            if (electiveCount > 0) card.classList.add('elective');
+            card.style.setProperty('--delay', index);
+            
+            card.innerHTML = `
+                <div class="pipara-academy-course-semester-number">${index + 1}</div>
+                <h2>${semester.title}</h2>
+                <p>${semester.description}</p>
+                <span class="pipara-academy-course-subjects-count">${semester.subjects.length} Subjects</span>
+                <div class="pipara-academy-course-subject-breakdown">
+                    <span class="pipara-academy-course-core-count">${coreCount} Core</span>
+                    <span class="pipara-academy-course-elective-count">${electiveCount} Electives</span>
+                </div>
+            `;
+            
+            card.addEventListener('click', () => openOverlay(semester.title, semester.subjects));
+            semesterGrid.appendChild(card);
+        });
+    };
+
+    const renderSubjectCards = (subjects) => {
+        subjectList.innerHTML = "";
+        subjects.forEach((subject, index) => {
+            const unitCount = subjectUnits[subject.name]?.length || 0;
+            const card = document.createElement("div");
+            card.className = "pipara-academy-course-unit-card";
+            card.style.animationDelay = `${index * 0.05}s`;
+            
+            card.innerHTML = `
+                <div class="pipara-academy-course-unit-header">
+                    <div class="pipara-academy-course-unit-icon">
+                        <i class="fas ${subjectIcons[index % subjectIcons.length]}"></i>
+                    </div>
+                    <div class="pipara-academy-course-unit-title-container">
+                        <h4>${subject.name}</h4>
+                        ${subject.elective ? '<span class="pipara-academy-course-resource-badge">ELECTIVE</span>' : ''}
+                    </div>
+                </div>
+                <p>${subject.description}</p>
+                <div class="pipara-academy-course-units-count">${unitCount} Units</div>
+            `;
+            
+            card.addEventListener('click', () => openUnitOverlay(subject.name));
+            subjectList.appendChild(card);
+        });
+    };
+
+    const renderUnitCards = (units, subjectName) => {
+        unitList.innerHTML = "";
+        if (units.length === 0) {
+            // Generate fallback units
+            const unitThemes = [
+                "Fundamentals and Introduction",
+                "Core Concepts and Principles",
+                "Advanced Techniques",
+                "Practical Applications",
+                "Case Studies and Real-world Examples"
+            ];
+            units = unitThemes.map(theme => ({
+                title: theme,
+                description: getUnitDescription(unitThemes.indexOf(theme) + 1, subjectName)
+            }));
+        }
+        
+        units.forEach((unit, index) => {
+            const unitCard = document.createElement("div");
+            unitCard.className = "pipara-academy-course-unit-card";
+            unitCard.style.animationDelay = `${index * 0.05}s`;
+            const unitLink = generateUnitLink(subjectName, unit.title);
+            
+            unitCard.innerHTML = `
+                <div class="pipara-academy-course-unit-header">
+                    <div class="pipara-academy-course-unit-icon">
+                        <i class="fas ${unitIcons[index % unitIcons.length]}"></i>
+                    </div>
+                    <div class="pipara-academy-course-unit-title-container">
+                        <div class="pipara-academy-course-unit-number">Unit ${index + 1}</div>
+                        <h4>${unit.title}</h4>
+                    </div>
+                </div>
+                <p>${unit.description}</p>
+                <div class="pipara-academy-course-unit-progress">
+                    <div class="pipara-academy-course-unit-progress-bar" 
+                         style="width: ${Math.floor(Math.random() * 100)}%">
+                    </div>
+                </div>
+            `;
+            
+            unitCard.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (loadingOverlay && loadingText) {
+                    loadingText.textContent = `Opening ${unit.title}...`;
+                    loadingOverlay.classList.add('active');
+                }
+                setTimeout(() => location.replace(unitLink), 300);
+            });
+            
+            unitList.appendChild(unitCard);
+        });
+    };
+
+    // Overlay Management
+    const openOverlay = (title, subjects) => {
+        currentSemesterTitle = title;
+        document.getElementById("pipara-academy-course-semester-title").textContent = title;
+        renderSubjectCards(subjects);
+        overlay.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    };
+
+    const openUnitOverlay = (subjectName) => {
+        currentSubject = subjectName;
+        document.getElementById("pipara-academy-course-subject-title").textContent = subjectName;
+        document.getElementById("pipara-academy-course-overlay-subtitle").textContent = "Select a unit to view content";
+        currentUnits = subjectUnits[subjectName] || [];
+        renderUnitCards(currentUnits, subjectName);
+        unitOverlay.style.display = "flex";
+        overlay.style.display = "none";
+    };
+
+    const closeOverlay = () => {
+        overlay.style.display = "none";
+        document.body.style.overflow = "auto";
+    };
+
+    const closeUnitOverlay = () => {
+        unitOverlay.style.display = "none";
+        document.body.style.overflow = "auto";
+    };
+
+    const goBackToSubjects = () => {
+        unitOverlay.style.display = "none";
+        overlay.style.display = "flex";
+    };
+
+    // Event Listeners
+    const initEventListeners = () => {
+        // Filter buttons
+        filterBtns.forEach(button => {
+            button.addEventListener('click', function() {
+                filterBtns.forEach(btn => btn.classList.remove('pipara-academy-course-active'));
+                this.classList.add('pipara-academy-course-active');
+                
+                const filterValue = this.dataset.filter;
+                document.querySelectorAll('.pipara-academy-course-card').forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const semesterIndex = Array.from(semesterGrid.children).indexOf(card);
+                        const semester = semesterData[semesterIndex];
+                        const shouldShow = 
+                            (filterValue === 'elective' && semester.subjects.some(s => s.elective)) ||
+                            (filterValue === 'core' && semester.subjects.some(s => !s.elective));
+                        card.style.display = shouldShow ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+
+        // Overlay close handlers
+        overlay.addEventListener('click', (e) => e.target === overlay && closeOverlay());
+        unitOverlay.addEventListener('click', (e) => e.target === unitOverlay && closeUnitOverlay());
+    };
+
+    // Initialization
+    const init = () => {
+        renderSemesterCards();
+        initEventListeners();
+        
+        if (loadingOverlay) {
+            setTimeout(() => loadingOverlay.classList.remove('active'), 500);
+        }
+    };
+
+    // Expose navigation function
+    window.goBackToSubjects = goBackToSubjects;
+
+    // Start when DOM is ready
+    document.addEventListener('DOMContentLoaded', init);
+})();

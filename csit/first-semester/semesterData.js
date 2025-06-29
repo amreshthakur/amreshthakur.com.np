@@ -1,274 +1,279 @@
+// Mock data for subjects and units
+const subjectData = [
+    {
+        name: "Introduction to Information Technology",
+        description: "Fundamentals of computer systems, IT components, and applications.",
+        elective: false,
+        semester: "First Semester",
+        units: 11
+    },
+    {
+        name: "C Programming",
+        description: "Programming basics using C, including data types, control structures, and functions.",
+        elective: false,
+        semester: "First Semester",
+        units: 11
+    },
+    {
+        name: "Digital Logic",
+        description: "Study of logic gates, Boolean algebra, and digital circuit design.",
+        elective: false,
+        semester: "First Semester",
+        units: 7
+    },
+    {
+        name: "Mathematics I (Calculus)",
+        description: "Differential and integral calculus relevant to computer science.",
+        elective: false,
+        semester: "First Semester",
+        units: 11
+    },
+    {
+        name: "Physics",
+        description: "Mechanics, electricity, and magnetism in the context of computing.",
+        elective: false,
+        semester: "First Semester",
+        units: 7
+    }
+
+];
+
+
 // Sample Semester Data
 const semesterData = [
-{
-    title: "Introduction to Information Technology",
-    description: "Advance programming and understanding of discrete systems and microprocessors.",
-    subjects: [
-        {
-            name: "Introduction to Computer",
-            description: "Overview of basic computer concepts and evolution.",
-           
-        },
-        {
-            name: "The Computer System Hardware",
-            description: "Understanding physical components of a computer system.",
-            // elective: false
-        },
-        {
-            name: "Computer Memory",
-            description: "Types, hierarchy, and functions of memory in computing.",
-            // elective: false
-        },
-        {
-            name: "Input and Output Devices",
-            description: "Devices used to interact with and receive data from computers.",
-            // elective: false
-        },
-        {
-            name: "Data Representation",
-            description: "Binary number systems, encoding schemes, and data formats.",
-            // elective: false
-        },
-        {
-            name: "Computer Software",
-            description: "System and application software with types and examples.",
-            // elective: false
-        },
-        {
-            name: "Data Communication and Computer Network",
-            description: "Basic concepts of networking, transmission modes, and topologies.",
-            elective: false
-        },
-        {
-            name: "The Internet and Internet Services",
-            description: "Internet basics, protocols, and online services.",
-            elective: false
-        },
-        {
-            name: "Fundamentals of Database",
-            description: "Database concepts, models, and management systems.",
-            elective: false
-        },
-        {
-            name: "Multimedia",
-            description: "Text, audio, video, and interactive content in computing.",
-            elective: false
-        },
-        {
-            name: "Computer Security",
-            description: "Cybersecurity principles, threats, and protection methods.",
-            elective: false
-        }
-    ]
-}
-,
-  {
-    title: "C Programming",
-    description: "Core CS topics including algorithms, graphics, and architecture.",
-    subjects: [
-   
-        {
-            name: "Problem Solving with Computer",
-            description: "Understanding the fundamentals of problem-solving and algorithm design.",
-            elective: false
-        },
-        {
-            name: "Elements of C",
-            description: "Basics of the C programming language including syntax and structure.",
-            elective: false
-        },
-        {
-            name: "Input and Output",
-            description: "Standard input/output functions and formatted I/O in C.",
-            elective: false
-        },
-        {
-            name: "Operators and Expression",
-            description: "Arithmetic, relational, logical operators and their precedence.",
-            elective: false
-        },
-        {
-            name: "Control Statement",
-            description: "Decision making using if-else, switch, loops, and jump statements.",
-            elective: false
-        },
-        {
-            name: "Arrays",
-            description: "One-dimensional, two-dimensional arrays and array manipulation.",
-            elective: false
-        },
-        {
-            name: "Functions",
-            description: "User-defined functions, scope, recursion, and parameter passing.",
-            elective: false
-        },
-        {
-            name: "Structure and Union",
-            description: "Group related data using structures and unions in C.",
-            elective: false
-        },
-        {
-            name: "Pointers",
-            description: "Pointer basics, arithmetic, arrays, and functions with pointers.",
-            elective: false
-        },
-        {
-            name: "File Handling in C",
-            description: "Reading from and writing to files using C file I/O.",
-            elective: false
-        },
-        {
-            name: "Introduction to Graphics",
-            description: "Basic concepts of graphics in C using libraries like graphics.h.",
-            elective: false
-        }
-    ]
-}
-,
     {
-    title: "Digital Logic",
-    description: "System-level computing, network fundamentals, and theory of computation.",
-    subjects: [
-        {
-            name: "Binary Systems",
-            description: "Number systems, conversions, and binary arithmetic.",
-            elective: false
-        },
-        {
-            name: "Boolean Algebra and Logic Gates",
-            description: "Logic operations, Boolean identities, and gate-level design.",
-            elective: false
-        },
-        {
-            name: "Simplification of Boolean Functions",
-            description: "Karnaugh maps and algebraic simplification techniques.",
-            elective: false
-        },
-        {
-            name: "Combinational Logic",
-            description: "Design and analysis of combinational logic circuits.",
-            elective: false
-        },
-        {
-            name: "Combinational Logic with MSI and LSI",
-            description: "Use of Medium and Large Scale Integration devices in circuits.",
-            elective: false
-        },
-        {
-            name: "Synchronous and Asynchronous Sequential Logic",
-            description: "Design principles of sequential circuits and timing control.",
-            elective: false
-        },
-        {
-            name: "Registers and Counters",
-            description: "Sequential storage elements and counting circuits.",
-            elective: false
-        }
-    ]
-}
-,
+        title: "BSc.CSIT : First Semester",
+        description: "Build a strong foundation in programming and computer science principles.",
+        subjects: [
+            {
+                name: "Introduction to Information Technology",
+                description: "Fundamentals of computer systems, IT components, and applications.",
+                elective: false
+            },
+            {
+                name: "C Programming",
+                description: "Programming basics using C, including data types, control structures, and functions.",
+                elective: false
+            },
+            {
+                name: "Digital Logic",
+                description: "Study of logic gates, Boolean algebra, and digital circuit design.",
+                elective: false
+            },
+            {
+                name: "Mathematics I (Calculus)",
+                description: "Differential and integral calculus relevant to computer science.",
+                elective: false
+            },
+            {
+                name: "Physics",
+                description: "Mechanics, electricity, and magnetism in the context of computing.",
+                elective: false
+            }
+        ]
+    },
     {
-    title: "Mathematics I (Calculus)",
-    description: "Web technology, project design, ethics, and technical elective options.",
-    subjects: [
-       {
-            name: "Function of One Variable",
-            description: "Introduction to functions and their properties.",
-            elective: false
-        },
-        {
-            name: "Limits and Continuity",
-            description: "Concepts of limits and continuity in calculus.",
-            elective: false
-        },
-        {
-            name: "Derivatives",
-            description: "Definition and techniques of differentiation.",
-            elective: false
-        },
-        {
-            name: "Applications of Derivatives",
-            description: "Use of derivatives in optimization and motion problems.",
-            elective: false
-        },
-        {
-            name: "Antiderivatives",
-            description: "Introduction to integration and antiderivatives.",
-            elective: false
-        },
-        {
-            name: "Applications of Antiderivatives",
-            description: "Area under curves and other integral applications.",
-            elective: false
-        },
-        {
-            name: "Ordinary Differential Equations",
-            description: "Basic concepts and solutions of ODEs.",
-            elective: false
-        },
-        {
-            name: "Infinite Sequence and Series",
-            description: "Convergence and properties of sequences and series.",
-            elective: false
-        },
-        {
-            name: "Plane and Space Vectors",
-            description: "Vector algebra and geometry in two and three dimensions.",
-            elective: false
-        },
-        {
-            name: "Partial Derivatives and Multiple Integrals",
-            description: "Multivariable calculus topics and techniques.",
-            elective: false
-        }
-    ]
-}
-,
+        title: "BSc.CSIT : Second Semester",
+        description: "Advance programming and understanding of discrete systems and microprocessors.",
+        subjects: [
+            {
+                name: "Discrete Structures",
+                description: "Sets, relations, functions, graphs, and combinatorics in computing.",
+                elective: false
+            },
+            {
+                name: "Object Oriented Programming",
+                description: "Concepts like classes, inheritance, and polymorphism using Java/C++.",
+                elective: false
+            },
+            {
+                name: "Microprocessor",
+                description: "Architecture and assembly-level programming of Intel 8085/8086.",
+                elective: false
+            },
+            {
+                name: "Mathematics II",
+                description: "Linear algebra, matrices, and numerical solutions for equations.",
+                elective: false
+            },
+            {
+                name: "Statistics I",
+                description: "Probability theory, data analysis, and statistical distributions.",
+                elective: false
+            }
+        ]
+    },
     {
-    title: "Physics",
-    description: "Advanced software development and NET-centric computing.",
-    subjects: [
-   
-        {
-            name: "Rotational Dynamics and Oscillatory Motion",
-            description: "Study of rotating bodies and oscillations in physical systems.",
-            elective: false
-        },
-        {
-            name: "Electric and Magnetic Field",
-            description: "Fundamentals of electromagnetism and field theory.",
-            elective: false
-        },
-        {
-            name: "Fundamentals of Atomic Theory",
-            description: "Atomic structure and properties of matter.",
-            elective: false
-        },
-        {
-            name: "Methods of Quantum Mechanics",
-            description: "Basic principles and mathematical tools of quantum physics.",
-            elective: false
-        },
-        {
-            name: "Fundamentals of Solid State Physics",
-            description: "Properties of solids and crystal structures.",
-            elective: false
-        },
-        {
-            name: "Semiconductor and Semiconductor Devices",
-            description: "Semiconductor materials and electronic device physics.",
-            elective: false
-        },
-        {
-            name: "Universal Gates and Physics of Integrated Circuits",
-            description: "Logic gates and physical principles behind ICs.",
-            elective: false
-        }
-    ]
-}
-,
+        title: "BSc.CSIT : Third Semester",
+        description: "Core CS topics including algorithms, graphics, and architecture.",
+        subjects: [
+            {
+                name: "Data Structures and Algorithms",
+                description: "Linear/nonlinear data structures, searching, sorting, and recursion.",
+                elective: false
+            },
+            {
+                name: "Numerical Method",
+                description: "Solutions for nonlinear equations, interpolation, and numerical integration.",
+                elective: false
+            },
+            {
+                name: "Computer Architecture",
+                description: "Internal organization of computer systems and instruction cycles.",
+                elective: false
+            },
+            {
+                name: "Computer Graphics",
+                description: "2D/3D transformations, viewing, and graphics programming using OpenGL.",
+                elective: false
+            },
+            {
+                name: "Statistics II",
+                description: "Statistical inference, hypothesis testing, regression, and correlation.",
+                elective: false
+            }
+        ]
+    },
     {
-        title: "Tu Questions",
+        title: "BSc.CSIT : Fourth Semester",
+        description: "System-level computing, network fundamentals, and theory of computation.",
+        subjects: [
+            {
+                name: "Theory of Computation",
+                description: "Automata theory, grammars, and Turing machines.",
+                elective: false
+            },
+            {
+                name: "Computer Networks",
+                description: "OSI model, IP addressing, switching, and routing basics.",
+                elective: false
+            },
+            {
+                name: "Operating Systems",
+                description: "Processes, memory management, file systems, and concurrency.",
+                elective: false
+            },
+            {
+                name: "Database Management System",
+                description: "SQL, ER modeling, relational algebra, normalization.",
+                elective: false
+            },
+            {
+                name: "Artificial Intelligence",
+                description: "Search algorithms, expert systems, and machine learning basics.",
+                elective: false
+            }
+        ]
+    },
+    {
+        title: "BSc.CSIT : Fifth Semester",
+        description: "Web technology, project design, ethics, and technical elective options.",
+        subjects: [
+            {
+                name: "Microprocessor Based Design",
+                description: "Design of digital systems using microprocessors/microcontrollers.",
+                elective: false
+            },
+            {
+                name: "Web Technology",
+                description: "HTML, CSS, JavaScript, server-side scripting, and web frameworks.",
+                elective: false
+            },
+            {
+                name: "System Analysis and Design",
+                description: "Requirement analysis, system modeling, and software specification.",
+                elective: false
+            },
+            {
+                name: "Society and Ethics in Information Technology",
+                description: "IT laws, digital ethics, and social implications of technology.",
+                elective: false
+            },
+            {
+                name: "Design and Analysis of Algorithms",
+                description: "Divide-and-conquer, greedy algorithms, dynamic programming.",
+                elective: true
+            },
+            {
+                name: "Cryptography",
+                description: "Symmetric/asymmetric encryption, hashing, digital signatures.",
+                elective: true
+            },
+            {
+                name: "Image Processing",
+                description: "Image enhancement, filtering, compression, and segmentation.",
+                elective: true
+            },
+            {
+                name: "Knowledge Management",
+                description: "Processes and systems to manage organizational knowledge.",
+                elective: true
+            },
+            {
+                name: "Simulation and Modeling",
+                description: "Modeling of systems using discrete-event simulation techniques.",
+                elective: true
+            }
+        ]
+    },
+    {
+        title: "BSc.CSIT : Sixth Semester",
+        description: "Advanced software development and NET-centric computing.",
+        subjects: [
+            {
+                name: "Software Engineering",
+                description: "Agile models, design patterns, testing, and project lifecycle.",
+                elective: false
+            },
+            {
+                name: "Compiler Design and Construction",
+                description: "Lexical, syntax, and semantic analysis; code generation.",
+                elective: false
+            },
+            {
+                name: "E-Governance",
+                description: "Use of ICT in public service delivery and governance.",
+                elective: false
+            },
+            {
+                name: "NET Centric Computing",
+                description: "Distributed apps, web services, and .NET framework.",
+                elective: false
+            },
+            {
+                name: "Technical Writing",
+                description: "Writing reports, documentation, and academic content.",
+                elective: false
+            },
+            {
+                name: "E-commerce",
+                description: "Online business models, security, payment systems.",
+                elective: true
+            },
+            {
+                name: "Neural Networks",
+                description: "ANN architectures, backpropagation, and training algorithms.",
+                elective: true
+            },
+            {
+                name: "Computer Hardware Design",
+                description: "Designing computer components using VHDL or Verilog.",
+                elective: true
+            },
+            {
+                name: "Automation and Robotics",
+                description: "Sensors, actuators, control systems in robotics.",
+                elective: true
+            },
+            {
+                name: "Cognitive Science",
+                description: "Study of mind, perception, and decision-making models.",
+                elective: true
+            }
+        ]
+    },
+    {
+        title: "BSc.CSIT : Seventh Semester",
         description: "Specialization electives and real-world project implementation.",
         subjects: [
             {
@@ -329,121 +334,74 @@ const semesterData = [
         ]
     },
     {
-        title: "TU Model Set Qustions",
-        description: "Advance programming and understanding of discrete systems and microprocessors.",
+        title: "BSc.CSIT : Eighth Semester",
+        description: "Emerging computing fields, advanced networks, and internship.",
         subjects: [
             {
-                name: "Discrete Structures",
-                description: "Sets, relations, functions, graphs, and combinatorics in computing.",
+                name: "Advanced Database",
+                description: "Object-relational databases, indexing, and query optimization.",
                 elective: false
             },
             {
-                name: "Object Oriented Programming",
-                description: "Concepts like classes, inheritance, and polymorphism using Java/C++.",
+                name: "Advanced Networking with IPv6",
+                description: "IPv6 architecture, transition techniques, and routing protocols.",
                 elective: false
             },
             {
-                name: "Microprocessor",
-                description: "Architecture and assembly-level programming of Intel 8085/8086.",
+                name: "Internship",
+                description: "Industrial experience in real IT environment.",
                 elective: false
             },
             {
-                name: "Mathematics II",
-                description: "Linear algebra, matrices, and numerical solutions for equations.",
-                elective: false
+                name: "Distributed Networking",
+                description: "Peer-to-peer, client-server, and cloud-based networks.",
+                elective: true
             },
             {
-                name: "Statistics I",
-                description: "Probability theory, data analysis, and statistical distributions.",
-                elective: false
+                name: "Game Technology",
+                description: "Game design, development platforms, and game physics.",
+                elective: true
+            },
+            {
+                name: "Distributed and Object Oriented Database",
+                description: "Advanced database structures and distributed queries.",
+                elective: true
+            },
+            {
+                name: "Introduction to Cloud Computing",
+                description: "Cloud services, virtualization, SaaS/PaaS/IaaS.",
+                elective: true
+            },
+            {
+                name: "Geographical Information System",
+                description: "Mapping, GPS, and spatial data visualization.",
+                elective: true
+            },
+            {
+                name: "Decision Support System and Expert System",
+                description: "AI systems aiding decision-making in enterprises.",
+                elective: true
+            },
+            {
+                name: "Mobile Application Development",
+                description: "Developing Android/iOS applications using Flutter/React Native.",
+                elective: true
+            },
+            {
+                name: "Embedded Systems Programming",
+                description: "Programming microcontrollers for hardware-level tasks.",
+                elective: true
+            },
+            {
+                name: "International Business Management",
+                description: "Global business strategies and foreign trade management.",
+                elective: true
             }
         ]
-    },
-    {
-    title: "Notes",
-    description: "Different types of notes by style and format for effective learning and organization.",
-    subjects: [
-        {
-            name: "Lecture Notes",
-            description: "Notes taken during lectures focusing on key points and explanations.",
-            elective: false
-        },
-        {
-            name: "Summary Notes",
-            description: "Condensed notes highlighting main ideas and important concepts.",
-            elective: false
-        },
-        {
-            name: "Outline Notes",
-            description: "Structured notes using headings and subheadings to organize information.",
-            elective: false
-        },
-        {
-            name: "Mind Map Notes",
-            description: "Visual notes that connect ideas using diagrams and branches.",
-            elective: false
-        },
-        {
-            name: "Cornell Notes",
-            description: "Notes divided into cues, notes, and summary for effective review.",
-            elective: false
-        },
-        {
-            name: "Flashcards",
-            description: "Small cards with questions and answers for memorization.",
-            elective: false
-        },
-        {
-            name: "Annotation Notes",
-            description: "Notes made directly on texts with highlights and comments.",
-            elective: false
-        },
-        {
-            name: "Research Notes",
-            description: "Detailed notes collected from various sources including quotes and references.",
-            elective: false
-        },
-        {
-            name: "Handwritten Notes (Hard Copy)",
-            description: "Manual notes written on paper notebooks or sheets.",
-            elective: false
-        },
-        {
-            name: "Digital Notes (Note-taking Apps like OneNote, Evernote, Notion)",
-            description: "Notes created and organized using digital applications.",
-            elective: false
-        },
-        {
-            name: "PDF Notes",
-            description: "Notes saved or shared in PDF format, often scanned or exported.",
-            elective: false
-        },
-        {
-            name: "Audio Notes (Voice Recordings)",
-            description: "Notes captured as voice recordings for lectures or reminders.",
-            elective: false
-        },
-        {
-            name: "Video Notes",
-            description: "Recorded video explanations or tutorials combining visuals and audio.",
-            elective: false
-        },
-        {
-            name: "Typed Notes (Word Docs, Google Docs, Text Editors)",
-            description: "Notes typed using text editors or word processing software.",
-            elective: false
-        },
-        {
-            name: "Bullet Journals",
-            description: "Handwritten system combining notes and organization with symbols and logs.",
-            elective: false
-        },
-        {
-            name: "Whiteboard Notes",
-            description: "Temporary notes written on whiteboards during meetings or study sessions.",
-            elective: false
-        }
-    ]
-}
-
+    }
 ];
+
+
+
+
+
