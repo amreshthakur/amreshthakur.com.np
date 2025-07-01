@@ -111,6 +111,12 @@
     <!-- search functionality and footer credit and social media launcher -->
 
 
+
+
+    
+      <script src="first-semester\semesterData.js"></script>
+    <script src="first-semester\subjectunit.js"></script>
+
     <!-- subejctunit.js and semesterData.js -->
     <script src="data/semesterData.js"></script>
     <script src="data/subjectunit.js"></script>
@@ -1982,61 +1988,107 @@ font-size: clamp(0.9rem, 3vw, 1.2rem); /* Mobile */
 
 
 
+
     <!-- =============================================================================================================== -->
     <!-- course explorer start -->
     <!-- =============================================================================================================== -->
-    <div class="pipara-academy-course-container">
-        <header class="pipara-academy-course-header">
-            <h1 class="pipara-academy-course-title">Pipara Academy Course Explorer</h1>
-            <div class="pipara-academy-course-filter-container">
-                <button class="pipara-academy-course-filter-btn pipara-academy-course-active" data-filter="all">All
-                    Semesters</button>
-                <button class="pipara-academy-course-filter-btn" data-filter="core">Core Subjects</button>
-                <button class="pipara-academy-course-filter-btn" data-filter="elective">Electives</button>
-            </div>
-        </header>
-        <div class="pipara-academy-course-semester-grid">
-            <!-- Semester cards will be dynamically generated -->
-        </div>
+ <div class="pa-container">
+        <!-- Semester View -->
+        <div id="pa-semester-view">
+            <header class="pa-header">
+                <h1 class="pa-title">BSc CSIT Course</h1>
+                <p class="pa-subtitle">Browse through the BSc.CSIT curriculum by semester, subject, and units</p>
+                
+             
+                
+                <div class="pa-search-container">
+                    <i class="fas fa-search pa-search-icon"></i>
+                    <input type="text" class="pa-search-input" placeholder="Search courses, subjects, or units..." id="paSearchTriggerInput">
+                </div>
+            </header>
+            
 
-        <!-- Semester Overlay -->
-        <div id="pipara-academy-course-overlay" class="pipara-academy-course-overlay">
-            <div class="pipara-academy-course-overlay-container">
-                <div class="pipara-academy-course-overlay-header">
-                    <h2 id="pipara-academy-course-semester-title">First Semester</h2>
+            <h2 class="pa-title" style="font-size: 1.8rem; margin-bottom: 20px;">BSc.CSIT Courses</h2>
+
+               <div class="pa-filter-container">
+                    <button class="pa-filter-btn pa-active" data-filter="all">All Semesters</button>
+                    <button class="pa-filter-btn" data-filter="core">Core Subjects</button>
+                    <button class="pa-filter-btn" data-filter="elective">Electives</button>
+                </div>
+
+            <div class="pa-semester-grid" id="pa-semester-grid">
+                <!-- Semester cards will be dynamically generated -->
+            </div>
+        </div>
+        
+        <!-- Subject Overlay -->
+        <div id="pa-subject-overlay" class="pa-overlay">
+            <div class="pa-overlay-container">
+                <div class="pa-overlay-header">
+                    <h2 id="pa-semester-title">First Semester</h2>
                     <p>Select a subject to view its units</p>
-                    <button class="pipara-academy-course-close-btn" onclick="closeOverlay()">
+                    <button class="pa-close-btn" onclick="closeSubjectOverlay()">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
-                <div class="pipara-academy-course-overlay-content">
-                    <button class="pipara-academy-course-back-btn" onclick="closeOverlay()">
+                <div class="pa-overlay-content">
+                    <button class="pa-back-btn" onclick="closeSubjectOverlay()">
                         <i class="fas fa-arrow-left"></i> Back to Semesters
                     </button>
-                    <div id="pipara-academy-course-subject-content">
-                        <div class="pipara-academy-course-unit-list" id="pipara-academy-course-subject-list"></div>
-                    </div>
+                    <div class="pa-subject-grid" id="pa-subject-list"></div>
                 </div>
             </div>
         </div>
-
+        
         <!-- Unit Overlay -->
-        <div id="pipara-academy-course-unit-overlay" class="pipara-academy-course-overlay">
-            <div class="pipara-academy-course-overlay-container">
-                <div class="pipara-academy-course-overlay-header">
-                    <h2 id="pipara-academy-course-subject-title">Programming Fundamentals</h2>
-                    <p id="pipara-academy-course-overlay-subtitle">Select a unit to view content</p>
-                    <button class="pipara-academy-course-close-btn" onclick="closeUnitOverlay()">
+        <div id="pa-unit-overlay" class="pa-overlay">
+            <div class="pa-overlay-container">
+                <div class="pa-overlay-header">
+                    <h2 id="pa-subject-title">Programming Fundamentals</h2>
+                    <p id="pa-overlay-subtitle">Select a unit to open its tutorial</p>
+                    <button class="pa-close-btn" onclick="closeUnitOverlay()">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
-                <div class="pipara-academy-course-overlay-content">
-                    <button class="pipara-academy-course-back-btn" onclick="goBackToSubjects()">
+                <div class="pa-overlay-content">
+                    <button class="pa-back-btn" onclick="goBackToSubjects()">
                         <i class="fas fa-arrow-left"></i> Back to Subjects
                     </button>
-                    <div id="pipara-academy-course-unit-content">
-                        <div class="pipara-academy-course-unit-list" id="pipara-academy-course-unit-list"></div>
+                    <div class="pa-unit-grid" id="pa-unit-list"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Overlay - FIXED STRUCTURE -->
+        <div id="pa-search-overlay" class="pa-search-overlay">
+            <div class="pa-search-header">
+                <div class="pa-search-box">
+                    <button class="pa-search-close-btn" id="paSearchCloseBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <div class="pa-search-box-inner" id="paSearchBoxInner">
+                        <i class="fas fa-search pa-search-overlay-icon"></i>
+                        <input type="text" class="pa-search-overlay-input" id="paSearchInput" placeholder="Search for semesters, subjects, units or topics..." autocomplete="off">
                     </div>
+                    
+                    <div class="pa-search-filters">
+                        <button class="pa-search-filter-btn active" data-filter="all">All</button>
+                        <button class="pa-search-filter-btn" data-filter="semester">Semesters</button>
+                        <button class="pa-search-filter-btn" data-filter="subject">Subjects</button>
+                        <button class="pa-search-filter-btn" data-filter="unit">Units</button>
+                    </div>
+                    
+                    <div class="pa-search-stats">
+                        <span id="paSearchResultCount">0 results</span>
+                        <span id="paSearchTime">0.00ms</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pa-search-results-container">
+                <div class="pa-search-results-grid" id="paSearchResultsGrid">
+                    <!-- Search results will be dynamically generated here -->
                 </div>
             </div>
         </div>
@@ -2166,6 +2218,7 @@ font-size: clamp(0.9rem, 3vw, 1.2rem); /* Mobile */
 
 
     <script src="../javaScript/topnav-main.js"></script>
+    <script src="../JavaScript/course-explorer.js"></script>
 
 </body>
 
