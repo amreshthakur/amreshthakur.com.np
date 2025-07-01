@@ -51,8 +51,8 @@ h6 {
   width: 100%;
   white-space: nowrap;
   overflow: auto;
-  background-color: rgba(236, 233, 233, 0.965);
-  color: #a24545;
+  background-color: rgba(255, 255, 255, 0.965);
+  color: #000000;
   font-size: 0;
   letter-spacing: 1px;
 }
