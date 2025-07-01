@@ -1,6 +1,6 @@
 
 // Lesson 1: Introduction to Computer
-const lesson1Data = {
+const lesson2Data = {
   // Unit 1: Introduction to Computer (3 Hours)
 
 
