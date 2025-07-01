@@ -7,14 +7,14 @@ const lesson1Data = {
 
   
   
-  'intro-overview': {
+  'intro': {
     title: 'Introduction',
     content: `
 
 
 
     
-                <h1>Chapter 1: Introduction to Computers</h1>
+                <h1>hi i amd i boss </h1>
     
     <h2>Introduction</h2>
     <p>
