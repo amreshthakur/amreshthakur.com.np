@@ -18,6 +18,7 @@ const subjectData = [
         name: "Digital Logic",
         description: "Study of logic gates, Boolean algebra, and digital circuit design.",
         elective: false,
+        type: "core",
         semester: "First Semester",
         units: 7
     },

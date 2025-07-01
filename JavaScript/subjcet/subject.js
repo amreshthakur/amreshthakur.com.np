@@ -1,129 +1,117 @@
+// DOM Elements
+const subjectGrid = document.getElementById('pa-subject-grid');
+const unitList = document.getElementById('pa-unit-list');
+const unitOverlay = document.getElementById('pa-unit-overlay');
+const subjectTitle = document.getElementById('pa-subject-title');
+const filterBtns = document.querySelectorAll('.pa-filter-btn');
 
+// Helper function to generate slugs
+function generateSlug(text) {
+    return text.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/--+/g, '-')
+        .replace(/(^|\/)bsc-?csit-/g, '$1'); // Remove prefixes
+}
 
-        const subjectIcons = [
-            "fa-laptop-code", "fa-microchip", "fa-paint-brush",
-            "fa-diagram-project", "fa-desktop", "fa-network-wired",
-            "fa-brain", "fa-database", "fa-calculator", "fa-server",
-            "fa-code", "fa-shield-alt", "fa-mobile", "fa-globe"
-        ];
+// Generate unit tutorial URL with semester
+function generateUnitLink(semester, subjectName, unitTitle) {
+    const semesterSlug = generateSlug(semester);
+    const subjectSlug = generateSlug(subjectName);
+    const unitSlug = generateSlug(unitTitle);
+    return `/csit/${semesterSlug}/${subjectSlug}/${unitSlug}/`;
+}
 
-        const unitIcons = [
-            "fa-book-open", "fa-shapes", "fa-sitemap",
-            "fa-cogs", "fa-cube", "fa-project-diagram",
-            "fa-palette", "fa-chart-line", "fa-code-branch", "fa-bug"
-        ];
+// Initialize subject cards
+function initSubjectCards() {
+    subjectGrid.innerHTML = '';
 
-        // DOM Elements
-        const subjectGrid = document.getElementById('pa-subject-grid');
-        const unitGrid = document.getElementById('pa-unit-grid');
-        const filterBtns = document.querySelectorAll('.pa-filter-btn');
-        const unitOverlay = document.getElementById('pa-unit-overlay');
-        const subjectTitle = document.getElementById('pa-subject-title');
-        const overlaySubtitle = document.getElementById('pa-overlay-subtitle');
+    subjectData.forEach((subject, index) => {
+        const subjectIcon = getSubjectIcon(subject.name);
+        const card = document.createElement('div');
+        card.className = `pa-subject-card ${subject.type}`;
+        card.style.animationDelay = `${index * 0.05}s`;
+        card.dataset.semester = subject.semester; // Store semester in dataset
 
-        // State
-        let currentSubject = "";
-        let currentUnits = [];
-        let isRestoringFromHistory = false;
-
-        // Initialize subject cards
-        function initSubjectCards() {
-            subjectGrid.innerHTML = '';
-
-            subjectData.forEach((subject, index) => {
-                const iconIndex = index % subjectIcons.length;
-                const cardType = subject.elective ? 'elective' : 'core';
-
-                const card = document.createElement('div');
-                card.className = `pa-subject-card ${cardType}`;
-                card.innerHTML = `
+        card.innerHTML = `
             <div class="pa-subject-header">
-                <h3 class="pa-subject-title">${subject.name}</h3>
-                <div class="pa-subject-meta">
-                    <span>${subject.semester}</span>
-                    <span>${subject.units} Units</span>
+                <div>
+                    <h3 class="pa-subject-title">${subject.name}</h3>
+                    <div class="pa-subject-meta">
+                        <span class="pa-semester-badge">${subject.semester.replace('-', ' ')}</span>
+                        <span>${subject.units} Units</span>
+                    </div>
                 </div>
                 <div class="pa-subject-icon">
-                    <i class="fas ${subjectIcons[iconIndex]}"></i>
+                    <i class="fas ${subjectIcon}"></i>
                 </div>
             </div>
             <div class="pa-subject-description">
                 ${subject.description}
             </div>
             <div class="pa-subject-footer">
-                ${subject.elective ?
-                        '<span class="pa-resource-badge">ELECTIVE</span>' :
-                        '<span class="pa-resource-badge">CORE</span>'}
+                ${subject.type === 'elective' ? 
+                    '<span class="pa-resource-badge pa-elective-badge">ELECTIVE</span>' : 
+                    '<span class="pa-resource-badge pa-core-count-badge">CORE</span>'}
                 <span class="pa-units-count">${subject.units} Learning Units</span>
             </div>
         `;
 
-                card.addEventListener('click', () => openUnitOverlay(subject.name));
-                subjectGrid.appendChild(card);
-            });
+        card.addEventListener('click', () => openUnitOverlay(subject.name, subject.semester));
+        subjectGrid.appendChild(card);
+    });
+}
 
-            // Initialize progress bars
-            setTimeout(() => {
-                document.querySelectorAll('.pa-progress-bar').forEach(bar => {
-                    const width = Math.floor(Math.random() * 60) + 20;
-                    bar.style.width = `${width}%`;
-                });
-            }, 300);
+// Get appropriate icon for subject
+function getSubjectIcon(subjectName) {
+    const iconMap = {
+        "Programming": "fa-laptop-code",
+        "Artificial": "fa-brain",
+        "Database": "fa-database",
+        "Networks": "fa-network-wired",
+        "Web": "fa-globe",
+        "Operating": "fa-desktop",
+        "Data Structures": "fa-sitemap",
+        "Cybersecurity": "fa-shield-alt"
+    };
+    
+    for (const key in iconMap) {
+        if (subjectName.includes(key)) {
+            return iconMap[key];
         }
+    }
+    return "fa-book";
+}
 
-        // Generate slugs for URLs
-        function generateSlug(text) {
-            return text.toLowerCase()
-                .replace(/[^\w\s-]/g, '')
-                .replace(/\s+/g, '-')
-                .replace(/--+/g, '-');
-        }
+// Open unit overlay with semester
+function openUnitOverlay(subjectName, semester) {
+    subjectTitle.textContent = subjectName;
+    renderUnitCards(subjectName, semester);
+    unitOverlay.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
 
-        // Generate unit links with semester
-        function generateUnitLink(semester, subject, unitTitle) {
-            const courseSlug = "csit";
-            const semesterSlug = generateSlug(semester);
-            const subjectSlug = generateSlug(subject);
-            const unitSlug = generateSlug(unitTitle);
-            return `/${courseSlug}/${semesterSlug}/${subjectSlug}/${unitSlug}/`;
-        }
+// Render unit cards with semester
+function renderUnitCards(subjectName, semester) {
+    unitList.innerHTML = '';
+    
+    const units = unitData[subjectName] || [];
+    const unitIcons = [
+        "fa-book-open", "fa-shapes", "fa-sitemap",
+        "fa-cogs", "fa-cube", "fa-project-diagram",
+        "fa-palette", "fa-chart-line", "fa-code-branch", "fa-bug"
+    ];
 
-        // Open unit overlay with history state management
-        function openUnitOverlay(subjectName, fromHistory = false) {
-            currentSubject = subjectName;
-            subjectTitle.textContent = subjectName;
-            overlaySubtitle.textContent = "Select a unit to open its tutorial";
+    if (units.length > 0) {
+        units.forEach((unit, index) => {
+            const unitNumber = index + 1;
+            const iconIndex = index % unitIcons.length;
+            const unitLink = generateUnitLink(semester, subjectName, unit.title);
 
-            // Only push state if not restoring from history
-            if (!fromHistory) {
-                history.pushState({ overlay: subjectName }, '');
-            }
-
-            currentUnits = unitData[subjectName] || generateDefaultUnits(subjectName);
-
-            renderUnitCards();
-
-            unitOverlay.style.display = "flex";
-            document.body.style.overflow = "hidden";
-        }
-
-        // Render unit cards
-        function renderUnitCards() {
-            unitGrid.innerHTML = '';
-
-            const subjectObj = subjectData.find(s => s.name === currentSubject);
-            const semester = subjectObj ? subjectObj.semester : 'unknown-semester';
-
-            if (currentUnits.length > 0) {
-                currentUnits.forEach((unit, index) => {
-                    const unitNumber = index + 1;
-                    const unitLink = generateUnitLink(semester, currentSubject, unit.title);
-                    const iconIndex = index % unitIcons.length;
-
-                    const unitCard = document.createElement('div');
-                    unitCard.className = 'pa-unit-card';
-                    unitCard.style.animationDelay = `${index * 0.05}s`;
-                    unitCard.innerHTML = `
+            const unitCard = document.createElement("div");
+            unitCard.className = 'pa-unit-card';
+            unitCard.style.animationDelay = `${index * 0.05}s`;
+            unitCard.innerHTML = `
                 <div class="pa-unit-header">
                     <div class="pa-unit-icon">
                         <i class="fas ${unitIcons[iconIndex]}"></i>
@@ -141,97 +129,72 @@
                     <div class="pa-progress-bar"></div>
                 </div>
             `;
-
-                    // Direct navigation without loading overlay
-                    unitCard.addEventListener('click', () => {
-                        window.location.href = unitLink;
-                    });
-
-                    unitGrid.appendChild(unitCard);
-                });
-            }
-
-            setTimeout(() => {
-                document.querySelectorAll('.pa-progress-bar').forEach(bar => {
-                    const width = Math.floor(Math.random() * 60) + 20;
-                    bar.style.width = `${width}%`;
-                });
-            }, 300);
-        }
-
-        // Generate default units
-        function generateDefaultUnits(subjectName) {
-            const unitThemes = [
-                "Fundamentals and Introduction",
-                "Core Concepts and Principles",
-                "Advanced Techniques",
-                "Practical Applications",
-                "Case Studies and Real-world Examples",
-                "Implementation and Optimization",
-                "Advanced Topics and Research",
-                "Future Directions and Trends"
-            ];
-
-            return unitThemes.map((theme, index) => ({
-                title: `${theme} of ${subjectName}`,
-                description: `This unit covers ${theme.toLowerCase()} related to ${subjectName}`
-            }));
-        }
-
-        // Close unit overlay
-        function closeUnitOverlay() {
-            unitOverlay.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-
-        // Filter buttons
-        filterBtns.forEach(button => {
-            button.addEventListener('click', function () {
-                filterBtns.forEach(btn => btn.classList.remove('pa-active'));
-                this.classList.add('pa-active');
-
-                const filterValue = this.dataset.filter;
-                const subjectCards = document.querySelectorAll('.pa-subject-card');
-                subjectCards.forEach(card => {
-                    if (filterValue === 'all') {
-                        card.style.display = 'block';
-                    } else if (filterValue === 'core') {
-                        card.style.display = card.classList.contains('core') ? 'block' : 'none';
-                    } else if (filterValue === 'elective') {
-                        card.style.display = card.classList.contains('elective') ? 'block' : 'none';
-                    }
-                });
+            
+            unitCard.addEventListener('click', function() {
+                window.location.href = unitLink;
             });
+            
+            unitList.appendChild(unitCard);
+        });
+        
+        // Initialize progress bars with random values
+        setTimeout(() => {
+            document.querySelectorAll('.pa-progress-bar').forEach(bar => {
+                const width = Math.floor(Math.random() * 60) + 20;
+                bar.style.width = `${width}%`;
+            });
+        }, 300);
+    } else {
+        unitList.innerHTML = `
+            <div style="text-align: center; padding: 40px; color: rgba(255,255,255,0.7)">
+                <i class="fas fa-book" style="font-size: 3rem; margin-bottom: 20px;"></i>
+                <h3>No Units Available</h3>
+                <p>This subject doesn't have any units defined yet.</p>
+            </div>
+        `;
+    }
+}
+
+// Close unit overlay
+function closeUnitOverlay() {
+    unitOverlay.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+// Filter initialization
+filterBtns.forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterBtns.forEach(btn => {
+            btn.classList.remove('pa-active');
         });
 
-        // History state management
-        window.addEventListener('popstate', function (event) {
-            if (event.state && event.state.overlay) {
-                // Restore overlay from history
-                isRestoringFromHistory = true;
-                openUnitOverlay(event.state.overlay, true);
-                isRestoringFromHistory = false;
+        // Add active class to clicked button
+        this.classList.add('pa-active');
+
+        // Get filter type
+        const filterValue = this.dataset.filter;
+
+        // Show/hide subjects based on filter
+        document.querySelectorAll('.pa-subject-card').forEach(card => {
+            if (filterValue === 'all') {
+                card.style.display = 'flex';
             } else {
-                // Close overlay when going back
-                closeUnitOverlay();
+                const cardType = card.classList.contains('core') ? 'core' : 'elective';
+                card.style.display = (cardType === filterValue) ? 'flex' : 'none';
             }
         });
+    });
+});
 
-        // Close overlay on outside click
-        unitOverlay.addEventListener('click', function (e) {
-            if (e.target === this) {
-                history.back();
-            }
-        });
+// Close overlay when clicking outside the container
+unitOverlay.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeUnitOverlay();
+    }
+});
 
-        // Initialize app
-        document.addEventListener('DOMContentLoaded', () => {
-            initSubjectCards();
-
-            // Restore overlay state if present in history
-            if (history.state && history.state.overlay) {
-                isRestoringFromHistory = true;
-                openUnitOverlay(history.state.overlay, true);
-                isRestoringFromHistory = false;
-            }
-        });
+// Initialize the application
+document.addEventListener('DOMContentLoaded', () => {
+    initSubjectCards();
+});
