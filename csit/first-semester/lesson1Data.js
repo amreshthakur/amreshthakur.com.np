@@ -1,3 +1,4 @@
+
 // Lesson 1: Introduction to Computer
 const lesson1Data = {
   // Unit 1: Introduction to Computer (3 Hours)
