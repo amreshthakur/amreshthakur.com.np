@@ -627,3 +627,253 @@ th {
 
 
 
+
+
+/* ============================================subject page================================================== */
+
+            .grid-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .box {
+            border-radius: 15px;
+            padding: 25px;
+            font-size: 1.1rem;
+            min-height: 200px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            display: flex;
+            flex-direction: column;
+                        background: white;
+
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #3498db;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+        }
+
+        .box h2 i {
+            margin-right: 12px;
+            color: #3498db;
+        }
+
+        .main-unit {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+        }
+
+        .question-list {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+
+        .other-subject {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        .other-semester {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+        .other-courses {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+        }
+
+        .unit-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .unit-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 18px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        .unit-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+            border-left: 4px solid #e74c3c;
+        }
+
+        .unit-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            display: flex;
+        }
+
+        .unit-item .unit-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .unit-item p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-left: 38px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .list-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .list-item i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            min-width: 25px;
+        }
+
+        .question-list .list-item {
+            border-left: 4px solid #e74c3c;
+        }
+        .question-list .list-item i {
+            color: #e74c3c;
+        }
+
+        .other-subject .list-item {
+            border-left: 4px solid #2ecc71;
+        }
+        .other-subject .list-item i {
+            color: #2ecc71;
+        }
+
+        .other-semester .list-item {
+            border-left: 4px solid #f39c12;
+        }
+        .other-semester .list-item i {
+            color: #f39c12;
+        }
+
+        .other-courses .list-item {
+            border-left: 4px solid #9b59b6;
+        }
+        .other-courses .list-item i {
+            color: #9b59b6;
+        }
+
+        /* Scrollable containers */
+        .scrollable-list {
+            max-height: 280px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        /* Custom scrollbar styling */
+        .scrollable-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scrollable-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .scrollable-list::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 10px;
+        }
+
+        .scrollable-list::-webkit-scrollbar-thumb:hover {
+            background: #2980b9;
+        }
+        
+
+        /* 🔁 Responsive for Tablets and Phones */
+        @media (max-width: 992px) {
+            .unit-list {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .grid-container {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .main-unit,
+            .question-list,
+            .other-subject,
+            .other-semester,
+            .other-courses {
+                grid-column: 1 / 2;
+                grid-row: auto;
+            }
+            
+          
+            
+            body {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .unit-list {
+                grid-template-columns: 1fr;
+            }
+
+       
+            .box h2 {
+                font-size: 1.5rem;
+            }
+            
+            .box {
+                padding: 20px;
+            }
+        }
+
+    /* ============================================subject page================================================== */
