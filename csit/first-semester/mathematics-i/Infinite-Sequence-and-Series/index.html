@@ -12,7 +12,7 @@
     <meta name="author" content="Your Name">
 
     <!-- Website Webpage Names -->
-    <title>BSc CSIT Notes, Old Questions - All Semesters | Pipara Academy</title>
+    <title>Pipara Academy Online Education Center</title>
 
     <!-- Open Graph Meta Tags (Facebook, WhatsApp) -->
     <meta property="og:type" content="website">
@@ -45,8 +45,6 @@
 
     <!-- HTML Language -->
     <html lang="en">
-
-
 
  <!-- ✅ Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -266,6 +264,15 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1945,77 +1952,127 @@
 
 
 
-    <!-- =============================================================================================================== -->
-    <!-- course explorer start -->
-    <!-- =============================================================================================================== -->
-    <div class="pipara-academy-course-container">
-        <header class="pipara-academy-course-header">
-            <h1 class="pipara-academy-course-title">Pipara Academy Course Explorer</h1>
-            <div class="pipara-academy-course-filter-container">
-                <button class="pipara-academy-course-filter-btn pipara-academy-course-active" data-filter="all">All
-                    Semesters</button>
-                <button class="pipara-academy-course-filter-btn" data-filter="core">Core Subjects</button>
-                <button class="pipara-academy-course-filter-btn" data-filter="elective">Electives</button>
-            </div>
-        </header>
-        <div class="pipara-academy-course-semester-grid">
-            <!-- Semester cards will be dynamically generated -->
-        </div>
+    <!-- <style>
+        #leftSidebar,
+        #rightSidebar {
+            display: none;
+        }
+    </style> -->
 
-        <!-- Semester Overlay -->
-        <div id="pipara-academy-course-overlay" class="pipara-academy-course-overlay">
-            <div class="pipara-academy-course-overlay-container">
-                <div class="pipara-academy-course-overlay-header">
-                    <h2 id="pipara-academy-course-semester-title">First Semester</h2>
-                    <p>Select a subject to view its units</p>
-                    <button class="pipara-academy-course-close-btn" onclick="closeOverlay()">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="pipara-academy-course-overlay-content">
-                    <button class="pipara-academy-course-back-btn" onclick="closeOverlay()">
-                        <i class="fas fa-arrow-left"></i> Back to Semesters
-                    </button>
-                    <div id="pipara-academy-course-subject-content">
-                        <div class="pipara-academy-course-unit-list" id="pipara-academy-course-subject-list"></div>
+
+
+
+    <!-- Mobile Menu Toggle -->
+    <!-- <button class="menu-toggle" id="menuToggle">☰ Menu</button> -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar"></div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <!-- Left Sidebar -->
+
+        <aside class="sidebar left-sidebar" id="leftSidebar">
+            <div class="sidebar-section">
+
+                <h2>Introduction to Computer</h2>
+                <ul>
+                    <li><a href="#" data-content="intro-overview" class="menu-link">Introduction</a></li>
+                    <li><a href="#" data-content="intro-digital-analog" class="menu-link">Digital and Analog
+                            Computers</a></li>
+                    <li><a href="#" data-content="intro-characteristics" class="menu-link">Characteristics of
+                            Computer</a></li>
+                    <li><a href="#" data-content="intro-history" class="menu-link">History of Computer</a></li>
+                    <li><a href="#" data-content="intro-generations" class="menu-link">Generations of Computer</a></li>
+                    <li><a href="#" data-content="intro-classification" class="menu-link">Classification of Computer</a>
+                    </li>
+                    <li><a href="#" data-content="intro-system" class="menu-link">The Computer System</a></li>
+                    <li><a href="#" data-content="intro-application" class="menu-link">Application of Computers</a></li>
+                </ul>
+
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Semester Overlay -->
+            <div id="pipara-academy-course-overlay" class="pipara-academy-course-overlay">
+                <div class="pipara-academy-course-overlay-container">
+                    <div class="pipara-academy-course-overlay-header">
+                        <h2 id="pipara-academy-course-semester-title">First Semester</h2>
+                        <p>Select a subject to view its units</p>
+                        <button class="pipara-academy-course-close-btn" onclick="closeOverlay()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="pipara-academy-course-overlay-content">
+                        <button class="pipara-academy-course-back-btn" onclick="closeOverlay()">
+                            <i class="fas fa-arrow-left"></i> Back to Semesters
+                        </button>
+                        <div id="pipara-academy-course-subject-content">
+                            <div class="pipara-academy-course-unit-list" id="pipara-academy-course-subject-list"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Unit Overlay -->
-        <div id="pipara-academy-course-unit-overlay" class="pipara-academy-course-overlay">
-            <div class="pipara-academy-course-overlay-container">
-                <div class="pipara-academy-course-overlay-header">
-                    <h2 id="pipara-academy-course-subject-title">Programming Fundamentals</h2>
-                    <p id="pipara-academy-course-overlay-subtitle">Select a unit to view content</p>
-                    <button class="pipara-academy-course-close-btn" onclick="closeUnitOverlay()">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="pipara-academy-course-overlay-content">
-                    <button class="pipara-academy-course-back-btn" onclick="goBackToSubjects()">
-                        <i class="fas fa-arrow-left"></i> Back to Subjects
-                    </button>
-                    <div id="pipara-academy-course-unit-content">
-                        <div class="pipara-academy-course-unit-list" id="pipara-academy-course-unit-list"></div>
+            <!-- Unit Overlay -->
+            <div id="pipara-academy-course-unit-overlay" class="pipara-academy-course-overlay">
+                <div class="pipara-academy-course-overlay-container">
+                    <div class="pipara-academy-course-overlay-header">
+                        <h2 id="pipara-academy-course-subject-title">Programming Fundamentals</h2>
+                        <p id="pipara-academy-course-overlay-subtitle">Select a unit to view content</p>
+                        <button class="pipara-academy-course-close-btn" onclick="closeUnitOverlay()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="pipara-academy-course-overlay-content">
+                        <button class="pipara-academy-course-back-btn" onclick="goBackToSubjects()">
+                            <i class="fas fa-arrow-left"></i> Back to Subjects
+                        </button>
+                        <div id="pipara-academy-course-unit-content">
+                            <div class="pipara-academy-course-unit-list" id="pipara-academy-course-unit-list">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- ================================================================================================================================== -->
+
+            <div class="post-content" id="contentDisplay">
+                <div class="content-card">
+                    <!-- ............results............ -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar right-sidebar" id="rightSidebar">
+            <div class="sidebar-section">
+                <h2>Computer System Hardware</h2>
+                <ul>
+                    <li><a href="#" data-content="hardware-intro" class="menu-link">Introduction</a></li>
+                    <li><a href="#" data-content="hardware-cpu" class="menu-link">Central Processing Unit</a></li>
+                    <li><a href="#" data-content="hardware-memory" class="menu-link">Memory Unit</a></li>
+                    <li><a href="#" data-content="hardware-format" class="menu-link">Instruction Format</a></li>
+                    <li><a href="#" data-content="hardware-set" class="menu-link">Instruction Set</a></li>
+                    <li><a href="#" data-content="hardware-cycle" class="menu-link">Instruction Cycle</a></li>
+                    <li><a href="#" data-content="hardware-micro" class="menu-link">Microprocessor</a></li>
+                    <li><a href="#" data-content="hardware-interconnect" class="menu-link">Interconnecting the Units</a>
+                    </li>
+                    <li><a href="#" data-content="hardware-cabinet" class="menu-link">Inside a Computer Cabinet</a></li>
+                </ul>
+            </div>
+        </aside>
     </div>
-
-    <!-- =============================================================================================================== -->
-    <!-- course explorer end -->
-    <!-- =============================================================================================================== -->
-
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer>
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Column 1: About -->
                 <div class="footer-column">
-                    <h3>About</h3>
+                    <h4>About CodeLearn</h4>
                     <p>Your premier destination for coding tutorials and tech education. We make complex concepts simple
                         with hands-on projects and real-world examples.</p>
                     <div class="newsletter-form">
@@ -2029,7 +2086,7 @@
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#" aria-label="Home">Home</a></li>
+                        <li><a href="/" aria-label="Home">Home</a></li>
                         <li><a href="#" aria-label="Courses">Courses</a></li>
                         <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
                         <li><a href="#" aria-label="Blog">Blog</a></li>
@@ -2090,9 +2147,28 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script src="JavaScript/subejct-unit-semester.js"></script>
-    <script src="csit/data/subjectunit.js"></script>
     <script src="csit/data/semesterData.js"></script>
+    <script src="csit/data/subjectunit.js"></script>
     <script src="javaScript/topnav-main.js"></script>
 
 </body>

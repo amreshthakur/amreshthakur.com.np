@@ -649,7 +649,7 @@ th {
             border: none;
             display: flex;
             flex-direction: column;
-                        background: white;
+                        /* background: white; */
 
         }
 
@@ -663,7 +663,6 @@ th {
             margin-bottom: 20px;
             padding-bottom: 12px;
             border-bottom: 3px solid #3498db;
-            color: #2c3e50;
             display: flex;
             align-items: center;
         }
