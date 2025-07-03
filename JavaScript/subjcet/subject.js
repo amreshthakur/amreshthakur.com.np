@@ -19,7 +19,7 @@ function generateUnitLink(semester, subjectName, unitTitle) {
     const semesterSlug = generateSlug(semester);
     const subjectSlug = generateSlug(subjectName);
     const unitSlug = generateSlug(unitTitle);
-    return `${semesterSlug}/${subjectSlug}/${unitSlug}/`;
+    return `/csit/${semesterSlug}/${subjectSlug}/${unitSlug}/`;
 }
 
 // Initialize subject cards

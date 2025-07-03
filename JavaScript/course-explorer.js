@@ -42,9 +42,23 @@ function generateUnitLink(subject, unitTitle) {
     const semesterSlug = generateSlug(currentSemesterTitle);
     const subjectSlug = generateSlug(subject);
     const unitSlug = generateSlug(unitTitle);
-    // Remove "bsccsit-" from unit links
-    return `${courseSlug}/${semesterSlug}/${subjectSlug}/${unitSlug}/`.replace('bsccsit-', '');
+
+    // Normalize the path (remove index.html, split by /)
+    const path = window.location.pathname.replace("index.html", "");
+    const pathParts = path.split("/").filter(Boolean);
+
+    // Check if current path already includes 'csit'
+    const isInsideCSIT = pathParts.includes(courseSlug);
+
+    // Add 'csit/' only if not already in path
+    const basePath = isInsideCSIT ? "" : `${courseSlug}/`;
+
+    // Construct and return final URL
+    return `/${basePath}${semesterSlug}/${subjectSlug}/${unitSlug}/`.replace("bsccsit-", "");
 }
+
+
+
 
 // Initialize semester cards
 function initSemesterCards() {
