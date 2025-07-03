@@ -35,20 +35,20 @@ function generateSlug(text) {
         .replace(/--+/g, '-');
 }
 
-// Helper function to clean semester slug
+// Helper function to clean semester slug - FIXED
 function cleanSemesterSlug(slug) {
-    // Always remove prefix regardless of path
+    // Remove all variations of "bsc-csit-" prefix
     return slug.replace(/^(bsc[-_]?csit[-_]?|bsccsit[-_]?)/i, '');
 }
 
 // Generate proper URL structure - UPDATED
 function generateUnitLink(subject, unitTitle) {
     const courseSlug = "csit";
-    let semesterSlug = cleanSemesterSlug(generateSlug(currentSemesterTitle));
+    const semesterSlug = cleanSemesterSlug(generateSlug(currentSemesterTitle));
     const subjectSlug = generateSlug(subject);
     const unitSlug = generateSlug(unitTitle);
 
-    // Always use the same URL structure: /csit/semester/subject/unit/
+    // Always use the same URL structure
     return `/${courseSlug}/${semesterSlug}/${subjectSlug}/${unitSlug}/`;
 }
 
@@ -395,6 +395,7 @@ function searchCurriculum(query, filter) {
     const match = txt => txt?.toLowerCase().includes(q);
 
     semesterData.forEach((semester, si) => {
+        // Apply the same cleaning to search slugs
         let semSlug = cleanSemesterSlug(generateSlug(semester.title));
 
         if ((filter === 'all' || filter === 'semester') && (match(semester.title) || match(semester.description))) {
