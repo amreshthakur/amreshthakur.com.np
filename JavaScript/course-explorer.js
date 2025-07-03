@@ -35,30 +35,21 @@ function generateSlug(text) {
         .replace(/--+/g, '-');
 }
 
-// Helper function to remove bsc-csit prefix
+// Helper function to clean semester slug
 function cleanSemesterSlug(slug) {
-    return slug.replace(/^bsc-csit-/, '');
+    // Always remove prefix regardless of path
+    return slug.replace(/^(bsc[-_]?csit[-_]?|bsccsit[-_]?)/i, '');
 }
 
-// Generate proper URL structure
+// Generate proper URL structure - UPDATED
 function generateUnitLink(subject, unitTitle) {
     const courseSlug = "csit";
-    let semesterSlug = generateSlug(currentSemesterTitle);
-    semesterSlug = cleanSemesterSlug(semesterSlug);
+    let semesterSlug = cleanSemesterSlug(generateSlug(currentSemesterTitle));
     const subjectSlug = generateSlug(subject);
     const unitSlug = generateSlug(unitTitle);
 
-    // Normalize path: remove index.html, leading/trailing slashes
-    const path = window.location.pathname.replace(/index\.html$/, "").replace(/^\/|\/$/g, "");
-    const pathParts = path.split("/");
-
-    // If already on a /csit/* path, don't repeat "csit"
-    const isInsideCSIT = pathParts[0] === courseSlug;
-
-    // Only include 'csit/' if not already in path
-    const basePath = isInsideCSIT ? "" : `${courseSlug}/`;
-
-    return `/${basePath}${semesterSlug}/${subjectSlug}/${unitSlug}/`;
+    // Always use the same URL structure: /csit/semester/subject/unit/
+    return `/${courseSlug}/${semesterSlug}/${subjectSlug}/${unitSlug}/`;
 }
 
 // Initialize semester cards
@@ -399,12 +390,12 @@ function searchCurriculum(query, filter) {
     const t0 = performance.now();
     const q = query.toLowerCase();
     const results = [];
+    const courseSlug = "csit";
 
     const match = txt => txt?.toLowerCase().includes(q);
 
     semesterData.forEach((semester, si) => {
-        let semSlug = getSemesterSlug(semester.title);
-        semSlug = cleanSemesterSlug(semSlug);  // Apply cleaning here too
+        let semSlug = cleanSemesterSlug(generateSlug(semester.title));
 
         if ((filter === 'all' || filter === 'semester') && (match(semester.title) || match(semester.description))) {
             results.push({
@@ -414,13 +405,13 @@ function searchCurriculum(query, filter) {
                 subjects: semester.subjects.length,
                 core: semester.subjects.filter(s => !s.elective).length,
                 electives: semester.subjects.filter(s => s.elective).length,
-                link: `/csit/${semSlug}/`,
+                link: `/${courseSlug}/${semSlug}/`,
                 semesterIndex: si
             });
         }
 
         semester.subjects.forEach(subject => {
-            const subjSlug = toSlug(subject.name);
+            const subjSlug = generateSlug(subject.name);
 
             if ((filter === 'all' || filter === 'subject') && (match(subject.name) || match(subject.description))) {
                 results.push({
@@ -428,7 +419,7 @@ function searchCurriculum(query, filter) {
                     title: subject.name,
                     description: subject.description,
                     semester: semester.title,
-                    link: `/csit/${semSlug}/${subjSlug}/`,
+                    link: `/${courseSlug}/${semSlug}/${subjSlug}/`,
                     elective: subject.elective
                 });
             }
@@ -442,7 +433,7 @@ function searchCurriculum(query, filter) {
                         description: unit.description,
                         subject: subject.name,
                         semester: semester.title,
-                        link: `/csit/${semSlug}/${subjSlug}/${toSlug(unit.title)}`
+                        link: `/${courseSlug}/${semSlug}/${subjSlug}/${generateSlug(unit.title)}/`
                     });
                 }
             });
