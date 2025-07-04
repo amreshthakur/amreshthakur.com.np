@@ -1,105 +1,101 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <!-- Basic Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Keywords"
-        content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, PAN.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Courses, Programming, Web Development, Training, Learning, Quiz, Notes, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website">
-    <meta name="Description"
-        content="Well organized and easy to understand Web building Courses with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more.">
-    <meta name="author" content="Your Name">
+  <!-- ✅ Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Arrays in C Programming – BSc CSIT 3rd Semester Notes | Pipara Academy</title>
 
-    <!-- Website Webpage Names -->
-    <title>Pipara Academy Online Education Center</title>
+  <meta name="description" content="Learn Arrays in C Programming with detailed notes, examples, and programs from BSc CSIT 3rd Semester syllabus. Provided by Pipara Academy – your learning partner in Nepal.">
+  <meta name="keywords" content="Arrays in C, C Programming, BSc CSIT Notes, CSIT Semester 3, Pipara Academy, Tribhuvan University, Programming Notes, CSIT Nepal, amreshthakur.com.np" />
+  <meta name="author" content="Amresh Thakur" />
 
-    <!-- Open Graph Meta Tags (Facebook, WhatsApp) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="/">
-    <meta property="og:title" content="Your Website Title">
-    <meta property="og:image" content="logo_link_url___436_2.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="436">
-    <meta property="og:image:height" content="228">
-    <meta property="og:description"
-        content="Pipara Academy offers free online Courses, references and Notes in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many, many more.">
+  <!-- ✅ Indexing and Crawling -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="bingbot" content="index, follow" />
 
-    <!-- Twitter Meta Tags -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/">
-    <meta property="twitter:title" content="Your Website Title">
-    <meta property="twitter:description" content="A concise and informative description for Twitter">
-    <meta property="twitter:image" content="/">
+  <!-- ✅ Canonical URL -->
+  <link rel="canonical" href="https://amreshthakur.com.np/csit/first-semester/c-programming/arrays/" />
 
-    <!-- Search Engine Meta Tags -->
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="https://amreshthakur.com.np/favicon.ico" type="image/x-icon" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- ✅ Open Graph Meta Tags -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://amreshthakur.com.np/csit/3rd-semester/c-programming/arrays/" />
+  <meta property="og:title" content="Arrays in C – BSc CSIT Notes & Examples | Pipara Academy" />
+  <meta property="og:description" content="Master arrays in C with notes, examples, and tutorials tailored for BSc CSIT students. From Pipara Academy." />
+  <meta property="og:image" content="https://amreshthakur.com.np/images/arrays-og-banner.png" />
+  <meta property="og:site_name" content="Pipara Academy" />
 
-    <!-- Canonical Link (Specify the preferred version of a page) -->
-    <link rel="canonical" href="https://www.yourwebsite.com">
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@piparaacademy" />
+  <meta name="twitter:title" content="Arrays in C Programming – CSIT Notes | Pipara Academy" />
+  <meta name="twitter:description" content="Learn arrays in C with CSIT-aligned notes and examples. Perfect for Semester 3 students." />
+  <meta name="twitter:image" content="https://amreshthakur.com.np/images/arrays-twitter-card.png" />
+  <meta name="twitter:image:alt" content="Arrays in C - Pipara Academy" />
 
-    <!-- HTML Language -->
-    <html lang="en">
+  <!-- ✅ Site Identity -->
+  <meta name="application-name" content="Pipara Academy" />
+  <meta name="theme-color" content="#007bff" />
 
-   <!-- ✅ Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": "Statistics II",
-        "description": "Complete BSc CSIT Statistics II course with notes, examples and solutions",
-        "educationalLevel": "undergraduate",
-        "provider": {
-            "@type": "Organization",
-            "name": "Pipara Academy",
-            "url": "https://www.piparaacademy.com",
-            "logo": "https://www.piparaacademy.com/logo.png"
-        },
-        "hasCourseInstance": {
-            "@type": "CourseInstance",
-            "courseMode": "online",
-            "location": {
-                "@type": "VirtualLocation",
-                "url": "https://www.piparaacademy.com/courses/bsc-csit/third-semester/statistics-ii/"
-            },
-            "audience": {
-                "@type": "EducationalAudience",
-                "audienceType": "CSIT students"
-            }
-        },
-        "teaches": [
-            "Probability theory",
-            "Probability distributions",
-            "Statistical inference",
-            "Hypothesis testing",
-            "Correlation and regression analysis",
-            "Sampling theory",
-            "Chi-square and t-tests"
-        ],
-        "timeRequired": "PT45H"
-    }
-    </script>
-  <!-- ✅ CSS Stylesheets -->
-  <link href="../../../../main.css" rel="stylesheet" type="text/css" />
-  <link href="../../../../style/style.css" rel="stylesheet" type="text/css" />
+  <!-- ✅ Google Site Verification -->
+  <meta name="google-site-verification" content="FITdzHukrQTwVoxMRJt2mu9fKe21KB-2SxQ5XWe33SU" />
 
-  <!-- ✅ Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- ✅ Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Arrays in C Programming",
+    "description": "In-depth CSIT 3rd Semester guide on Arrays in C – with notes, solved problems and examples.",
+    "educationalLevel": "Undergraduate",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Pipara Academy",
+      "url": "https://amreshthakur.com.np",
+      "logo": "https://amreshthakur.com.np/logo.png"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://amreshthakur.com.np/csit/3rd-semester/c-programming/arrays/"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "BSc CSIT Students"
+      }
+    },
+    "teaches": [
+      "Array initialization",
+      "1D and 2D arrays",
+      "Passing arrays to functions",
+      "Multi-dimensional arrays"
+    ],
+    "timeRequired": "PT6H"
+  }
+  </script>
+    <!-- ✅ CSS Stylesheets -->
+    <link href="../../../../main.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../style/style.css" rel="stylesheet" type="text/css" />
 
-  <!-- ✅ JavaScript (deferred for performance) -->
+    <!-- ✅ Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-  <script src="lesson1Data.js" defer></script>
+    <!-- ✅ JavaScript (deferred for performance) -->
+    <script src="lesson1Data.js" defer></script>
 
 
     <!-- search functionality and footer credit and social media launcher -->
-    <script src="../../../../JavaScript/Search-Script.js"></script>
-    <script src="../../../../JavaScript/Footer-credit.js"></script>
-    <script src="../../../../JavaScript/Social-Media-Launcher.js"></script>
+    <script src="../../../../JavaScript/Search-Script.js" defer></script>
+    <script src="../../../../JavaScript/Footer-credit.js" defer></script>
+    <script src="../../../../JavaScript/Social-Media-Launcher.js" defer></script>
     <!-- search functionality and footer credit and social media launcher -->
 
 
@@ -1979,7 +1975,7 @@
 
                 <h2>Introduction to Computer</h2>
                 <ul>
-                    <li><a href="#" data-content="memory-intro" class="menu-link">Introduction</a></li>
+                    <li><a href="#" data-content="intro-overview" class="menu-link">Introduction</a></li>
                     <li><a href="#" data-content="intro-digital-analog" class="menu-link">Digital and Analog
                             Computers</a></li>
                     <li><a href="#" data-content="intro-characteristics" class="menu-link">Characteristics of
@@ -1996,7 +1992,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content">        
             <div class="post-content" id="contentDisplay">
                 <div class="content-card">
                     <!-- ............results............ -->
@@ -2009,7 +2005,7 @@
             <div class="sidebar-section">
                 <h2>Computer System Hardware</h2>
                 <ul>
-                    <li><a href="#" data-content="hardware-intro" class="menu-link">Introduction</a></li>
+                    <li><a href="#" data-content="memory-intro" class="menu-link">Introduction</a></li>
                     <li><a href="#" data-content="hardware-cpu" class="menu-link">Central Processing Unit</a></li>
                     <li><a href="#" data-content="hardware-memory" class="menu-link">Memory Unit</a></li>
                     <li><a href="#" data-content="hardware-format" class="menu-link">Instruction Format</a></li>
@@ -2023,15 +2019,18 @@
             </div>
         </aside>
     </div>
+
+
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Column 1: About -->
                 <div class="footer-column">
-                    <h4>About CodeLearn</h4>
-                    <p>Your premier destination for coding tutorials and tech education. We make complex concepts simple
-                        with hands-on projects and real-world examples.</p>
+                    <h3>About</h3>
+                    <p>Pipara Academy Nepal is a private educational center in Dhanusha and Mahottari. We offer digital
+                        and printed study materials for NEB, CTEVT, Tribhuvan University, and Purbanchal University,
+                        helping students in Pipara and Janakpur succeed in their academic journey.</p>
                     <div class="newsletter-form">
                         <input type="email" class="newsletter-input" placeholder="Your email address"
                             aria-label="Email for newsletter">
@@ -2044,37 +2043,45 @@
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="/" aria-label="Home">Home</a></li>
-                        <li><a href="#" aria-label="Courses">Courses</a></li>
-                        <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
-                        <li><a href="#" aria-label="Blog">Blog</a></li>
-                        <li><a href="#" aria-label="Code Challenges">Code Challenges</a></li>
-                        <li><a href="#" aria-label="Contact Us">Contact Us</a></li>
+                        <li><a href="/about/" aria-label="About Us">About Us</a></li>
+                        <li><a href="/resources/" aria-label="Resources">Resources</a></li>
+                        <li><a href="https://www.akthakur.com.np/" aria-label="Blog" target="_blank"
+                                rel="noopener">Blog</a></li>
+                        <li><a href="/faq/" aria-label="FAQ">FAQ</a></li>
+                        <li><a href="/privacy-policy/" aria-label="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="/terms/" aria-label="Terms & Conditions">Terms & Conditions</a></li>
+                        <li><a href="/contact/" aria-label="Contact Us">Contact Us</a></li>
                     </ul>
                 </div>
 
+
                 <!-- Column 2: Quick Links -->
                 <div class="footer-column">
-                    <h4>Quick Links</h4>
+                    <h4>Courses</h4>
+                    <b>TRIBHUVAN UNIVERSITY</b>
                     <ul class="footer-links">
-                        <li><a href="#" aria-label="Home">Home</a></li>
-                        <li><a href="#" aria-label="Courses">Courses</a></li>
-                        <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
-                        <li><a href="#" aria-label="Blog">Blog</a></li>
-                        <li><a href="#" aria-label="Code Challenges">Code Challenges</a></li>
-                        <li><a href="#" aria-label="Contact Us">Contact Us</a></li>
+                        <li><a href="/csit/" aria-label="CSIT">CSIT</a></li>
+                        <li><a href="/bca/" aria-label="BCA">BCA</a></li>
+                        <li><a href="/BIT/" aria-label="BIT">BIT</a></li>
+                        <li><a href="/bbs/" aria-label="BBS">BBS</a></li>
+                    </ul>
+
+                    <b>POKHARA UNIVERSITY</b>
+                    <ul class="footer-links">
+                        <li><a href="/bca/" aria-label="BCA">BCA</a></li>
+                        <li><a href="/BIT/" aria-label="BIT">BIT</a></li>
+                        <li><a href="/cit/" aria-label="CIT">CIT</a></li>
                     </ul>
                 </div>
+
 
                 <!-- Column 3: Resources -->
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="#" aria-label="Documentation">Documentation</a></li>
-                        <li><a href="#" aria-label="GitHub Repository">GitHub Repos</a></li>
-                        <li><a href="#" aria-label="Cheat Sheets">Cheat Sheets</a></li>
-                        <li><a href="#" aria-label="Developer Tools">Dev Tools</a></li>
-                        <li><a href="#" aria-label="API Reference">API Reference</a></li>
-                        <li><a href="#" aria-label="Community Forum">Community Forum</a></li>
+                        <li><a href="#" aria-label="PDF Notes">PDF Notes</a></li>
+                        <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
+                        <li><a href="#" aria-label="Code Playground">TU CSIT Notice</a></li>
                     </ul>
                 </div>
 
@@ -2084,20 +2091,20 @@
                     <h4>Connect With Us</h4>
                     <p>Join our community for updates, tips, and exclusive content:</p>
                     <div class="social-icons">
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" data-platform="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" data-platform="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" data-platform="twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" data-platform="linkedin" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#" data-platform="discord" aria-label="Discord"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
-            </div>
 
+            </div>
             <div class="footer-bottom">
                 <p>&copy; <span id="currentYear"></span> <span id="websiteName"></span>. All rights reserved. Designed
                     with ♥ for developers.</p>
             </div>
-
         </div>
     </footer>
 
@@ -2122,9 +2129,8 @@
 
 
 
-
-    <script src="../../../../csit/data/semesterData.js"></script>
     <script src="../../../../csit/data/subjectunit.js"></script>
+    <script src="../../../../csit/data/semesterData.js"></script>
     <script src="../../../../javaScript/topnav-main.js"></script>
 
 </body>
