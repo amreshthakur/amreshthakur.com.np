@@ -4,9 +4,9 @@ var TopNavBar = {
     secondaryNavHeightPx: 32,
     fullHeight: '100vh',
     element: document.getElementById('nav-bar'),
-    // searchFromBox: false,
-    // fullScreenNav: false,
-    // fullScreenSearchResults: false,
+    searchFromBox: false,
+    fullScreenNav: false,
+    fullScreenSearchResults: false,
     parentLayoutNotifier: null,
     inIframe: null,
     location: null,
@@ -1428,13 +1428,7 @@ var TopNavBar = {
   
   TopNavBar.init();
 
-
-
-
   // ---====================================================================================
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const contentDisplay = document.getElementById('contentDisplay');
     const menuToggle = document.getElementById('menuToggle');
@@ -1550,16 +1544,5 @@ document.addEventListener('DOMContentLoaded', function() {
     //     window.location.hash = 'intro-overview';
     // }
 });
-
-
-
-
-
-// ================================== subtopnav ======================================
-
-
-
-// ================================== subtopnav ======================================
-
 
 
