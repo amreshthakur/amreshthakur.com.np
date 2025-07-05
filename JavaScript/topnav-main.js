@@ -1557,11 +1557,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ================================== subtopnav ======================================
 
- fetch('/template-parts/subtopnav.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('subtopnav-container').innerHTML = data;
-        });
+
 
 // ================================== subtopnav ======================================
 
