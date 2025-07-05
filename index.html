@@ -1813,8 +1813,157 @@
 
 
 
-<div id="subtopnav-container"></div>
+ <div id='subtopnav' onclick='return pellessii(event)' onmousedown='startscrolling_subtopnav(event)'
+            onmousemove='scrolling_subtopnav(event)' onmouseup='endscrolling_subtopnav(event)'>
 
+
+            <div id='scroll_left_btn'>
+                <span onmousedown='scrollmenow(-1)' onmouseout='stopscrollmenow()' onmouseup='stopscrollmenow()' />
+            </div>
+
+            <a class='ga-nav subtopnav_firstitem' href='../../../../csit/'
+                title='BSc Computer Science and Information Technology'>BSc.CSIT</a>
+            <!-- First Semester -->
+            <a class='ga-nav' href='/csit/first-semester/introduction-to-information-technology/'
+                title='Introduction to Information Technology'>Introduction to Information Technology</a>
+            <a class='ga-nav' href='/csit/first-semester/c-programming/' title='C Programming'>C Programming</a>
+            <a class='ga-nav' href='/csit/first-semester/digital-logic/' title='Digital Logic'>Digital Logic</a>
+            <a class='ga-nav' href='/csit/first-semester/mathematics-i-calculus/' title='Mathematics I (Calculus)'>Mathematics I
+                (Calculus)</a>
+            <a class='ga-nav' href='/csit/first-semester/physics/' title='Physics'>Physics</a>
+
+            <!-- Second Semester -->
+            <a class='ga-nav' href='/csit/second-semester/discrete-structures/' title='Discrete Structures'>Discrete
+                Structures</a>
+            <a class='ga-nav' href='/csit/second-semester/object-oriented-programming/'
+                title='Object Oriented Programming'>Object Oriented Programming</a>
+            <a class='ga-nav' href='/csit/second-semester/microprocessor/' title='Microprocessor'>Microprocessor</a>
+            <a class='ga-nav' href='/csit/second-semester/statistics-i/' title='Statistics I'>Statistics I</a>
+            <a class='ga-nav' href='/csit/second-semester/mathematics-ii/' title='Mathematics II'>Mathematics II</a>
+
+            <!-- Third Semester -->
+            <a class='ga-nav' href='/csit/third-semester/data-structures-and-algorithms/'
+                title='Data Structures and Algorithms'>Data Structures and Algorithms</a>
+            <a class='ga-nav' href='/csit/third-semester/numerical-method/' title='Numerical Method'>Numerical
+                Method</a>
+            <a class='ga-nav' href='/csit/third-semester/computer-architecture/' title='Computer Architecture'>Computer
+                Architecture</a>
+            <a class='ga-nav' href='/csit/third-semester/computer-graphics/' title='Computer Graphics'>Computer
+                Graphics</a>
+            <a class='ga-nav' href='/csit/third-semester/statistics-ii/' title='Statistics II'>Statistics II</a>
+
+            <!-- Fourth Semester -->
+            <a class='ga-nav' href='/csit/fourth-semester/theory-of-computation/' title='Theory of Computation'>Theory
+                of Computation</a>
+            <a class='ga-nav' href='/csit/fourth-semester/computer-networks/' title='Computer Networks'>Computer
+                Networks</a>
+            <a class='ga-nav' href='/csit/fourth-semester/operating-systems/' title='Operating Systems'>Operating
+                Systems</a>
+            <a class='ga-nav' href='/csit/fourth-semester/database-management-system/'
+                title='Database Management System'>Database Management System</a>
+            <a class='ga-nav' href='/csit/fourth-semester/artificial-intelligence/'
+                title='Artificial Intelligence'>Artificial Intelligence</a>
+
+            <!-- Fifth Semester Core -->
+            <a class='ga-nav' href='/csit/fifth-semester/microprocessor-based-design/'
+                title='Microprocessor Based Design'>Microprocessor Based Design</a>
+            <a class='ga-nav' href='/csit/fifth-semester/web-technology/' title='Web Technology'>Web Technology</a>
+            <a class='ga-nav' href='/csit/fifth-semester/system-analysis-and-design/'
+                title='System Analysis and Design'>System Analysis and Design</a>
+            <a class='ga-nav' href='/csit/fifth-semester/society-and-ethics-in-information-technology/'
+                title='Society and Ethics in IT'>Society and Ethics in Information Technology</a>
+
+            <!-- Fifth Semester Electives -->
+            <a class='ga-nav' href='/csit/fifth-semester/knowledge-management/' title='Knowledge Management'>Knowledge
+                Management</a>
+            <a class='ga-nav' href='/csit/fifth-semester/design-and-analysis-of-algorithms/'
+                title='Design and Analysis of Algorithms'>Design and Analysis of Algorithms</a>
+            <a class='ga-nav' href='/csit/fifth-semester/simulation-and-modelling/'
+                title='Simulation and Modelling'>Simulation and Modelling</a>
+            <a class='ga-nav' href='/csit/fifth-semester/image-processing/' title='Image Processing'>Image
+                Processing</a>
+            <a class='ga-nav' href='/csit/fifth-semester/cryptography/' title='Cryptography'>Cryptography</a>
+
+            <!-- Sixth Semester Core -->
+            <a class='ga-nav' href='/csit/sixth-semester/software-engineering/' title='Software Engineering'>Software
+                Engineering</a>
+            <a class='ga-nav' href='/csit/sixth-semester/compiler-design-and-construction/'
+                title='Compiler Design and Construction'>Compiler Design and Construction</a>
+            <a class='ga-nav' href='/csit/sixth-semester/e-governance/' title='E-Governance'>E-Governance</a>
+            <a class='ga-nav' href='/csit/sixth-semester/net-centric-computing/' title='NET Centric Computing'>NET
+                Centric Computing</a>
+            <a class='ga-nav' href='/csit/sixth-semester/technical-writing/' title='Technical Writing'>Technical
+                Writing</a>
+            <a class='ga-nav' href='/csit/sixth-semester/applied-logic/' title='Applied Logic'>Applied Logic</a>
+
+            <!-- Sixth Semester Electives -->
+            <a class='ga-nav' href='/csit/sixth-semester/e-commerce/' title='E-commerce'>E-commerce</a>
+            <a class='ga-nav' href='/csit/sixth-semester/automation-and-robotics/'
+                title='Automation and Robotics'>Automation and Robotics</a>
+            <a class='ga-nav' href='/csit/sixth-semester/neural-networks/' title='Neural Networks'>Neural Networks</a>
+            <a class='ga-nav' href='/csit/sixth-semester/computer-hardware-design/'
+                title='Computer Hardware Design'>Computer Hardware Design</a>
+            <a class='ga-nav' href='/csit/sixth-semester/cognitive-science/' title='Cognitive Science'>Cognitive
+                Science</a>
+
+            <!-- Seventh Semester Core -->
+            <a class='ga-nav' href='/csit/seventh-semester/advanced-java-programming/'
+                title='Advanced Java Programming'>Advanced Java Programming</a>
+            <a class='ga-nav' href='/csit/seventh-semester/data-warehousing-and-data-mining/'
+                title='Data Warehousing and Data Mining'>Data Warehousing and Data Mining</a>
+            <a class='ga-nav' href='/csit/seventh-semester/principles-of-management/'
+                title='Principles of Management'>Principles of Management</a>
+            <a class='ga-nav' href='/csit/seventh-semester/project-work/' title='Project Work'>Project Work</a>
+            <a class='ga-nav' href='/csit/seventh-semester/information-retrieval/'
+                title='Information Retrieval'>Information Retrieval</a>
+
+            <!-- Seventh Semester Electives -->
+            <a class='ga-nav' href='/csit/seventh-semester/database-administration/'
+                title='Database Administration'>Database Administration</a>
+            <a class='ga-nav' href='/csit/seventh-semester/software-project-management/'
+                title='Software Project Management'>Software Project Management</a>
+            <a class='ga-nav' href='/csit/seventh-semester/network-security/' title='Network Security'>Network
+                Security</a>
+            <a class='ga-nav' href='/csit/seventh-semester/digital-system-design/' title='Digital System Design'>Digital
+                System Design</a>
+            <a class='ga-nav' href='/csit/seventh-semester/network-and-system-administration/'
+                title='Network and System Administration'>Network and System Administration</a>
+            <a class='ga-nav' href='/csit/seventh-semester/international-marketing/'
+                title='International Marketing'>International Marketing</a>
+
+            <!-- Eighth Semester Core -->
+            <a class='ga-nav' href='/csit/eighth-semester/advanced-database/' title='Advanced Database'>Advanced
+                Database</a>
+            <a class='ga-nav' href='/csit/eighth-semester/internship/' title='Internship'>Internship</a>
+            <a class='ga-nav' href='/csit/eighth-semester/advanced-networking-with-ipv6/'
+                title='Advanced Networking with IPv6'>Advanced Networking with IPv6</a>
+
+            <!-- Eighth Semester Electives -->
+            <a class='ga-nav' href='/csit/eighth-semester/distributed-networking/'
+                title='Distributed Networking'>Distributed Networking</a>
+            <a class='ga-nav' href='/csit/eighth-semester/game-technology/' title='Game Technology'>Game Technology</a>
+            <a class='ga-nav' href='/csit/eighth-semester/distributed-object-oriented-database/'
+                title='Distributed and Object Oriented Database'>Distributed and Object Oriented Database</a>
+            <a class='ga-nav' href='/csit/eighth-semester/introduction-to-cloud-computing/'
+                title='Introduction to Cloud Computing'>Introduction to Cloud Computing</a>
+            <a class='ga-nav' href='/csit/eighth-semester/geographical-information-system/'
+                title='Geographical Information System'>Geographical Information System</a>
+            <a class='ga-nav' href='/csit/eighth-semester/decision-support-system/'
+                title='Decision Support System and Expert System'>Decision Support System and Expert System</a>
+            <a class='ga-nav' href='/csit/eighth-semester/mobile-application-development/'
+                title='Mobile Application Development'>Mobile Application Development</a>
+            <a class='ga-nav' href='/csit/eighth-semester/embedded-systems-programming/'
+                title='Embedded Systems Programming'>Embedded Systems Programming</a>
+            <a class='ga-nav' href='/csit/eighth-semester/international-business-management/'
+                title='International Business Management'>International Business Management</a>
+
+
+            <div id='btn_container_subtopnav'>
+                <div class='w3-hide-medium w3-hide-small' id='scroll_right_btn'>
+                    <span onmousedown='scrollmenow(1)' onmouseout='stopscrollmenow()' onmouseup='stopscrollmenow()' />
+                </div>
+            </div>
+        </div>
 
 
 
