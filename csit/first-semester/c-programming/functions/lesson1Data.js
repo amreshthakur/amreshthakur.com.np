@@ -1,54 +1,42 @@
 const lesson1Data = {
-    'memory-intro': {
-        title: 'Introduction',
-        content: `<h1>Introduction</h1><p>Computer memory refers to the physical devices used to store data or programs temporarily or permanently. It plays a crucial role in processing, storing, and retrieving information. It can be broadly classified into primary (main) and secondary (storage) memory.</p>`
+    'functions-library': {
+        title: 'Library Functions',
+        content: `<h1>Library Functions</h1><p>Library functions are predefined functions provided by C libraries, such as <code>printf()</code>, <code>scanf()</code>, <code>strlen()</code>, and many others. They help simplify programming tasks and require inclusion of appropriate header files.</p>`
     },
-    'memory-representation': {
-        title: 'Memory Representation',
-        content: `<h1>Memory Representation</h1><p>Data in memory is represented in binary format (0s and 1s). Each binary digit is called a bit, and 8 bits make a byte. Memory is usually measured in KB, MB, GB, or TB. Text, numbers, and multimedia files are all stored as binary values.</p>`
+    'functions-user-defined': {
+        title: 'User-Defined Functions',
+        content: `<h1>User-Defined Functions</h1><p>These are functions created by the programmer to perform specific tasks. They promote code reuse, modularity, and better organization in programs.</p>`
     },
-    'memory-hierarchy': {
-        title: 'Memory Hierarchy',
-        content: `<h1>Memory Hierarchy</h1><p>The memory hierarchy is an organization of memory types by speed and cost. From fastest and smallest to slowest and largest, it includes: CPU Registers → Cache → RAM → Hard Disk → Optical/Magnetic Storage. Faster memory is costlier but accessed quicker.</p>`
+    'functions-prototype-call-definition': {
+        title: 'Function Prototype, Call, and Definition',
+        content: `<h1>Function Prototype, Call, and Definition</h1><p>A function prototype declares the function signature. The call invokes the function, and the definition provides its actual code. All three are essential for function execution in C.</p>`
     },
-    'memory-registers': {
-        title: 'CPU Registers',
-        content: `<h1>CPU Registers</h1><p>Registers are small, high-speed storage locations within the CPU used to hold temporary data, instructions, and addresses during processing. Common types include the Accumulator, Program Counter (PC), Instruction Register (IR), and Memory Address Register (MAR).</p>`
+    'functions-nested-recursion': {
+        title: 'Nested Functions and Recursion',
+        content: `<h1>Nested Functions and Recursion</h1><p>Nested functions are functions called within other functions. Recursion occurs when a function calls itself, either directly or indirectly, to solve problems like factorial or Fibonacci sequence.</p>`
     },
-    'memory-cache': {
-        title: 'Cache Memory',
-        content: `<h1>Cache Memory</h1><p>Cache memory is a small-sized, fast memory located close to the CPU. It stores frequently accessed data and instructions to reduce access time and improve performance. It is faster than RAM but more expensive and limited in size.</p>`
+    'functions-arguments-return': {
+        title: 'Function Arguments and Return Types',
+        content: `<h1>Function Arguments and Return Types</h1><p>Functions may receive inputs (arguments) and return values. The return type defines the data type of the result. Functions can also return <code>void</code> if no value is returned.</p>`
     },
-    'memory-primary': {
-        title: 'Primary Memory',
-        content: `<h1>Primary Memory</h1><p>Also known as main memory, it includes RAM and ROM. RAM (Random Access Memory) is volatile and stores data temporarily during processing. ROM (Read-Only Memory) is non-volatile and stores essential instructions for booting the system.</p>`
+    'functions-pass-arrays': {
+        title: 'Passing Arrays to Functions',
+        content: `<h1>Passing Arrays to Functions</h1><p>Arrays can be passed to functions as arguments. Since arrays are passed by reference, the changes made inside the function affect the original array.</p>`
     },
-    'memory-secondary': {
-        title: 'Secondary Memory',
-        content: `<h1>Secondary Memory</h1><p>Secondary memory refers to storage devices like hard disks, SSDs, CDs, DVDs, and USB drives. It is non-volatile and used for long-term storage of programs, data, and the operating system. It is slower than primary memory but has higher capacity.</p>`
+    'functions-pass-strings': {
+        title: 'Passing Strings to Functions',
+        content: `<h1>Passing Strings to Functions</h1><p>Strings, as character arrays, are passed to functions similarly to arrays. Modifications within the function can reflect on the original string unless <code>const</code> is used.</p>`
     },
-    'memory-access': {
-        title: 'Access Types of Storage',
-        content: `<h1>Access Types of Storage Devices</h1><p>There are two main types of data access: sequential access (data is accessed in order, like in magnetic tape) and direct/random access (data can be accessed at any location instantly, like in RAM or hard drives).</p>`
+    'functions-call-by': {
+        title: 'Call by Value and Call by Address',
+        content: `<h1>Call by Value and Call by Address</h1><p>Call by value passes a copy of the variable, keeping the original unchanged. Call by address passes the memory address, allowing functions to modify the original variable.</p>`
     },
-    'memory-tape': {
-        title: 'Magnetic Tape',
-        content: `<h1>Magnetic Tape</h1><p>Magnetic tape is a sequential-access storage medium used for data backup and archival. It stores data on a magnetized plastic ribbon and is inexpensive but slower compared to other storage devices.</p>`
+    'functions-scope-visibility': {
+        title: 'Scope, Visibility, and Lifetime of Variables',
+        content: `<h1>Scope, Visibility, and Lifetime of Variables</h1><p>Scope determines where a variable can be accessed. Visibility controls its access across different parts of the program. Lifetime is how long a variable exists in memory.</p>`
     },
-    'memory-disk': {
-        title: 'Magnetic Disk',
-        content: `<h1>Magnetic Disk</h1><p>Magnetic disks, like hard drives, use magnetic fields to store data on rotating platters. They provide direct access to data and are widely used due to their large capacity and relatively fast performance.</p>`
-    },
-    'memory-optical': {
-        title: 'Optical Disk',
-        content: `<h1>Optical Disk</h1><p>Optical disks use laser technology to read/write data. Common types include CD, DVD, and Blu-ray. They are mainly used for media storage and distribution, and data is accessed in a spiral track format.</p>`
-    },
-    'memory-magneto': {
-        title: 'Magneto-Optical Disk',
-        content: `<h1>Magneto-Optical Disk</h1><p>This hybrid disk uses both magnetic and optical technologies. It allows data to be read optically and written magnetically, offering rewritability, reliability, and moderate speed—used for long-term secure storage.</p>`
-    },
-    'memory-usage': {
-        title: 'How Computer Uses Memory',
-        content: `<h1>How the Computer Uses its Memory</h1><p>Computers use memory to load programs, execute instructions, store intermediate results, and save data. CPU retrieves data from RAM or cache to process and may store output to secondary memory. Efficient memory management is crucial for performance.</p>`
+    'functions-local-global': {
+        title: 'Local and Global Variables',
+        content: `<h1>Local and Global Variables</h1><p>Local variables are declared inside functions and accessible only within them. Global variables are declared outside functions and accessible throughout the program.</p>`
     }
 };
