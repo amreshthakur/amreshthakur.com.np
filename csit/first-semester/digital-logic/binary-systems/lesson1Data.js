@@ -1,54 +1,38 @@
 const lesson1Data = {
-    'memory-intro': {
-        title: 'Introduction',
-        content: `<h1>Introduction</h1><p>Computer memory refers to the physical devices used to store data or programs temporarily or permanently. It plays a crucial role in processing, storing, and retrieving information. It can be broadly classified into primary (main) and secondary (storage) memory.</p>`
+    'digital-system': {
+        title: 'Digital Systems',
+        content: `<h1>Digital Systems</h1><p>Digital systems are electronic systems that process and store data in binary format (0s and 1s). They include components like logic gates, flip-flops, multiplexers, and memory units. These systems are used in computers, calculators, and digital devices to perform computations and control operations.</p>`
     },
-    'memory-representation': {
-        title: 'Memory Representation',
-        content: `<h1>Memory Representation</h1><p>Data in memory is represented in binary format (0s and 1s). Each binary digit is called a bit, and 8 bits make a byte. Memory is usually measured in KB, MB, GB, or TB. Text, numbers, and multimedia files are all stored as binary values.</p>`
+    'binary-numbers': {
+        title: 'Binary Numbers',
+        content: `<h1>Binary Numbers</h1><p>Binary numbers use base-2 numeral system consisting only of digits 0 and 1. Each digit in a binary number is a bit. This system is used by computers to perform all processing and operations due to its compatibility with digital circuitry.</p>`
     },
-    'memory-hierarchy': {
-        title: 'Memory Hierarchy',
-        content: `<h1>Memory Hierarchy</h1><p>The memory hierarchy is an organization of memory types by speed and cost. From fastest and smallest to slowest and largest, it includes: CPU Registers → Cache → RAM → Hard Disk → Optical/Magnetic Storage. Faster memory is costlier but accessed quicker.</p>`
+    'numbers-base-conversion': {
+        title: 'Number Base Conversion',
+        content: `<h1>Number Base Conversion</h1><p>Base conversion refers to changing numbers from one numeral system to another (e.g., from decimal to binary, octal, or hexadecimal). Conversion methods include division-remainder for integer parts and multiplication for fractional parts.</p>`
     },
-    'memory-registers': {
-        title: 'CPU Registers',
-        content: `<h1>CPU Registers</h1><p>Registers are small, high-speed storage locations within the CPU used to hold temporary data, instructions, and addresses during processing. Common types include the Accumulator, Program Counter (PC), Instruction Register (IR), and Memory Address Register (MAR).</p>`
+    'octal-hexadecimal': {
+        title: 'Octal and Hexadecimal Numbers',
+        content: `<h1>Octal and Hexadecimal Numbers</h1><p>Octal is a base-8 system (digits 0-7) and hexadecimal is a base-16 system (digits 0-9 and A-F). These systems simplify binary representations and are commonly used in digital electronics and programming.</p>`
     },
-    'memory-cache': {
-        title: 'Cache Memory',
-        content: `<h1>Cache Memory</h1><p>Cache memory is a small-sized, fast memory located close to the CPU. It stores frequently accessed data and instructions to reduce access time and improve performance. It is faster than RAM but more expensive and limited in size.</p>`
+    'complements': {
+        title: 'Complements',
+        content: `<h1>Complements</h1><p>Complements are used in binary arithmetic to simplify subtraction. The two types are 1’s complement (invert all bits) and 2’s complement (1’s complement + 1). 2’s complement is widely used for representing negative binary numbers.</p>`
     },
-    'memory-primary': {
-        title: 'Primary Memory',
-        content: `<h1>Primary Memory</h1><p>Also known as main memory, it includes RAM and ROM. RAM (Random Access Memory) is volatile and stores data temporarily during processing. ROM (Read-Only Memory) is non-volatile and stores essential instructions for booting the system.</p>`
+    'signed-binary': {
+        title: 'Signed Binary Numbers',
+        content: `<h1>Signed Binary Numbers</h1><p>Signed binary numbers represent both positive and negative integers. Common methods include sign-magnitude, 1’s complement, and 2’s complement. The leftmost bit (MSB) is the sign bit: 0 for positive, 1 for negative.</p>`
     },
-    'memory-secondary': {
-        title: 'Secondary Memory',
-        content: `<h1>Secondary Memory</h1><p>Secondary memory refers to storage devices like hard disks, SSDs, CDs, DVDs, and USB drives. It is non-volatile and used for long-term storage of programs, data, and the operating system. It is slower than primary memory but has higher capacity.</p>`
+    'decimal-codes': {
+        title: 'Decimal Codes',
+        content: `<h1>Decimal Codes</h1><p>Decimal codes are binary representations of decimal digits. Examples include Binary Coded Decimal (BCD), Excess-3, and Gray Code. These codes are useful in applications like digital displays and error detection.</p>`
     },
-    'memory-access': {
-        title: 'Access Types of Storage',
-        content: `<h1>Access Types of Storage Devices</h1><p>There are two main types of data access: sequential access (data is accessed in order, like in magnetic tape) and direct/random access (data can be accessed at any location instantly, like in RAM or hard drives).</p>`
+    'binary-storage-registers': {
+        title: 'Binary Storage and Registers',
+        content: `<h1>Binary Storage and Registers</h1><p>Binary data is stored in memory units and registers. Registers are small storage locations in the CPU used to hold data temporarily during processing. They operate at high speed and are essential for efficient computation.</p>`
     },
-    'memory-tape': {
-        title: 'Magnetic Tape',
-        content: `<h1>Magnetic Tape</h1><p>Magnetic tape is a sequential-access storage medium used for data backup and archival. It stores data on a magnetized plastic ribbon and is inexpensive but slower compared to other storage devices.</p>`
-    },
-    'memory-disk': {
-        title: 'Magnetic Disk',
-        content: `<h1>Magnetic Disk</h1><p>Magnetic disks, like hard drives, use magnetic fields to store data on rotating platters. They provide direct access to data and are widely used due to their large capacity and relatively fast performance.</p>`
-    },
-    'memory-optical': {
-        title: 'Optical Disk',
-        content: `<h1>Optical Disk</h1><p>Optical disks use laser technology to read/write data. Common types include CD, DVD, and Blu-ray. They are mainly used for media storage and distribution, and data is accessed in a spiral track format.</p>`
-    },
-    'memory-magneto': {
-        title: 'Magneto-Optical Disk',
-        content: `<h1>Magneto-Optical Disk</h1><p>This hybrid disk uses both magnetic and optical technologies. It allows data to be read optically and written magnetically, offering rewritability, reliability, and moderate speed—used for long-term secure storage.</p>`
-    },
-    'memory-usage': {
-        title: 'How Computer Uses Memory',
-        content: `<h1>How the Computer Uses its Memory</h1><p>Computers use memory to load programs, execute instructions, store intermediate results, and save data. CPU retrieves data from RAM or cache to process and may store output to secondary memory. Efficient memory management is crucial for performance.</p>`
+    'binary-logic': {
+        title: 'Binary Logic',
+        content: `<h1>Binary Logic</h1><p>Binary logic involves logical operations (AND, OR, NOT, XOR) on binary inputs. These operations are performed using logic gates in digital circuits, forming the basis of arithmetic and control operations in computers.</p>`
     }
 };
