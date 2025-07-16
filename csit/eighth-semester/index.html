@@ -90,9 +90,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
   <!-- ✅ JavaScript (deferred) -->
-  <script src="../../JavaScript/side-bar.js" defer></script>
-  <script src="../../JavaScript/General.js" defer></script>
-  <script src="../../JavaScript/lesson1Data.js" defer></script>
+       <!-- search functionality and footer credit and social media launcher -->
+    <script src="../../javaScript/Search-Script.js"></script>
+    <script src="../../javaScript/Footer-credit.js"></script>
+    <script src="../../javaScript/Social-Media-Launcher.js"></script>
+    <!-- search functionality and footer credit and social media launcher -->
+
 
 
    <link rel="stylesheet" href="../../style/subject.css">
@@ -1953,10 +1956,10 @@
                 <p class="pa-subtitle">Browse through all subjects and their learning units</p>
             </header>
 
-            <div class="pa-filter-container">
+         <div class="pa-filter-container">
                 <button class="pa-filter-btn pa-active" data-filter="all">All Subjects</button>
                 <button class="pa-filter-btn" data-filter="core">Core Subjects</button>
-                <button class="pa-filter-btn" data-filter="elective">Electives</button>
+                <button class="pa-filter-btn" data-filter="elective">Notes</button>
             </div>
 
             <div class="pa-subject-grid" id="pa-subject-grid">
@@ -1985,7 +1988,7 @@
     <!-- course explorer end -->
     <!-- =============================================================================================================== -->
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-grid">
@@ -2055,26 +2058,23 @@
                     <h4>Connect With Us</h4>
                     <p>Join our community for updates, tips, and exclusive content:</p>
                     <div class="social-icons">
-                        <a href="#" onclick="openYouTubeApp()" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" onclick="openGitHub()" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" onclick="openTwitter()" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" onclick="openLinkedIn()" aria-label="LinkedIn"><i
+                        <a href="#" data-platform="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" data-platform="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" data-platform="twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" data-platform="linkedin" aria-label="LinkedIn"><i
                                 class="fab fa-linkedin-in"></i></a>
-                        <a href="#" onclick="openDiscord()" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" data-platform="discord" aria-label="Discord"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
 
-
-
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; <span id="currentYear"></span> <span id="websiteName"></span>. All rights reserved. Designed
                     with ♥ for developers.</p>
             </div>
-
         </div>
     </footer>
+    <!-- Footer End -->
 
 
 

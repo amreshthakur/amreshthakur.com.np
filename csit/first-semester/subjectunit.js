@@ -56,6 +56,7 @@ const unitData = {
         { title: "Semiconductor and Semiconductor devices", description: "Understand the physics behind modern electronic components" },
         { title: "Universal Gates and Physics of Integrated Circuits", description: "" }
     ]
+    
 };
 
 

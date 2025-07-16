@@ -4,6 +4,7 @@ const subjectData = [
         name: "Introduction to Information Technology",
         description: "Fundamentals of computer systems, IT components, and applications.",
         elective: false,
+        type: "core",
         semester: "First Semester",
         units: 11
     },
@@ -11,6 +12,7 @@ const subjectData = [
         name: "C Programming",
         description: "Programming basics using C, including data types, control structures, and functions.",
         elective: false,
+        type: "core",
         semester: "First Semester",
         units: 11
     },
@@ -26,12 +28,35 @@ const subjectData = [
         name: "Mathematics I (Calculus)",
         description: "Differential and integral calculus relevant to computer science.",
         elective: false,
+        type: "core",
         semester: "First Semester",
         units: 11
     },
     {
         name: "Physics",
         description: "Mechanics, electricity, and magnetism in the context of computing.",
+        elective: false,
+        type: "core",
+        semester: "First Semester",
+        units: 7
+    },
+    {
+        name: "Chapter wise Notes",
+        description: "Comprehensive notes organized by chapter for easy revision.",
+        elective: false,
+        semester: "First Semester",
+        units: 7
+    },
+    {
+        name: "Handwritten Notes",
+        description: "Handwritten notes for each chapter to aid in revision.",
+        elective: false,
+        semester: "First Semester",
+        units: 7
+    },
+    {
+        name: "Sample Questions",
+        description: "Practice questions for each chapter to test understanding.",
         elective: false,
         semester: "First Semester",
         units: 7
