@@ -43,21 +43,21 @@ const subjectData = [
     {
         name: "Chapter wise Notes",
         description: "Comprehensive notes organized by chapter for easy revision.",
-        elective: false,
+        type: "elective",
         semester: "First Semester",
         units: 7
     },
     {
         name: "Handwritten Notes",
         description: "Handwritten notes for each chapter to aid in revision.",
-        elective: false,
+        type: "elective",
         semester: "First Semester",
         units: 7
     },
     {
         name: "Sample Questions",
         description: "Practice questions for each chapter to test understanding.",
-        elective: false,
+        type: "elective",
         semester: "First Semester",
         units: 7
     }
