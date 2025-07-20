@@ -1,62 +1,291 @@
+// const unitData = {
+//     "Introduction to Information Technology": [
+//         { title: "Introduction to Computer", description: "Learn the history, evolution, and fundamental concepts of computing technology" },
+//         { title: "The Computer System Hardware", description: "Explore the physical components that make up a computer system" },
+//         { title: "Computer Memory", description: "Understand different types of memory and their roles in computer systems" },
+//         { title: "Input and Output Devices", description: "" },
+//         { title: "Data Representation", description: "" },
+//         { title: "Computer Software", description: "" },
+//         { title: "Data Communication and Computer Network", description: "" },
+//         { title: "The Internet and Internet Services", description: "" },
+//         { title: "Fundamentals of Database", description: "" },
+//         { title: "Multimedia", description: "" },
+//         { title: "Computer Security", description: "" }
+//     ],
+//     "C Programming": [
+//         { title: "Problem Solving with Computer", description: "Learn algorithmic thinking and problem-solving techniques" },
+//         { title: "Elements of C", description: "Master the fundamental building blocks of the C programming language" },
+//         { title: "Input and Output", description: "" },
+//         { title: "Operators and Expression", description: "" },
+//         { title: "Control Statement", description: "" },
+//         { title: "Arrays", description: "" },
+//         { title: "Functions", description: "Understand function design, implementation, and usage in C" },
+//         { title: "Structure and Union", description: "" },
+//         { title: "Pointers", description: "" },
+//         { title: "File Handling in C", description: "" },
+//         { title: "Introduction to Graphics", description: "" }
+//     ],
+//     "Digital Logic": [
+//         { title: "Binary Systems", description: "Explore the foundation of digital computing with binary numbers" },
+//         { title: "Boolean Algebra and Logic Gates", description: "Learn the mathematical foundation of digital circuit design" },
+//         { title: "Simplification of Boolean Functions", description: "" },
+//         { title: "Combinational Logic", description: "Design and analyze circuits with outputs based solely on current inputs" },
+//         { title: "Combinational Logic with MSI and LSI", description: "" },
+//         { title: "Synchronous and Asynchronous Sequential Logic", description: "" },
+//         { title: "Registers and Counters", description: "" }
+//     ],
+//     "Mathematics I (Calculus)": [
+//         { title: "Function of One Variable", description: "Explore mathematical functions and their properties" },
+//         { title: "Limits and Continuity", description: "Understand the fundamental concepts of calculus" },
+//         { title: "Derivatives", description: "Master the concept of rates of change and slopes of curves" },
+//         { title: "Applications of Derivatives", description: "" },
+//         { title: "Antiderivatives", description: "" },
+//         { title: "Applications of Antiderivatives", description: "" },
+//         { title: "Ordinary Differential Equations", description: "" },
+//         { title: "Infinite Sequence and Series", description: "" },
+//         { title: "Plane and Space Vectors", description: "" },
+//         { title: "Partial Derivatives and Multiple Integrals", description: "" },
+//         { title: "Old Syllabus", description: "" }
+//     ],
+//     "Physics": [
+//         { title: "Rotational Dynamics and Oscillatory Motion", description: "Study motion of rigid bodies and periodic oscillations" },
+//         { title: "Electric and Magnetic Field", description: "Explore the fundamental forces of electromagnetism" },
+//         { title: "Fundamentals of Atomic Theory", description: "" },
+//         { title: "Methods of Quantum Mechanics", description: "" },
+//         { title: "Fundamentals of Solid State Physics", description: "" },
+//         { title: "Semiconductor and Semiconductor devices", description: "Understand the physics behind modern electronic components" },
+//         { title: "Universal Gates and Physics of Integrated Circuits", description: "" }
+//     ]
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const unitData = {
-    "Introduction to Information Technology": [
-        { title: "Introduction to Computer", description: "Learn the history, evolution, and fundamental concepts of computing technology" },
-        { title: "The Computer System Hardware", description: "Explore the physical components that make up a computer system" },
-        { title: "Computer Memory", description: "Understand different types of memory and their roles in computer systems" },
-        { title: "Input and Output Devices", description: "" },
-        { title: "Data Representation", description: "" },
-        { title: "Computer Software", description: "" },
-        { title: "Data Communication and Computer Network", description: "" },
-        { title: "The Internet and Internet Services", description: "" },
-        { title: "Fundamentals of Database", description: "" },
-        { title: "Multimedia", description: "" },
-        { title: "Computer Security", description: "" }
+    "Discrete Structures": [
+        {
+            title: "Basic Discrete Structures",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Integers and Matrices",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Logic and Proof Methods",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Induction and Recursion",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Counting and Discrete Probability",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Relations and Graphs",
+            description: "",
+            topics: []
+        }
     ],
-    "C Programming": [
-        { title: "Problem Solving with Computer", description: "Learn algorithmic thinking and problem-solving techniques" },
-        { title: "Elements of C", description: "Master the fundamental building blocks of the C programming language" },
-        { title: "Input and Output", description: "" },
-        { title: "Operators and Expression", description: "" },
-        { title: "Control Statement", description: "" },
-        { title: "Arrays", description: "" },
-        { title: "Functions", description: "Understand function design, implementation, and usage in C" },
-        { title: "Structure and Union", description: "" },
-        { title: "Pointers", description: "" },
-        { title: "File Handling in C", description: "" },
-        { title: "Introduction to Graphics", description: "" }
+    "Object Oriented Programming": [
+        {
+            title: "Introduction to Object Oriented Programming",
+            description: "Learn the fundamental principles of object-oriented programming",
+            topics: ["Classes and objects", "Encapsulation", "Abstraction", "OOP vs procedural"]
+        },
+        {
+            title: "Basics of C++ programming",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Classes & Objects",
+            description: "Master the building blocks of OOP systems",
+            topics: ["Class definition", "Constructors", "Methods", "Access modifiers"]
+        },
+        {
+            title: "Operator Overloading",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Inheritance",
+            description: "Understand how classes can inherit properties from other classes",
+            topics: ["Superclass/subclass", "Method overriding", "Abstract classes", "Inheritance hierarchies"]
+        },
+        {
+            title: "Virtual Function, Polymorphism, and miscellaneous",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Function Templates and Exception Handling",
+            description: "",
+            topics: []
+        },
+        {
+            title: "File handling",
+            description: "",
+            topics: []
+        }
     ],
-    "Digital Logic": [
-        { title: "Binary Systems", description: "Explore the foundation of digital computing with binary numbers" },
-        { title: "Boolean Algebra and Logic Gates", description: "Learn the mathematical foundation of digital circuit design" },
-        { title: "Simplification of Boolean Functions", description: "" },
-        { title: "Combinational Logic", description: "Design and analyze circuits with outputs based solely on current inputs" },
-        { title: "Combinational Logic with MSI and LSI", description: "" },
-        { title: "Synchronous and Asynchronous Sequential Logic", description: "" },
-        { title: "Registers and Counters", description: "" }
+    "Microprocessor": [
+        {
+            title: "Introduction",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Basic Architecture",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Instruction Cycle",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Basic I/O, Memory R/W and Interrupt Operations",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Assembly Language Programming",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Input/ Output Interfaces",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Advanced Microprocessors",
+            description: "",
+            topics: []
+        }
     ],
-    "Mathematics I (Calculus)": [
-        { title: "Function of One Variable", description: "Explore mathematical functions and their properties" },
-        { title: "Limits and Continuity", description: "Understand the fundamental concepts of calculus" },
-        { title: "Derivatives", description: "Master the concept of rates of change and slopes of curves" },
-        { title: "Applications of Derivatives", description: "" },
-        { title: "Antiderivatives", description: "" },
-        { title: "Applications of Antiderivatives", description: "" },
-        { title: "Ordinary Differential Equations", description: "" },
-        { title: "Infinite Sequence and Series", description: "" },
-        { title: "Plane and Space Vectors", description: "" },
-        { title: "Partial Derivatives and Multiple Integrals", description: "" },
-        { title: "Old Syllabus", description: "" }
+    "Statistics I": [
+        {
+            title: "Introduction",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Descriptive Statistics",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Introduction to Probability",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Sampling",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Random Variables and Mathematical Expectation",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Probability Distributions",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Correlation and Linear Regression",
+            description: "",
+            topics: []
+        }
     ],
-    "Physics": [
-        { title: "Rotational Dynamics and Oscillatory Motion", description: "Study motion of rigid bodies and periodic oscillations" },
-        { title: "Electric and Magnetic Field", description: "Explore the fundamental forces of electromagnetism" },
-        { title: "Fundamentals of Atomic Theory", description: "" },
-        { title: "Methods of Quantum Mechanics", description: "" },
-        { title: "Fundamentals of Solid State Physics", description: "" },
-        { title: "Semiconductor and Semiconductor devices", description: "Understand the physics behind modern electronic components" },
-        { title: "Universal Gates and Physics of Integrated Circuits", description: "" }
+    "Mathematics II": [
+        {
+            title: "Linear Equations in Linear Algebra",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Transformation",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Matrix Algebra",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Determinants",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Vector Spaces",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Vector Space Continued",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Eigenvalues and Eigen Vectors",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Orthogonality and Least Squares",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Groups and Subgroups",
+            description: "",
+            topics: []
+        },
+        {
+            title: "Rings and Fields",
+            description: "",
+            topics: []
+        }
     ]
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

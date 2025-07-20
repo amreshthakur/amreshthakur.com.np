@@ -1,40 +1,38 @@
 // Mock data for subjects and units
 const subjectData = [
     {
-        name: "Introduction to Information Technology",
-        description: "Fundamentals of computer systems, IT components, and applications.",
+        name: "Data Structures and Algorithms",
+        description: "Fundamental data structures and algorithms for efficient problem-solving.",
         elective: false,
-        semester: "Second Semester",
+        semester: "Third Semester",
         units: 11
     },
     {
-        name: "C Programming",
-        description: "Programming basics using C, including data types, control structures, and functions.",
+        name: "Numerical Method",
+        description: "Techniques for solving mathematical problems numerically.",
         elective: false,
-        semester: "Second Semester",
-        units: 11
-    },
-    {
-        name: "Digital Logic",
-        description: "Study of logic gates, Boolean algebra, and digital circuit design.",
-        elective: false,
-        semester: "Second Semester",
+        semester: "Third Semester",
         units: 7
     },
     {
-        name: "Mathematics I (Calculus)",
-        description: "Differential and integral calculus relevant to computer science.",
+        name: "Computer Architecture",
+        description: "Design and function of computer hardware, including CPU, memory, and I/O systems.",
         elective: false,
-        semester: "Second Semester",
-        units: 11
+        semester: "Third Semester",
+        units: 7
     },
     {
-        name: "Physics",
-        description: "Mechanics, electricity, and magnetism in the context of computing.",
+        name: "Computer Graphics",
+        description: "Introduction to graphics systems, rendering techniques, and modeling.",
         elective: false,
-        semester: "Second Semester",
+        semester: "Third Semester",
+        units: 7
+    },
+    {
+        name: "Statistics II",
+        description: "Advanced statistical methods and their applications in computing.",
+        elective: false,
+        semester: "Third Semester",
         units: 7
     }
-
 ];
-
