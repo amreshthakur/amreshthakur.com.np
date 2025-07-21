@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+                      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage of First Semester -->
+  <url>
+    <loc>https://amreshthakur.com.np/csit/first-semester/</loc>
+    <lastmod>2025-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Introduction to IT -->
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/introduction-to-computer/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/the-computer-system-hardware/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/computer-memory/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/input-and-output-devices/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/data-representation/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/computer-software/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/data-communication-and-computer-network/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/the-internet-and-internet-services/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/fundamentals-of-database/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/multimedia/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/computer-security/</loc></url>
+
+  <!-- C Programming -->
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/problem-solving-with-computer/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/elements-of-c/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/input-and-output/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/operators-and-expression/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/control-statement/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/arrays/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/functions/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/structure-and-union/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/pointers/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/file-handling-in-c/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/c-programming/introduction-to-graphics/</loc></url>
+
+  <!-- Digital Logic -->
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/binary-systems/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/boolean-algebra-and-logic-gates/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/simplification-of-boolean-functions/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/combinational-logic/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/combinational-logic-with-msi-and-lsi/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/synchronous-and-asynchronous-sequential-logic/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/digital-logic/registers-and-counters/</loc></url>
+
+  <!-- Mathematics (Calculus and General) -->
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/function-of-one-variable/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/limits-and-continuity/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/derivatives/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/applications-of-derivatives/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/antiderivatives/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/applications-of-antiderivatives/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/ordinary-differential-equations/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/infinite-sequence-and-series/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/plane-and-space-vectors/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i/partial-derivatives-and-multiple-integrals/</loc></url>
+
+  <!-- Calculus Versions -->
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/function-of-one-variable/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/limits-and-continuity/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/derivatives/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/applications-of-derivatives/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/antiderivatives/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/applications-of-antiderivatives/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/ordinary-differential-equations/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/infinite-sequence-and-series/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/plane-and-space-vectors/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/mathematics-i-calculus/partial-derivatives-and-multiple-integrals/</loc></url>
+
+  <!-- Physics -->
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/physics/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/physics/rotational-dynamics-and-oscillatory-motion/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/physics/electric-and-magnetic-field/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/physics/fundamentals-of-atomic-theory/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/physics/methods-of-quantum-mechanics/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/physics/fundamentals-of-solid-state-physics/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/physics/semiconductor-and-semiconductor-devices/</loc></url>
+  <url><loc>https://amreshthakur.com.np/csit/first-semester/physics/universal-gates-and-physics-of-integrated-circuits/</loc></url>
+
+</urlset>

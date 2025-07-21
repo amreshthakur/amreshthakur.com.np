@@ -5,58 +5,13 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <!-- Homepage of First Semester -->
- <url>
+  <url>
     <loc>https://amreshthakur.com.np/csit/first-semester/</loc>
     <lastmod>2025-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-   <url>
-    <loc>https://amreshthakur.com.np/csit/second-semester/</loc>
-    <lastmod>2025-07-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-    <url>
-        <loc>https://amreshthakur.com.np/csit/third-semester/</loc>
-        <lastmod>2025-07-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-  </url>
-    <url>
-        <loc>https://amreshthakur.com.np/csit/fourth-semester/</loc>
-        <lastmod>2025-07-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://amreshthakur.com.np/csit/fifth-semester/</loc>
-        <lastmod>2025-07-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://amreshthakur.com.np/csit/sixth-semester/</loc>
-        <lastmod>2025-07-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://amreshthakur.com.np/csit/seventh-semester/</loc>
-        <lastmod>2025-07-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://amreshthakur.com.np/csit/eighth-semester/</loc>
-        <lastmod>2025-07-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-
-  <!-- Subjects of First Semester -->
   <!-- Introduction to IT -->
   <url>
     <loc>https://amreshthakur.com.np/csit/first-semester/introduction-to-information-technology/</loc>
