@@ -1,103 +1,104 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <!-- ✅ Basic Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords"
-        content="Introduction to Information Technology, IT Notes, BSc CSIT First Semester, TU CSIT Syllabus, IT Tutorials, Pipara Academy, Tribhuvan University, CSIT Nepal, Learn IT, Computer Fundamentals, Notes and Guides" />
-    <meta name="description"
-        content="Comprehensive Introduction to Information Technology notes and tutorials for BSc CSIT First Semester students, curated by Pipara Academy based on TU Nepal syllabus." />
-    <meta name="author" content="Pipara Academy" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="bingbot" content="index, follow" />
+  <!-- ✅ Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Arrays in C Programming – BSc CSIT 3rd Semester Notes | Pipara Academy</title>
 
-    <!-- ✅ Page Title -->
-    <title>Introduction to Information Technology Notes & Tutorials - BSc CSIT First Semester | Pipara Academy</title>
+  <meta name="description" content="Learn Arrays in C Programming with detailed notes, examples, and programs from BSc CSIT 3rd Semester syllabus. Provided by Pipara Academy – your learning partner in Nepal.">
+  <meta name="keywords" content="Arrays in C, C Programming, BSc CSIT Notes, CSIT Semester 3, Pipara Academy, Tribhuvan University, Programming Notes, CSIT Nepal, amreshthakur.com.np" />
+  <meta name="author" content="Amresh Thakur" />
 
-    <!-- ✅ Canonical URL -->
-    <link rel="canonical" href="https://amreshthakur.com.np/csit/first-semester/introduction-to-it" />
+  <!-- ✅ Indexing and Crawling -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="bingbot" content="index, follow" />
 
-    <!-- ✅ Favicon -->
-    <link rel="icon" href="https://amreshthakur.com.np/image/favicon_io/favicon.ico" type="image/x-icon" />
+  <!-- ✅ Canonical URL -->
+  <link rel="canonical" href="https://amreshthakur.com.np/csit/first-semester/c-programming/arrays/" />
 
-    <!-- ✅ Open Graph Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://amreshthakur.com.np/csit/first-semester/introduction-to-it" />
-    <meta property="og:title" content="Introduction to IT Notes & Tutorials | Pipara Academy" />
-    <meta property="og:description"
-        content="Access TU-based IT notes and examples for BSc CSIT First Semester. Provided by Pipara Academy." />
-    <meta property="og:image" content="https://amreshthakur.com.np/image/favicon_io/android-chrome-512x512.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta property="og:site_name" content="Pipara Academy" />
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="https://amreshthakur.com.np/favicon.ico" type="image/x-icon" />
 
-    <!-- ✅ Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://amreshthakur.com.np/csit/first-semester/introduction-to-it" />
-    <meta name="twitter:title" content="Introduction to IT Notes & Tutorials | Pipara Academy" />
-    <meta name="twitter:description"
-        content="Download Introduction to Information Technology notes and guides for TU CSIT First Semester from Pipara Academy." />
-    <meta name="twitter:image" content="https://amreshthakur.com.np/image/favicon_io/logo-share-social.png" />
+  <!-- ✅ Open Graph Meta Tags -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://amreshthakur.com.np/csit/3rd-semester/c-programming/arrays/" />
+  <meta property="og:title" content="Arrays in C – BSc CSIT Notes & Examples | Pipara Academy" />
+  <meta property="og:description" content="Master arrays in C with notes, examples, and tutorials tailored for BSc CSIT students. From Pipara Academy." />
+  <meta property="og:image" content="https://amreshthakur.com.np/images/arrays-og-banner.png" />
+  <meta property="og:site_name" content="Pipara Academy" />
 
-    <!-- ✅ Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": "Statistics II",
-        "description": "Complete BSc CSIT Statistics II course with notes, examples and solutions",
-        "educationalLevel": "undergraduate",
-        "provider": {
-            "@type": "Organization",
-            "name": "Pipara Academy",
-            "url": "https://www.piparaacademy.com",
-            "logo": "https://www.piparaacademy.com/logo.png"
-        },
-        "hasCourseInstance": {
-            "@type": "CourseInstance",
-            "courseMode": "online",
-            "location": {
-                "@type": "VirtualLocation",
-                "url": "https://www.piparaacademy.com/courses/bsc-csit/third-semester/statistics-ii/"
-            },
-            "audience": {
-                "@type": "EducationalAudience",
-                "audienceType": "CSIT students"
-            }
-        },
-        "teaches": [
-            "Probability theory",
-            "Probability distributions",
-            "Statistical inference",
-            "Hypothesis testing",
-            "Correlation and regression analysis",
-            "Sampling theory",
-            "Chi-square and t-tests"
-        ],
-        "timeRequired": "PT45H"
-    }
-    </script>
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@piparaacademy" />
+  <meta name="twitter:title" content="Arrays in C Programming – CSIT Notes | Pipara Academy" />
+  <meta name="twitter:description" content="Learn arrays in C with CSIT-aligned notes and examples. Perfect for Semester 3 students." />
+  <meta name="twitter:image" content="https://amreshthakur.com.np/images/arrays-twitter-card.png" />
+  <meta name="twitter:image:alt" content="Arrays in C - Pipara Academy" />
+
+  <!-- ✅ Site Identity -->
+  <meta name="application-name" content="Pipara Academy" />
+  <meta name="theme-color" content="#007bff" />
+
+  <!-- ✅ Google Site Verification -->
+  <meta name="google-site-verification" content="FITdzHukrQTwVoxMRJt2mu9fKe21KB-2SxQ5XWe33SU" />
+
+  <!-- ✅ Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Arrays in C Programming",
+    "description": "In-depth CSIT 3rd Semester guide on Arrays in C – with notes, solved problems and examples.",
+    "educationalLevel": "Undergraduate",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Pipara Academy",
+      "url": "https://amreshthakur.com.np",
+      "logo": "https://amreshthakur.com.np/logo.png"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://amreshthakur.com.np/csit/3rd-semester/c-programming/arrays/"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "BSc CSIT Students"
+      }
+    },
+    "teaches": [
+      "Array initialization",
+      "1D and 2D arrays",
+      "Passing arrays to functions",
+      "Multi-dimensional arrays"
+    ],
+    "timeRequired": "PT6H"
+  }
+  </script>
     <!-- ✅ CSS Stylesheets -->
-    <link href="../../../main.css" rel="stylesheet" type="text/css" />
-    <link href="../../../style/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../main.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../style/style.css" rel="stylesheet" type="text/css" />
 
     <!-- ✅ Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- ✅ JavaScript (deferred for performance) -->
-    <script src="../../../JavaScript/side-bar.js" defer></script>
-    <script src="../../../JavaScript/lesson1Data.js" defer></script>
+    <script src="lesson3Data.js" defer></script>
+    <script src="/csit/first-semester/mathematics-i-calculus/applications-of-derivatives/lesson4Data.js" defer></script>
 
 
     <!-- search functionality and footer credit and social media launcher -->
-    <script src="../../../JavaScript/Search-Script.js"></script>
-    <script src="../../../JavaScript/Footer-credit.js"></script>
-    <script src="../../../JavaScript/Social-Media-Launcher.js"></script>
+    <script src="../../../../JavaScript/Search-Script.js" defer></script>
+    <script src="../../../../JavaScript/Footer-credit.js" defer></script>
+    <script src="../../../../JavaScript/Social-Media-Launcher.js" defer></script>
     <!-- search functionality and footer credit and social media launcher -->
+
 
 
 
@@ -261,6 +262,15 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1940,211 +1950,83 @@
 
 
 
-    <!-- =============================================================================================================== -->
-    <!-- course explorer start -->
-    <!-- =============================================================================================================== -->
-    <div class="grid-container">
-        <!-- Main Unit Section -->
-        <div class="box main-unit">
-            <h2><i class="fas fa-book-open"></i>Introduction To Information Technology</h2>
-            <div class="unit-list">
-                <a href="introduction-to-computer/" class="unit-item">
-                    <h3><span class="unit-number">1</span> Introduction to Computer</h3>
-                    <p>Overview of computers, history, and applications</p>
-                </a>
-                <a href="the-computer-system-hardware/" class="unit-item">
-                    <h3><span class="unit-number">2</span> The Computer System Hardware</h3>
-                    <p>Internal and external hardware components</p>
-                </a>
-                <a href="computer-memory/" class="unit-item">
-                    <h3><span class="unit-number">3</span> Computer Memory</h3>
-                    <p>Primary, secondary, and cache memory</p>
-                </a>
-                <a href="input-and-output-devices/" class="unit-item">
-                    <h3><span class="unit-number">4</span> Input and Output Devices</h3>
-                    <p>Devices for user interaction and data transfer</p>
-                </a>
-                <a href="data-representation/" class="unit-item">
-                    <h3><span class="unit-number">5</span> Data Representation</h3>
-                    <p>Binary, octal, hexadecimal, and character encoding</p>
-                </a>
-                <a href="computer-software/" class="unit-item">
-                    <h3><span class="unit-number">6</span> Computer Software</h3>
-                    <p>System software, application software, and utilities</p>
-                </a>
-                <a href="data-communication-and-computer-network/" class="unit-item">
-                    <h3><span class="unit-number">7</span> Data Communication and Computer Network</h3>
-                    <p>Basics of communication systems and networking</p>
-                </a>
-                <a href="the-internet-and-internet-services/" class="unit-item">
-                    <h3><span class="unit-number">8</span> The Internet and Internet Services</h3>
-                    <p>WWW, email, browsers, and online tools</p>
-                </a>
-                <a href="fundamentals-of-database/" class="unit-item">
-                    <h3><span class="unit-number">9</span> Fundamentals of Database</h3>
-                    <p>Introduction to database systems and DBMS</p>
-                </a>
-                <a href="multimedia/" class="unit-item">
-                    <h3><span class="unit-number">10</span> Multimedia</h3>
-                    <p>Text, images, audio, and video integration</p>
-                </a>
-                <a href="computer-security/" class="unit-item">
-                    <h3><span class="unit-number">11</span> Computer Security</h3>
-                    <p>Threats, protection, and cybersecurity basics</p>
-                </a>
+    <!-- <style>
+        #leftSidebar,
+        #rightSidebar {
+            display: none;
+        }
+    </style> -->
+
+
+
+
+    <!-- Mobile Menu Toggle -->
+    <!-- <button class="menu-toggle" id="menuToggle">☰ Menu</button> -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar"></div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <!-- Left Sidebar -->
+
+        <aside class="sidebar left-sidebar" id="leftSidebar">
+            <div class="sidebar-section">
+
+                <h2>Introduction to Computer</h2>
+                <ul>
+                    <li><a href="#" data-content="intro-overview" class="menu-link">Introduction</a></li>
+                    <li><a href="#" data-content="intro-digital-analog" class="menu-link">Digital and Analog
+                            Computers</a></li>
+                    <li><a href="#" data-content="intro-characteristics" class="menu-link">Characteristics of
+                            Computer</a></li>
+                    <li><a href="#" data-content="intro-history" class="menu-link">History of Computer</a></li>
+                    <li><a href="#" data-content="intro-generations" class="menu-link">Generations of Computer</a></li>
+                    <li><a href="#" data-content="intro-classification" class="menu-link">Classification of Computer</a>
+                    </li>
+                    <li><a href="#" data-content="intro-system" class="menu-link">The Computer System</a></li>
+                    <li><a href="#" data-content="intro-application" class="menu-link">Application of Computers</a></li>
+                </ul>
+
             </div>
+        </aside>
 
-
-
-
-        </div>
-
-        <!-- Questions List Section -->
-        <div class="box question-list">
-            <h2><i class="fas fa-question-circle"></i> Important Questions sets</h2>
-            <div class="scrollable-list">
-                <a href="/csit/" class="list-item">
-                    <i class="fas fa-1"></i>
-                    <div>Explain problem solving steps with algorithms and flowcharts</div>
-                </a>
-                <a href="/csit/" class="list-item">
-                    <i class="fas fa-2"></i>
-                    <div>Describe data types in C with examples</div>
-                </a>
-                <a href="/csit/" class="list-item">
-                    <i class="fas fa-3"></i>
-                    <div>Differentiate between getchar() and scanf() functions</div>
-                </a>
-                <a href="/csit/" class="list-item">
-                    <i class="fas fa-4"></i>
-                    <div>Explain operator precedence with examples</div>
-                </a>
-                <a href="/csit/" class="list-item">
-                    <i class="fas fa-5"></i>
-                    <div>Write a program to find factorial using recursion</div>
-                </a>
-                <a href="/csit/" class="list-item">
-                    <i class="fas fa-6"></i>
-                    <div>Explain the concept of pointers with examples</div>
-                </a>
-                <a href="/csit/" class="list-item">
-                    <i class="fas fa-7"></i>
-                    <div>Describe file handling operations in C</div>
-                </a>
+        <!-- Main Content -->
+        <main class="main-content">        
+            <div class="post-content" id="contentDisplay">
+                <div class="content-card">
+                    <!-- ............results............ -->
+                </div>
             </div>
-        </div>
+        </main>
 
-        <!-- Other Subjects -->
-        <div class="box other-subject">
-            <h2><i class="fas fa-book"></i> Related Subjects</h2>
-            <div class="scrollable-list">
-                <a href="/csit/first-semester/introduction-to-information-technology/" class="list-item">
-                    <i class="fas fa-desktop"></i>
-                    <div>Introduction to Information Technology</div>
-                </a>
-                <a href="/csit/first-semester/c-programming/" class="list-item">
-                    <i class="fas fa-code"></i>
-                    <div>C Programming</div>
-                </a>
-                <a href="/csit/first-semester/digital-logic/" class="list-item">
-                    <i class="fas fa-microchip"></i>
-                    <div>Digital Logic</div>
-                </a>
-                <a href="/csit/first-semester/mathematics-i/" class="list-item">
-                    <i class="fas fa-square-root-alt"></i>
-                    <div>Mathematics I (Calculus)</div>
-                </a>
-                <a href="/csit/first-semester/physics/" class="list-item">
-                    <i class="fas fa-atom"></i>
-                    <div>Physics</div>
-                </a>
+        <!-- Right Sidebar -->
+        <aside class="sidebar right-sidebar" id="rightSidebar">
+            <div class="sidebar-section">
+                <h2>Computer System Hardware</h2>
+                <ul>
+                    <li><a href="#" data-content="memory-intro" class="menu-link">Introduction</a></li>
+                    <li><a href="#" data-content="hardware-cpu" class="menu-link">Central Processing Unit</a></li>
+                    <li><a href="#" data-content="hardware-memory" class="menu-link">Memory Unit</a></li>
+                    <li><a href="#" data-content="hardware-format" class="menu-link">Instruction Format</a></li>
+                    <li><a href="#" data-content="hardware-set" class="menu-link">Instruction Set</a></li>
+                    <li><a href="#" data-content="hardware-cycle" class="menu-link">Instruction Cycle</a></li>
+                    <li><a href="#" data-content="hardware-micro" class="menu-link">Microprocessor</a></li>
+                    <li><a href="#" data-content="hardware-interconnect" class="menu-link">Interconnecting the Units</a>
+                    </li>
+                    <li><a href="#" data-content="hardware-cabinet" class="menu-link">Inside a Computer Cabinet</a></li>
+                </ul>
             </div>
-
-        </div>
-
-        <!-- Other Semesters -->
-        <div class="box other-semester">
-            <h2><i class="fas fa-calendar-alt"></i> Other Semesters</h2>
-            <div class="scrollable-list">
-                <a href="/csit/first-semester/" class="list-item">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>First Semester Courses</div>
-                </a>
-                <a href="/csit/second-semester/" class="list-item">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Second Semester Courses</div>
-                </a>
-                <a href="/csit/third-semester/" class="list-item">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Third Semester Courses</div>
-                </a>
-                <a href="/csit/fourth-semester/" class="list-item">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Fourth Semester Courses</div>
-                </a>
-                <a href="/csit/fifth-semester/" class="list-item">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Fifth Semester Courses</div>
-                </a>
-                <a href="/csit/sixth-semester/" class="list-item">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Sixth Semester Courses</div>
-                </a>
-                <a href="/csit/seventh-semester/" class="list-item">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Seventh Semester Courses</div>
-                </a>
-                <a href="/csit/eighth-semester/" class="list-item">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Eighth Semester Courses</div>
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Other Courses -->
-        <div class="box other-courses">
-            <h2><i class="fas fa-graduation-cap"></i> Popular Courses</h2>
-            <div class="scrollable-list">
-                <a href="/csit/" class="list-item">
-                    <i class="fas fa-code"></i>
-                    <div>Web Development Bootcamp</div>
-                </a>
-                <a href="/" class="list-item">
-                    <i class="fas fa-mobile-alt"></i>
-                    <div>Mobile App Development</div>
-                </a>
-                <a href="/csit/" class="list-item">
-                    <i class="fas fa-brain"></i>
-                    <div>Machine Learning Fundamentals</div>
-                </a>
-                <!-- <a href="cyber.html" class="list-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <div>Cyber Security Essentials</div>
-                </a>
-                <a href="data-science.html" class="list-item">
-                    <i class="fas fa-chart-line"></i>
-                    <div>Data Science Specialization</div>
-                </a>
-                <a href="devops.html" class="list-item">
-                    <i class="fas fa-server"></i>
-                    <div>DevOps Engineering</div>
-                </a> -->
-            </div>
-        </div>
+        </aside>
     </div>
-
-    <!-- =============================================================================================================== -->
-    <!-- course explorer end -->
-    <!-- =============================================================================================================== -->
-
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer>
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Column 1: About -->
                 <div class="footer-column">
-                    <h3>About</h3>
+                    <h4>About CodeLearn</h4>
                     <p>Your premier destination for coding tutorials and tech education. We make complex concepts simple
                         with hands-on projects and real-world examples.</p>
                     <div class="newsletter-form">
@@ -2158,7 +2040,7 @@
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#" aria-label="Home">Home</a></li>
+                        <li><a href="/" aria-label="Home">Home</a></li>
                         <li><a href="#" aria-label="Courses">Courses</a></li>
                         <li><a href="#" aria-label="Tutorials">Tutorials</a></li>
                         <li><a href="#" aria-label="Blog">Blog</a></li>
@@ -2219,9 +2101,28 @@
 
 
 
-    <script src="../../../csit/data/subjectunit.js"></script>
-    <script src="../../../csit/data/semesterData.js"></script>
-    <script src="../../../javaScript/topnav-main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../../../csit/data/subjectunit.js"></script>
+    <script src="../../../../csit/data/semesterData.js"></script>
+    <script src="../../../../javaScript/topnav-main.js"></script>
 
 </body>
 
