@@ -1,63 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <!-- ✅ Basic Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ✅ Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Arrays in C Programming – BSc CSIT 3rd Semester Notes | Pipara Academy</title>
+  <title>Functions in C Programming – BSc CSIT 3rd Semester Notes | Pipara Academy</title>
 
-    <meta name="description"
-        content="Learn Arrays in C Programming with detailed notes, examples, and programs from BSc CSIT 3rd Semester syllabus. Provided by Pipara Academy – your learning partner in Nepal.">
-    <meta name="keywords"
-        content="Arrays in C, C Programming, BSc CSIT Notes, CSIT Semester 3, Pipara Academy, Tribhuvan University, Programming Notes, CSIT Nepal, amreshthakur.com.np" />
-    <meta name="author" content="Amresh Thakur" />
+  <meta name="description" content="Learn Functions in C Programming with detailed notes, examples, and programs from BSc CSIT 3rd Semester syllabus. Provided by Pipara Academy – your learning partner in Nepal." />
+  <meta name="keywords" content="Functions in C, C Programming, BSc CSIT Notes, CSIT Semester 3, Pipara Academy, Tribhuvan University, Programming Notes, CSIT Nepal, amreshthakur.com.np" />
+  <meta name="author" content="Amresh Thakur" />
 
-    <!-- ✅ Indexing and Crawling -->
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="bingbot" content="index, follow" />
+  <!-- ✅ Indexing and Crawling -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="bingbot" content="index, follow" />
 
-    <!-- ✅ Canonical URL -->
-    <link rel="canonical" href="https://amreshthakur.com.np/csit/first-semester/c-programming/arrays/" />
+  <!-- ✅ Canonical URL (FIXED wrong path) -->
+  <link rel="canonical" href="https://amreshthakur.com.np/csit/first-semester/c-programming/functions/" />
 
-    <!-- ✅ Favicon -->
-    <link rel="icon" href="https://amreshthakur.com.np/favicon.ico" type="image/x-icon" />
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="https://amreshthakur.com.np/favicon.ico" type="image/x-icon" />
 
-    <!-- ✅ Open Graph Meta Tags -->
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://amreshthakur.com.np/csit/3rd-semester/c-programming/arrays/" />
-    <meta property="og:title" content="functions in C – BSc CSIT Notes & Examples | Pipara Academy" />
-    <meta property="og:description"
-        content="Master functions in C with notes, examples, and tutorials tailored for BSc CSIT students. From Pipara Academy." />
-    <meta property="og:image" content="https://amreshthakur.com.np/images/functions-og-banner.png" />
-    <meta property="og:site_name" content="Pipara Academy" />
+  <!-- ✅ Open Graph Meta Tags -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://amreshthakur.com.np/csit/first-semester/c-programming/functions/" />
+  <meta property="og:title" content="Functions in C – BSc CSIT Notes & Examples | Pipara Academy" />
+  <meta property="og:description" content="Master functions in C with notes, examples, and tutorials tailored for BSc CSIT students. From Pipara Academy." />
+  <meta property="og:image" content="https://amreshthakur.com.np/images/functions-og-banner.png" />
+  <meta property="og:site_name" content="Pipara Academy" />
 
-    <!-- ✅ Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@piparaacademy" />
-    <meta name="twitter:title" content="Arrays in C Programming – CSIT Notes | Pipara Academy" />
-    <meta name="twitter:description"
-        content="Learn arrays in C with CSIT-aligned notes and examples. Perfect for Semester 3 students." />
-    <meta name="twitter:image" content="https://amreshthakur.com.np/images/arrays-twitter-card.png" />
-    <meta name="twitter:image:alt" content="Arrays in C - Pipara Academy" />
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@piparaacademy" />
+  <meta name="twitter:title" content="Functions in C Programming – CSIT Notes | Pipara Academy" />
+  <meta name="twitter:description" content="Learn functions in C with CSIT-aligned notes and examples. Perfect for Semester 3 students." />
+  <meta name="twitter:image" content="https://amreshthakur.com.np/images/functions-twitter-card.png" />
+  <meta name="twitter:image:alt" content="Functions in C - Pipara Academy" />
 
-    <!-- ✅ Site Identity -->
-    <meta name="application-name" content="Pipara Academy" />
-    <meta name="theme-color" content="#007bff" />
+  <!-- ✅ Site Identity -->
+  <meta name="application-name" content="Pipara Academy" />
+  <meta name="theme-color" content="#007bff" />
 
-    <!-- ✅ Google Site Verification -->
-    <meta name="google-site-verification" content="FITdzHukrQTwVoxMRJt2mu9fKe21KB-2SxQ5XWe33SU" />
+  <!-- ✅ Google Site Verification -->
+  <meta name="google-site-verification" content="FITdzHukrQTwVoxMRJt2mu9fKe21KB-2SxQ5XWe33SU" />
 
-    <!-- ✅ Structured Data (Schema.org JSON-LD) -->
-    <script type="application/ld+json">
+  <!-- ✅ Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": "Arrays in C Programming",
-    "description": "In-depth CSIT 3rd Semester guide on Arrays in C – with notes, solved problems and examples.",
+    "name": "Functions in C Programming",
+    "description": "In-depth CSIT first Semester guide on Functions in C – with notes, solved problems and examples.",
     "educationalLevel": "Undergraduate",
     "provider": {
       "@type": "EducationalOrganization",
@@ -70,7 +65,7 @@
       "courseMode": "online",
       "location": {
         "@type": "VirtualLocation",
-        "url": "https://amreshthakur.com.np/csit/3rd-semester/c-programming/arrays/"
+        "url": "https://amreshthakur.com.np/csit/first-semester/c-programming/functions/"
       },
       "audience": {
         "@type": "EducationalAudience",
@@ -78,39 +73,32 @@
       }
     },
     "teaches": [
-      "Array initialization",
-      "1D and 2D arrays",
-      "Passing arrays to functions",
-      "Multi-dimensional arrays"
+      "Function Declaration and Definition",
+      "Function Call",
+      "Passing Arguments",
+      "Return Types",
+      "Recursion",
+      "Library Functions vs User-defined Functions"
     ],
     "timeRequired": "PT6H"
   }
   </script>
-    <!-- ✅ CSS Stylesheets -->
-    <link href="../../../../main.css" rel="stylesheet" type="text/css" />
-    <link href="../../../../style/style.css" rel="stylesheet" type="text/css" />
 
-    <!-- ✅ Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- ✅ CSS Stylesheets -->
+  <link href="../../../../main.css" rel="stylesheet" type="text/css" />
+  <link href="../../../../style/style.css" rel="stylesheet" type="text/css" />
 
-    <!-- ✅ JavaScript (deferred for performance) -->
-    <script src="lesson7Data.js" defer></script>
-    <script src="/csit/first-semester/c-programming/structure-and-union/lesson8Data.js"></script>
+  <!-- ✅ Font Awesome Icons (only include once) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-
-    <!-- search functionality and footer credit and social media launcher -->
-    <script src="../../../../JavaScript/Search-Script.js" defer></script>
-    <script src="../../../../JavaScript/Footer-credit.js" defer></script>
-    <script src="../../../../JavaScript/Social-Media-Launcher.js" defer></script>
-    <!-- search functionality and footer credit and social media launcher -->
-
-
-
-
-
-    <!-- icon cnd link fa fa-caret-down and fa fa-caret-up -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- ✅ JavaScript Files -->
+  <script src="lesson7Data.js" defer></script>
+  <script src="/csit/first-semester/c-programming/structure-and-union/lesson8Data.js" defer></script>
+  <script src="../../../../javaScript/Search-Script.js" defer></script>
+  <script src="../../../../javaScript/Footer-credit.js" defer></script>
+  <script src="../../../../javaScript/Social-Media-Launcher.js" defer></script>
 </head>
+
 
 <body>
 
@@ -372,7 +360,7 @@
                     </a>
 
                     <a class="PAN-button PAN-round ga-fp" target="_blank"
-                        href="https://www.linkedin.com/company/Piparaacademy.com/" title="Pipara Academy on LinkedIn">
+                        href="https://www.linkedin.com/company/amreshthakur.com.np/" title="Pipara Academy on LinkedIn">
                         <i class="fa-brands fa-youtube-square"></i>
                     </a>
                 </div>
@@ -1474,7 +1462,7 @@
                                 </a>
 
                                 <a class="PAN-button PAN-round ga-fp" target="_blank"
-                                    href="https://www.instagram.com/Piparaacademy.com_official/"
+                                    href="https://www.instagram.com/amreshthakur.com.np_official/"
                                     title="Piparaacademy on Instagram">
                                     <i class="tnb-icon fa fa-instagram" aria-hidden="true"></i>
                                 </a>
@@ -1485,7 +1473,7 @@
                                 </a> -->
 
                                 <a class="PAN-button PAN-round ga-fp" target="_blank"
-                                    href="https://www.linkedin.com/company/Piparaacademy.com/"
+                                    href="https://www.linkedin.com/company/amreshthakur.com.np/"
                                     title="Piparaacademy on LinkedIn">
                                     <i class="tnb-icon fa fa-linkedin-square" aria-hidden="true"></i>
                                 </a>
