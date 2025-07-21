@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Load External Aside</title>
+  <style>
+    aside {
+      border: 2px solid #ccc;
+      padding: 16px;
+      width: 100%;
+      max-width: 1920px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Placeholder for external aside -->
+  <aside id="externalAside">Loading</aside>
+  
+  
+  
+
+  <script>
+    // Load external content into the aside
+    fetch('external-aside.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('externalAside').innerHTML = data;
+      })
+      .catch(error => {
+        document.getElementById('externalAside').innerHTML = 'Failed to load sidebar.';
+        console.error('Error loading external content:', error);
+      });
+  </script>
+
+</body>
+</html>

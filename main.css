@@ -178,7 +178,7 @@ h6 {
 /* Main Content */
 .main-content {
   flex: 1;
-  padding: 8px;
+  padding: 19px;
   overflow-y: auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
