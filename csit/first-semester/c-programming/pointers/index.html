@@ -2,88 +2,90 @@
 <html lang="en-US">
 
 <head>
-    <!-- Basic Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Keywords"
-        content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, PAN.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Courses, Programming, Web Development, Training, Learning, Quiz, Notes, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website">
-    <meta name="Description"
-        content="Well organized and easy to understand Web building Courses with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more.">
-    <meta name="author" content="Your Name">
+    <!-- ✅ Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Website Webpage Names -->
-    <title>Pipara Academy Online Education Center</title>
+    <title>Pointers in C Programming – BSc CSIT 3rd Semester Notes | Pipara Academy</title>
 
-    <!-- Open Graph Meta Tags (Facebook, WhatsApp) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="/">
-    <meta property="og:title" content="Pointers in C - Programming | Pipara Academy">
-    <meta property="og:image" content="logo_link_url___436_2.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="436">
-    <meta property="og:image:height" content="228">
+    <meta name="description"
+        content="Learn Pointers in C Programming with detailed notes, examples, and programs from BSc CSIT 3rd Semester syllabus. Provided by Pipara Academy – your learning partner in Nepal.">
+    <meta name="keywords"
+        content="Pointers in C, C Programming, BSc CSIT Notes, CSIT Semester 3, Pipara Academy, Tribhuvan University, Programming Notes, CSIT Nepal, amreshthakur.com.np" />
+    <meta name="author" content="Amresh Thakur" />
+
+    <!-- ✅ Indexing and Crawling -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+
+    <!-- ✅ Canonical URL -->
+    <link rel="canonical" href="https://amreshthakur.com.np/csit/first-semester/c-programming/pointers/" />
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="https://amreshthakur.com.np/favicon.ico" type="image/x-icon" />
+
+    <!-- ✅ Open Graph Meta Tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://amreshthakur.com.np/csit/first-semester/c-programming/pointers/" />
+    <meta property="og:title" content="Pointers in C – BSc CSIT Notes & Examples | Pipara Academy" />
     <meta property="og:description"
-        content="Pipara Academy offers free online Courses, references and Notes in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many, many more.">
+        content="Master operators and expressions in C with notes, examples, and tutorials tailored for BSc CSIT students. From Pipara Academy." />
+    <meta property="og:image" content="https://amreshthakur.com.np/images/operators-og-banner.png" />
+    <meta property="og:site_name" content="Pipara Academy" />
 
-    <!-- Twitter Meta Tags -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/">
-    <meta property="twitter:title" content="Pointers in C - Programming | Pipara Academy">
-    <meta property="twitter:description" content="A concise and informative description for Twitter">
-    <meta property="twitter:image" content="/">
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@piparaacademy" />
+    <meta name="twitter:title" content="Pointers in C Programming – CSIT Notes | Pipara Academy" />
+    <meta name="twitter:description"
+        content="Learn pointers in C with CSIT-aligned notes and examples. Perfect for Semester 3 students." />
+    <meta name="twitter:image" content="https://amreshthakur.com.np/images/operators-twitter-card.png" />
+    <meta name="twitter:image:alt" content="Pointers in C - Pipara Academy" />
 
-    <!-- Search Engine Meta Tags -->
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
+    <!-- ✅ Site Identity -->
+    <meta name="application-name" content="Pipara Academy" />
+    <meta name="theme-color" content="#007bff" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- ✅ Google Site Verification -->
+    <meta name="google-site-verification" content="FITdzHukrQTwVoxMRJt2mu9fKe21KB-2SxQ5XWe33SU" />
 
-    <!-- Canonical Link (Specify the preferred version of a page) -->
-    <link rel="canonical" href="https://www.yourwebsite.com">
-
-    <!-- HTML Language -->
-    <html lang="en">
-
- <!-- ✅ Structured Data (JSON-LD) -->
+    <!-- ✅ Structured Data (Schema.org JSON-LD) -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": "Statistics II",
-        "description": "Complete BSc CSIT Statistics II course with notes, examples and solutions",
-        "educationalLevel": "undergraduate",
-        "provider": {
-            "@type": "Organization",
-            "name": "Pipara Academy",
-            "url": "https://www.amreshthakur.com.np",
-            "logo": "https://www.amreshthakur.com.np/logo.png"
-        },
-        "hasCourseInstance": {
-            "@type": "CourseInstance",
-            "courseMode": "online",
-            "location": {
-                "@type": "VirtualLocation",
-                "url": "https://www.amreshthakur.com.np/courses/bsc-csit/third-semester/statistics-ii/"
-            },
-            "audience": {
-                "@type": "EducationalAudience",
-                "audienceType": "CSIT students"
-            }
-        },
-        "teaches": [
-            "Probability theory",
-            "Probability distributions",
-            "Statistical inference",
-            "Hypothesis testing",
-            "Correlation and regression analysis",
-            "Sampling theory",
-            "Chi-square and t-tests"
-        ],
-        "timeRequired": "PT45H"
-    }
-    </script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Pointers in C Programming",
+    "description": "In-depth CSIT first Semester guide on Pointers in C – with notes, solved problems and examples.",
+    "educationalLevel": "Undergraduate",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Pipara Academy",
+      "url": "https://amreshthakur.com.np",
+      "logo": "https://amreshthakur.com.np/logo.png"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://amreshthakur.com.np/csit/first-semester/c-programming/pointers/"
+      },
+      "audience": {
+        "@type": "EducationalAudience",
+        "audienceType": "BSc CSIT Students"
+      }
+    },
+    "teaches": [
+      "Array initialization",
+      "1D and 2D arrays",
+      "Passing arrays to functions",
+      "Multi-dimensional arrays"
+    ],
+    "timeRequired": "PT6H"
+  }
+  </script>
   <!-- ✅ CSS Stylesheets -->
   <link href="../../../../main.css" rel="stylesheet" type="text/css" />
   <link href="../../../../style/style.css" rel="stylesheet" type="text/css" />
@@ -97,9 +99,9 @@
 
 
     <!-- search functionality and footer credit and social media launcher -->
-    <script src="../../../../JavaScript/Search-Script.js"></script>
-    <script src="../../../../JavaScript/Footer-credit.js"></script>
-    <script src="../../../../JavaScript/Social-Media-Launcher.js"></script>
+    <script src="../../../../javaScript/Search-Script.js"></script>
+    <script src="../../../../javaScript/Footer-credit.js"></script>
+    <script src="../../../../javaScript/Social-Media-Launcher.js"></script>
     <!-- search functionality and footer credit and social media launcher -->
 
 
